@@ -8,7 +8,6 @@
 </head>
 <body>
     <h1>Página comercial</h1>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <a href="base/cadastro/fadd_cad.php">Cadastro</a>
     <a href="base/login.php">Login</a>
 </body>
