@@ -11,7 +11,7 @@ $senha = mysqli_real_escape_string($con, $_POST['senha']);
 
 // Valida��o do usu�rio/senha digitados
 $sql  = "select id_usu, nome_usu, nivel from usuario where (nome_usu = '". $usuario ."') ";
-$sql .= "and (senha_usu = '". $senha ."') and (status_usu = 1) limit 1";
+$sql .= "and (senha_usu = '". sha1($senha) ."') and (status_usu = 1) limit 1";
 
 $query = mysqli_query($con, $sql);
 
@@ -29,8 +29,8 @@ if (mysqli_num_rows($query) != 1) {
 	if (!isset($_SESSION)) session_start();
 
 	// Salva os dados encontrados na sess�o
-	$_SESSION['UsuarioID'] = $resultado['id'];
-	$_SESSION['UsuarioNome'] = $resultado['nome'];
+	$_SESSION['UsuarioID'] = $resultado['id_usu'];
+	$_SESSION['UsuarioNome'] = $resultado['nome_usu'];
 	$_SESSION['UsuarioNivel'] = $resultado['nivel'];
 
 	// Redireciona o visitante
