@@ -1,5 +1,5 @@
 <?php
-	define('DB_NAME', 'sistema');
+	define('DB_NAME', 'academia');
 	define('DB_USER', 'root');
 	define('DB_PASS', '');
 	define('DB_HOST', 'localhost');
