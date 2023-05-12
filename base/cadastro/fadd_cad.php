@@ -25,11 +25,31 @@
         border: none;
         outline: none;
         margin-top: -8px;
-        border-radius: 10px;
+        
     }
 
     .btnsub:hover {
         background-color: #f9735b;
+    }
+
+    .btncancel{
+        display: inline-block;
+        font-size: 12px;
+        padding: 11px 17px;
+        background-color: #595959;
+        color: #fff;
+        text-align: center;
+        font-weight: 400;
+        text-transform: uppercase;
+        transition: all .3s;
+        border: none;
+        outline: none;
+        margin-top: -8px;
+        text-decoration: none;
+    }
+    .btncancel:hover{
+        color: white;
+        background-color: #8c8c8c;
     }
 </style>
 
@@ -149,7 +169,7 @@
         <div id="actions" class="row">
             <div class="col-md-12">
                 <button type="submit" class="btnsub">Salvar</button>
-                <a href="../../index.php" class="btn btn-secondary">Cancelar</a>
+                <a href="../../index.php" class="btncancel">Cancelar</a>
             </div>
         </div>
     </form>
