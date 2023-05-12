@@ -1,32 +1,58 @@
 <?php
 
-    $nome             = $_POST["nome_usu"];
-    $cpf              = $_POST["cpf_usu"];
-    $tipo             = $_POST["tipo_usu"];
-    $cep              = $_POST["cep_usu"];
-    $nr               = $_POST["numero"];
-    $comp             = $_POST["complemento"];
-    $sexo             = $_POST["sexo"];
-    $dt_nasc          = $_POST["dt_nasc"];
-    $nomepai          = $_POST["nome_pai"];
-    $nomemae          = $_POST["nome_mae"];
-    $senha            = $_POST["senha_usu"];
+include '../config.php';
 
-    $fdt_nasc 	= implode("-", array_reverse(explode("/", $dt_nasc)));
+$nome             = $_POST["nome_usu"];
+$cpf              = $_POST["cpf"];
+$tipo             = $_POST["tipo_usu"];
+$cep              = $_POST["cep"];
+$nr               = $_POST["numero"];
+$comp             = $_POST["complemento"];
+$sexo             = $_POST["sexo"];
+$dt_nasc          = $_POST["dt_nasc"];
+$nomepai          = $_POST["nome_pai"];
+$nomemae          = $_POST["nome_mae"];
+$senha            = $_POST["senha_usu"];
+$rg               = $_POST["rg_usu"];
 
-    $sql = "insert into usuario values ";
-    $sql .= "('0',$mat,'$nome','$nomepai','$nomemae','$rg','$cpf','$fdt_nasc', ";
-    $sql .= "'$sexo','$esc','$comp','$cep','$oe_rg',$nr);";
+$fdt_nasc     = implode("-", array_reverse(explode("/", $dt_nasc)));
 
-    // echo $sql; exit;
+$mat = rand(1, 1000000);
 
-    $resultado = mysqli_query($con, $sql)or die(mysqli_error($erro));
+switch ($tipo) {
+    case 'alu':
+        $nivel = 1;
+        break;
+    case 'prof':
+        $nivel = 2;
+        break;
+    case 'ate':
+        $nivel = 3;
+        break;
+    case 'ger':
+        $nivel = 4;
+        break;
+    case 'adm':
+        $nivel = 5;
+        break;
 
-    if($resultado){
-        header('Location: \dashboard/dashboard.php?page=lista_usu&msg=1');
-        mysqli_close($con);
-    }else{
-        header('Location: \dashboard/dashboard.php?page=lista_usu&msg=4');
-        mysqli_close($con);
-    }
-?>
+    default:
+        $nivel = 1;
+        break;
+}
+
+$sql = "insert into usuario values ";
+$sql .= "('0','$nome','$cpf', 0 ,'$tipo','$cep','$nr', '$comp',";
+$sql .= "'$rg', '$sexo','$fdt_nasc', '$nomepai','$nomemae','$nivel','$senha', 1);";
+
+// echo $sql; exit;
+
+$resultado = mysqli_query($con, $sql) or die(mysqli_error($erro));
+
+if ($resultado) {
+    header('Location: \QuickFit-main/base/login.php');
+    mysqli_close($con);
+} else {
+    header('Location: \QuickFit-main/base/login.php');
+    mysqli_close($con);
+}
