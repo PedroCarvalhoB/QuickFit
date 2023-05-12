@@ -58,7 +58,7 @@ https://templatemo.com/tm-548-training-studio
                             <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
                             <li class="scroll-to-section"><a href="#features">Sobre</a></li>
                             <li class="scroll-to-section"><a href="#our-classes">Funcionamento</a></li>
-                            <li class="main-button"><a href="#">Entrar</a></li>
+                            <li class="main-button"><a href="base/login.php">Entrar</a></li>
                         </ul>
                         <a class='menu-trigger'>
                             <span>Menu</span>
@@ -82,7 +82,7 @@ https://templatemo.com/tm-548-training-studio
                 <h6>Trabalhe duro, fique forte</h6>
                 <h2>fácil com nosso <em>sistema</em></h2>
                 <div class="main-button scroll-to-section">
-                    <a href="#features">torne-se um usuário</a>
+                    <a href="base/cadastro/fadd_cad.php">torne-se um usuário</a>
                 </div>
             </div>
         </div>
@@ -125,7 +125,7 @@ https://templatemo.com/tm-548-training-studio
                             </div>
                             <div class="left-content">
                                 <h4>Cadastro de Usuários</h4>
-                                <p>Nosso sistema de cadastro permite que academias registrem informações sobre seus alunos e funcionários em um único lugar. Com ele, as academias podem cadastrar informações detalhadas sobre seus funcionários, como nome, cargo, nível de gerenciamento. Também é possível cadastrar informações sobre cada aluno, incluindo nome, idade, altura, peso para a elaboração de um plano de treinamento personalizado. </p>
+                                <p>Nosso sistema de cadastro de usuários para academias foi feito para simplificar o gerenciamento de dados e aprimorar a experiência. Com ele, as academias podem cadastrar informações sobre seus funcionários. Também é possível cadastrar informações completas sobre cada aluno, incluindo nome, idade, altura, peso, entre outros dados relevantes para a elaboração de um plano de treinamento personalizado. </p>
                             </div>
                         </li>
                     </ul>
@@ -141,11 +141,10 @@ https://templatemo.com/tm-548-training-studio
             <div class="row">
                 <div class="col-lg-10 offset-lg-1">
                     <div class="cta-content">
-                        <h2>Don’t <em>think</em>, begin <em>today</em>!</h2>
-                        <p>Ut consectetur, metus sit amet aliquet placerat, enim est ultricies ligula, sit amet dapibus
-                            odio augue eget libero. Morbi tempus mauris a nisi luctus imperdiet.</p>
+                        <h2>Não <em>pense</em>, comece <em>hoje</em>!</h2>
+                        <p>O sucesso na academia não é apenas uma questão de força física, mas de força de vontade e determinação.</p>
                         <div class="main-button scroll-to-section">
-                            <a href="#our-classes">torne-se um usuário</a>
+                            <a href="base/cadastro/fadd_cad.php">torne-se um usuário</a>
                         </div>
                     </div>
                 </div>
@@ -160,71 +159,45 @@ https://templatemo.com/tm-548-training-studio
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">
                     <div class="section-heading">
-                        <h2>Our <em>Classes</em></h2>
+                        <h2>Nosso <em>Funcionamento</em></h2>
                         <img src="assets/images/line-dec.png" alt="">
-                        <p>Nunc urna sem, laoreet ut metus id, aliquet consequat magna. Sed viverra ipsum dolor,
-                            ultricies fermentum massa consequat eu.</p>
+                        <p>Aqui você terá uma breve noção sobre o funcionamento do nosso sistema.</p>
                     </div>
                 </div>
             </div>
             <div class="row" id="tabs">
                 <div class="col-lg-4">
                     <ul>
-                        <li><a href='#tabs-1'><img src="assets/images/tabs-first-icon.png" alt="">First Training
-                                Class</a></li>
-                        <li><a href='#tabs-2'><img src="assets/images/tabs-first-icon.png" alt="">Second Training
-                                Class</a></a></li>
-                        <li><a href='#tabs-3'><img src="assets/images/tabs-first-icon.png" alt="">Third Training
-                                Class</a></a></li>
-                        <li><a href='#tabs-4'><img src="assets/images/tabs-first-icon.png" alt="">Fourth Training
-                                Class</a></a></li>
-                        <div class="main-rounded-button"><a href="#">View All Schedules</a></div>
+                        <li><a href='#tabs-1'><img src="assets/images/tabs-first-icon.png" alt="">Cadastro</a></li>
+                        <li><a href='#tabs-2'><img src="assets/images/tabs-first-icon.png" alt="">Avaliação Física</a></a></li>
+                        <li><a href='#tabs-3'><img src="assets/images/tabs-first-icon.png" alt="">Séries de exercícios</a></a></li>
+                        <li><a href='#tabs-4'><img src="assets/images/tabs-first-icon.png" alt="">Demonstração</a></a></li>
                     </ul>
                 </div>
                 <div class="col-lg-8">
                     <section class='tabs-content'>
                         <article id='tabs-1'>
                             <img src="assets/images/training-image-01.jpg" alt="First Class">
-                            <h4>First Training Class</h4>
-                            <p>Phasellus convallis mauris sed elementum vulputate. Donec posuere leo sed dui eleifend
-                                hendrerit. Sed suscipit suscipit erat, sed vehicula ligula. Aliquam ut sem fermentum sem
-                                tincidunt lacinia gravida aliquam nunc. Morbi quis erat imperdiet, molestie nunc ut,
-                                accumsan diam.</p>
-                            <div class="main-button">
-                                <a href="#">View Schedule</a>
-                            </div>
+                            <h4>Cadastro</h4>
+                            <p>Nosso sistema de cadastro para academias de musculação proporciona um controle completo e eficiente de todos os aspectos da academia, desde o cadastro da própria academia até a gestão de funcionários, alunos, aparelhos de musculação, exercícios e grupos musculares. Com essa ferramenta poderosa, você terá uma administração mais organizada e poderá oferecer um serviço de qualidade e personalizado aos seus alunos.</p>
                         </article>
+
                         <article id='tabs-2'>
                             <img src="assets/images/training-image-02.jpg" alt="Second Training">
-                            <h4>Second Training Class</h4>
-                            <p>Integer dapibus, est vel dapibus mattis, sem mauris luctus leo, ac pulvinar quam tortor a
-                                velit. Praesent ultrices erat ante, in ultricies augue ultricies faucibus. Nam tellus
-                                nibh, ullamcorper at mattis non, rhoncus sed massa. Cras quis pulvinar eros. Orci varius
-                                natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                            <div class="main-button">
-                                <a href="#">View Schedule</a>
-                            </div>
+                            <h4>Avaliação Física</h4>
+                            <p>Com nosso sistema de avaliação física, é possível oferecer uma experiência personalizada e eficaz aos seus alunos. Com base nos dados de peso, altura, medidas do corpo e objetivo do aluno, nossos professores podem realizar uma avaliação completa e precisa do condicionamento físico e da saúde do aluno.</p>
                         </article>
+
                         <article id='tabs-3'>
                             <img src="assets/images/training-image-03.jpg" alt="Third Class">
-                            <h4>Third Training Class</h4>
-                            <p>Fusce laoreet malesuada rhoncus. Donec ultricies diam tortor, id auctor neque posuere sit
-                                amet. Aliquam pharetra, augue vel cursus porta, nisi tortor vulputate sapien, id
-                                scelerisque felis magna id felis. Proin neque metus, pellentesque pharetra semper vel,
-                                accumsan a neque.</p>
-                            <div class="main-button">
-                                <a href="#">View Schedule</a>
-                            </div>
+                            <h4>Séries de exercícios personalizadas</h4>
+                            <p>Com base na avaliação física, nossos professores poderão criar um plano de treinamento personalizado e adaptado às necessidades individuais de cada aluno, ajudando-os a alcançar seus objetivos de forma segura e eficaz. Além disso, nosso sistema entregará uma ficha de exercícios totalmente digital para que não seja necessária a utilização de fichas físicas feitas em papel.</p>
                         </article>
+
                         <article id='tabs-4'>
                             <img src="assets/images/training-image-04.jpg" alt="Fourth Training">
-                            <h4>Fourth Training Class</h4>
-                            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
-                                egestas. Aenean ultrices elementum odio ac tempus. Etiam eleifend orci lectus, eget
-                                venenatis ipsum commodo et.</p>
-                            <div class="main-button">
-                                <a href="#">View Schedule</a>
-                            </div>
+                            <h4>Demonstração dos Exercícios</h4>
+                            <p>Com nosso sistema para academias, seus clientes terão acesso a imagens demonstrativas dos exercícios e dos aparelhos de musculação, tornando o treinamento mais fácil, eficaz e seguro. Nossas imagens demonstrativas são criadas com base em técnicas e conhecimentos de especialistas em musculação e saúde, garantindo a execução correta e segura dos exercícios e o uso adequado dos aparelhos de musculação.</p>
                         </article>
                     </section>
                 </div>
