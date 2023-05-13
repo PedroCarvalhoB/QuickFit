@@ -12,6 +12,18 @@
 
 </head>
 <style>
+    body{
+        background-image: url(images/contact-bg.jpg);
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        color: white;
+    }
+    h2{
+        color: #ed563b;
+        margin: 10px;
+    }
     .btnsub {
         display: inline-block;
         font-size: 12px;
@@ -57,7 +69,7 @@
     <main>
     <div id="main" class="container-fluid">
     <div id="top" class="row">
-        <div class="col-md-11" style="margin-top: 10px;">
+        <div class="col-md-11">
             <h2>Cadastro de Usuarios</h2>
         </div>
     </div>
@@ -69,7 +81,7 @@
         <div class="row">
             <div class="form-group col-md-2">
                 <label for="tipo_usu">Tipo</label>
-                <select class="form-select" name="tipo_usu">
+                <select class="form-select" name="tipo_usu" >
                     <option value="alu">Aluno</option>
                     <option value="prof">Professor</option>
                     <option value="ate">Atendente</option>
@@ -79,11 +91,11 @@
             </div>
             <div class="form-group col-md-7">
                 <label for="nome_usu">Nome Completo</label>
-                <input type="text" class="form-control" name="nome_usu">
+                <input type="text" class="form-control" name="nome_usu" required>
             </div>
             <div class="form-group col-md-3">
                 <label for="senha_usu">Senha</label>
-                <input type="password" class="form-control" name="senha_usu">
+                <input type="password" class="form-control" name="senha_usu" required>
             </div>
         </div>
 
@@ -93,22 +105,22 @@
         <div class="row">
             <div class="form-group col-md-3">
                 <label for="cpf">CPF</label>
-                <input type="text" class="form-control" name="cpf">
+                <input type="text" class="form-control" name="cpf" required>
             </div>
 
             <div class="form-group col-md-3">
                 <label for="rg_usu">RG</label>
-                <input type="text" class="form-control" name="rg_usu">
+                <input type="text" class="form-control" name="rg_usu" required>
             </div>
             <div class="form-group col-md-3">
                 <label for="sexo">Sexo</label><br>
-                <input type="radio" name="sexo" id="sexo" value="M">Masculino
+                <input type="radio" name="sexo" id="sexo" value="M" required>Masculino
                 &nbsp; &nbsp;
-                <input type="radio" name="sexo" id="sexo" value="F">Feminino
+                <input type="radio" name="sexo" id="sexo" value="F" required>Feminino
             </div>
             <div class="form-group col-md-3">
                 <label for="dt_nasc">Data Nascimento</label>
-                <input type="date" class="form-control" name="dt_nasc">
+                <input type="date" class="form-control" name="dt_nasc" required>
             </div>
         </div>
 
@@ -118,11 +130,11 @@
         <div class="row">
             <div class="form-group col-md-6">
                 <label for="nome_pai">Nome do Pai</label>
-                <input type="text" class="form-control" name="nome_pai">
+                <input type="text" class="form-control" name="nome_pai" required>
             </div>
             <div class="form-group col-md-6">
                 <label for="nome_mae">Nome da Mãe</label>
-                <input type="text" class="form-control" name="nome_mae">
+                <input type="text" class="form-control" name="nome_mae" required>
             </div>
         </div>
         
@@ -132,15 +144,15 @@
         <div class="row">
             <div class="form-group col-md-3">
                 <label for="cep">CEP</label>
-                <input type="text" class="form-control" name="cep">
+                <input type="text" class="form-control" name="cep" required>
             </div>
             <div class="form-group col-md-7">
                 <label for="">Logradouro</label>
-                <input type="text" class="form-control" name="">
+                <input type="text" class="form-control" name="logradouro" required>
             </div>
             <div class="form-group col-md-2">
                 <label for="numero">Número</label>
-                <input type="text" class="form-control" name="numero">
+                <input type="text" class="form-control" name="numero" required>
             </div>
         </div>
 
@@ -150,19 +162,19 @@
         <div class="row">
             <div class="form-group col-md-4">
                 <label for="complemento">Complemento</label>
-                <input type="text" class="form-control" name="complemento">
+                <input type="text" class="form-control" name="complemento" required>
             </div>
             <div class="form-group col-md-3">
                 <label for="">Bairro</label>
-                <input type="text" class="form-control" name="">
+                <input type="text" class="form-control" name="bairro" required>
             </div>
             <div class="form-group col-md-4">
                 <label for="">Cidade</label>
-                <input type="text" class="form-control" name="">
+                <input type="text" class="form-control" name="cidade" required>
             </div>
             <div class="form-group col-md-1">
                 <label for="">UF</label>
-                <input type="text" class="form-control" name="">
+                <input type="text" class="form-control" name="uf" required>
             </div>
         </div>
         <hr />
