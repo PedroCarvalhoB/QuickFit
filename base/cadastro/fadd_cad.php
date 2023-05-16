@@ -9,67 +9,14 @@
 
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="../../assets/css/cadastros.css">
 </head>
-<style>
-    body{
-        background-image: url(images/contact-bg.jpg);
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        color: white;
-    }
-    h2{
-        color: #ed563b;
-        margin: 10px;
-    }
-    .btnsub {
-        display: inline-block;
-        font-size: 12px;
-        padding: 11px 17px;
-        background-color: #ed563b;
-        color: #fff;
-        text-align: center;
-        font-weight: 400;
-        text-transform: uppercase;
-        transition: all .3s;
-        border: none;
-        outline: none;
-        margin-top: -8px;
-        
-    }
-
-    .btnsub:hover {
-        background-color: #f9735b;
-    }
-
-    .btncancel{
-        display: inline-block;
-        font-size: 12px;
-        padding: 11px 17px;
-        background-color: #595959;
-        color: #fff;
-        text-align: center;
-        font-weight: 400;
-        text-transform: uppercase;
-        transition: all .3s;
-        border: none;
-        outline: none;
-        margin-top: -8px;
-        text-decoration: none;
-    }
-    .btncancel:hover{
-        color: white;
-        background-color: #8c8c8c;
-    }
-</style>
 
 <body>
     <main>
     <div id="main" class="container-fluid">
     <div id="top" class="row">
-        <div class="col-md-11">
+        <div class="col-md-11 titulo">
             <h2>Cadastro de Usuarios</h2>
         </div>
     </div>
@@ -86,7 +33,7 @@
                     <option value="prof">Professor</option>
                     <option value="ate">Atendente</option>
                     <option value="ger">Gerente</option>
-                    <option value="adm">Admin</option>
+                    <option value="adm">Administrador(a)</option>
                 </select>
             </div>
             <div class="form-group col-md-7">
@@ -178,7 +125,7 @@
             </div>
         </div>
         <hr />
-        <div id="actions" class="row">
+        <div id="actions" class="row botoes">
             <div class="col-md-12">
                 <button type="submit" class="btnsub">Salvar</button>
                 <a href="../../index.php" class="btncancel">Cancelar</a>

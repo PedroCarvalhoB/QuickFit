@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
+
+body {
+    background-image: url(../images/contact-bg.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+}
+
+.titulo {
+    color: #ed563b;
+    margin-top: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btnsub {
+    display: inline-block;
+    font-size: 12px;
+    padding: 11px 17px;
+    background-color: #ed563b;
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+    text-transform: uppercase;
+    transition: all .3s;
+    border: none;
+    outline: none;
+    margin-top: -8px;
+
+}
+
+.btnsub:hover {
+    background-color: #f9735b;
+}
+
+.btncancel {
+    display: inline-block;
+    font-size: 12px;
+    padding: 11px 17px;
+    background-color: #595959;
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+    text-transform: uppercase;
+    transition: all .3s;
+    border: none;
+    outline: none;
+    margin-top: -8px;
+    text-decoration: none;
+}
+
+.btncancel:hover {
+    color: white;
+    background-color: #8c8c8c;
+}
+
+.botoes {
+    padding: 10px;
+}

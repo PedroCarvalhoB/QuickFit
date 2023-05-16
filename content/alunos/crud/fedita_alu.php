@@ -9,7 +9,9 @@ if (!isset($_SESSION))
 	$row = mysqli_fetch_array($sql);
 ?>
 <div id="main" class="container-fluid">
-	<br><h3 class="page-header">Editar registro do Aluno - <?php echo $id;?></h3>
+	<div>
+		<br><h3 class="page-header">Editar registro do Aluno - <?php echo $id;?></h3>
+	</div>
 
 	<!-- Área de campos do formulário de edição-->
 
