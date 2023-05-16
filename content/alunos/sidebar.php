@@ -23,7 +23,7 @@
             </ul>
         </li>
         <li>
-            <a href="?page=home">
+            <a href="?page=logout">
                 <i class='bx bxs-home'></i>
                 <span class="link_name">Sair</span>
             </a>

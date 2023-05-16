@@ -36,19 +36,23 @@ if (!isset($_SESSION))
       break;
 
     case 3:
-      include "content/funcionario/sidebar.php";
+      include "content/personal/sidebar.php";
       break;
 
     case 4:
-      include "content/gerente/sidebar.php";
+      include "content/funcionario/sidebar.php";
       break;
 
     case 5:
+      include "content/gerente/sidebar.php";
+      break;
+
+    case 6:
       include "content/admin/sidebar.php";
       break;
 
     default:
-      header("Location: home.php");
+      header("Location: index.php");
       break;
   }
   ?>
@@ -61,6 +65,7 @@ if (!isset($_SESSION))
 
     <?php include "base/config.php" ?>
     <?php include "base/ch_pages.php" ?>
+    
     
   </section>
 

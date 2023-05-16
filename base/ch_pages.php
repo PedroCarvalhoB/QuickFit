@@ -6,8 +6,12 @@
                 include "home.php";
                 break;
 
+            case 'logout':
+                include "base/logout.php";
+                break;
+                
             case 'fadd_cad':
-                include "fadd_cad.php";
+                include "cadastro/fadd_cad.php";
                 break;
 
             case 'insere_cad':
@@ -27,7 +31,7 @@
                 break;
 
             default:
-                include "home.php";
+                include "index.php";
                 break;
             }
     }

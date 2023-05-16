@@ -2,7 +2,7 @@
 
 // Verifica se houve POST e se o usu�rio ou a senha �(s�o) vazio(s)
 
-if (!empty($_POST) and (empty($_POST['usuario']) or empty($_POST['senha']))) {
+if (!empty($_POST) and (empty($_POST['cpf']) or empty($_POST['senha']))) {
 
 	header("Location: index.php"); exit;
 
@@ -15,7 +15,7 @@ $con = mysqli_connect('localhost', 'root', '', 'academia') or trigger_error(mysq
 
 
 
-$usuario = mysqli_real_escape_string($con, $_POST['usuario']);
+$cpf = mysqli_real_escape_string($con, $_POST['cpf']);
 
 $senha = mysqli_real_escape_string($con, $_POST['senha']);
 
@@ -24,7 +24,7 @@ $senha = mysqli_real_escape_string($con, $_POST['senha']);
 
 // Valida��o do usu�rio/senha digitados
 
-$sql  = "select id_usu, nome_usu, nivel from usuario where (nome_usu = '". $usuario ."') ";
+$sql  = "select id_usu, cpf, nivel from usuario where (cpf = '". $cpf ."') ";
 
 $sql .= "and (senha_usu = '". $senha ."') and (status_usu = 1) limit 1";
 
@@ -69,7 +69,7 @@ if (mysqli_num_rows($query) != 1) {
 
 	$_SESSION['UsuarioID'] = $resultado['id_usu'];
 
-	$_SESSION['UsuarioNome'] = $resultado['nome_usu'];
+	$_SESSION['UsuarioCPF'] = $resultado['cpf'];
 
 	$_SESSION['UsuarioNivel'] = $resultado['nivel'];
 

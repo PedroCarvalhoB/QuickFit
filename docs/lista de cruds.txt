@@ -1,0 +1,25 @@
+Funcionario(Gerente):
+
+Academia
+Aparelho
+Exercicio (+ Variações)
+Grupo Muscular
+
+Funcionario(Prof):
+
+Treinamento (Lista de Exercicios e Aparelhos)
+Avaliação
+
+Funcionario (Geral):
+
+Lista de Alunos
+
+Aluno:
+
+Matricula
+Treinos (Relatório)
+Avaliação (Relatório)
+
+
+
+
