@@ -12,7 +12,7 @@
   left: 0;
   height: 100%;
   width: 260px;
-  background: #11101d;
+  background: black;
   z-index: 100;
   transition: all 0.5s ease;
 }
@@ -210,7 +210,7 @@
 }
 .home-section{
   position: relative;
-  background: #E4E9F7;
+  background: white;
   height: 100vh;
   left: 260px;
   width: calc(100% - 260px);
