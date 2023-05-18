@@ -1,6 +1,6 @@
 <div class="sidebar close">
     <div class="logo-details">
-        <i class="fa-sharp fa-solid fa-dumbbell fa-rotate-90"></i>
+        <i class="fa-solid fa-dumbbell " style="color: #ed563b;"></i>
         <span class="logo_name logo">Quick<em> Fit</em></span>
     </div>
     <ul class="nav-links">
@@ -28,7 +28,7 @@
                 <span class="link_name">Sair</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?page=home">Sair</a></li>
+                <li><a class="link_name" href="?page=logout">Sair</a></li>
             </ul>
         </li>
     </ul>

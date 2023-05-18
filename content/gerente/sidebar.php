@@ -1,7 +1,7 @@
 <div class="sidebar close">
     <div class="logo-details">
-        <i class="fa-sharp fa-solid fa-dumbbell fa-rotate-90"></i>
-        <span class="logo_name">Fucking Gym</span>
+        <i class="fa-solid fa-dumbbell " style="color: #ed563b;"></i>
+        <span class="logo_name logo">Quick<em> Fit</em></span>
     </div>
     <ul class="nav-links">
         <li>
@@ -11,6 +11,15 @@
             </a>
             <ul class="sub-menu blank">
                 <li><a class="link_name" href="?page=home">Home</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="?page=view_alu">
+                <i class="fa-solid fa-user"></i>
+                <span class="link_name">Perfil</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="?page=view_alu">Perfil</a></li>
             </ul>
         </li>
         <li>
@@ -24,11 +33,11 @@
         </li>
         <li>
             <a href="?page=logout">
-                <i class='bx bxs-home'></i>
+                <i class="fa-solid fa-right-from-bracket"></i>
                 <span class="link_name">Sair</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?page=home">Sair</a></li>
+                <li><a class="link_name" href="?page=logout">Sair</a></li>
             </ul>
         </li>
     </ul>

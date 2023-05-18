@@ -121,8 +121,8 @@
 
 				<div id="actions" class="row botoes">
 					<div class="col-md-12">
-						<a href="?page=view_alu" class="btnsub">Voltar</a>
-						<button type="submit" class="btncancel">Salvar Alterações</button>
+						<a href="?page=view_alu" class="btncancel">Voltar</a>
+						<button type="submit" class="btnsub">Salvar Alterações</button>
 					</div>
 				</div>
 		</div>
