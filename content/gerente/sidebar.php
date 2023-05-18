@@ -13,24 +13,24 @@
                 <li><a class="link_name" href="?page=home">Home</a></li>
             </ul>
         </li>
+       
         <li>
-            <a href="?page=view_alu">
-                <i class="fa-solid fa-user"></i>
-                <span class="link_name">Perfil</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?page=view_alu">Perfil</a></li>
+            <div class="iocn-link">
+                <a href=" ">
+                    <i class='bx bxs-user' ></i>
+                    <span class="link_name">Academia</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name">Dados</a></li>
+                <li><a href="?page=fadd_acad">Cadastrar Academia</a></li>
+                <li><a href="?page=lol">Lista de Academias</a></li>
+                <li><a href="?page=fadd_exec">Adicionar Exercicio</a></li>
+
             </ul>
         </li>
-        <li>
-            <a href="?page=fadd_exec">
-                <i class='bx bxs-home'></i>
-                <span class="link_name">Exercícios</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?page=fadd_exec">Exercícios</a></li>
-            </ul>
-        </li>
+        
         <li>
             <a href="?page=logout">
                 <i class="fa-solid fa-right-from-bracket"></i>
