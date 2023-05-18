@@ -29,11 +29,11 @@
             <div class="form-group col-md-2">
                 <label for="tipo_usu">Tipo</label>
                 <select class="form-select" name="tipo_usu" >
-                    <option value="alu">Aluno</option>
-                    <option value="prof">Professor</option>
-                    <option value="ate">Atendente</option>
-                    <option value="ger">Gerente</option>
-                    <option value="adm">Administrador(a)</option>
+                    <option value="ALUNO">Aluno</option>
+                    <option value="PROFESSOR">Professor</option>
+                    <option value="ATENDENTE">Atendente</option>
+                    <option value="GERENTE">Gerente</option>
+                    <option value="ADMIN">Administrador(a)</option>
                 </select>
             </div>
             <div class="form-group col-md-7">
@@ -125,12 +125,14 @@
             </div>
         </div>
         <hr />
+        
         <div id="actions" class="row botoes">
             <div class="col-md-12">
                 <button type="submit" class="btnsub">Salvar</button>
                 <a href="../../index.php" class="btncancel">Cancelar</a>
             </div>
         </div>
+
     </form>
 </div>
     </main>
