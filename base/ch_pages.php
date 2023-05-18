@@ -38,12 +38,12 @@
                 include "content/gerente/crud/insere_exec.php";
                 break;
 
-            case 'fadd_cad':
-                include "content/gerente/crud/insere_cad.php";
+            case 'fadd_acad':
+                include "content/gerente/crud/fadd_acad.php";
                 break;
 
-            case 'insere_cad':
-                include "content/gerente/crud/insere_cad.php";
+            case 'insere_acad':
+                include "content/gerente/crud/insere_acad.php";
                 break;
 
             default:
