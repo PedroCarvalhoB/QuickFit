@@ -1,0 +1,32 @@
+body{
+    background-image: url(../images/slide-01.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.titulo{
+    color: #ed563b;
+}
+.btnsub {
+    display: inline-block;
+    font-size: 18px;
+    padding: 11px 17px;
+    background-color: #ed563b;
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all .3s;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    margin-top: 10px    ;
+}
+
+.btnsub:hover {
+    background-color: #f9735b;
+}
+.logincont{
+    background-color: rgba(19, 15, 15, 0.678);
+}
