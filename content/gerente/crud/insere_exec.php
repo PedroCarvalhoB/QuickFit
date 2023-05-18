@@ -1,7 +1,5 @@
 <?php
 
-include '../../../config.php';
-
 $nome             = $_POST["nome_exec"];
 $img              = $_POST["imagem"];
 $descr            = $_POST["desc_exec"];
@@ -14,7 +12,7 @@ $sql .= "('0','$nome','$img', '$descr');";
 $resultado = mysqli_query($con, $sql) or die(mysqli_error($erro));
 
 if ($resultado) {
-    header('Location: \QuickFit-main/dashboard.php?page=fadd_exec');
+    header('Location: \QuickFit-main/dashboard.php?page=home');
     mysqli_close($con);
 } else {
     header('Location: \QuickFit-main/dashboard.php?page=fadd_exec');

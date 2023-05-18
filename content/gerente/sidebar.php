@@ -17,7 +17,7 @@
         <li>
             <div class="iocn-link">
                 <a href=" ">
-                    <i class='bx bxs-user' ></i>
+                    <i class='bx bxs-user'></i>
                     <span class="link_name">Academia</span>
                 </a>
                 <i class='bx bxs-chevron-down arrow'></i>
@@ -26,8 +26,8 @@
                 <li><a class="link_name">Dados</a></li>
                 <li><a href="?page=fadd_acad">Cadastrar Academia</a></li>
                 <li><a href="?page=lol">Lista de Academias</a></li>
+                <li><a href="?page=fadd_apar">Adicionar Aparelho</a></li>
                 <li><a href="?page=fadd_exec">Adicionar Exercicio</a></li>
-
             </ul>
         </li>
         

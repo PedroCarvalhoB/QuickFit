@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Cadastro de Usuários</title>
+    <title>Cadastro de Exercício</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,7 +18,7 @@
         <div id="main" class="container-fluid">
             <div id="top" class="row">
                 <div class="col-md-11">
-                    <h2>Cadastro de Exercícios</h2>
+                    <h2>Cadastro de Exercício</h2>
                 </div>
             </div>
 
@@ -36,7 +36,7 @@
                         <input type="file" class="form-control" name="imagem" required>
                     </div>
                     <div class="form-group col-md-6">
-                        <label for="senha_usu">Descrição</label>
+                        <label for="desc_exec">Descrição</label>
                         <input type="text" class="form-control" name="desc_exec" required>
                     </div>
                 </div>

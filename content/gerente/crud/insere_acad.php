@@ -1,5 +1,4 @@
 ﻿<?php
-	include '../../../base/config.php';
 
 	$nome 			= $_POST["nome"];
 	$cnpj		    = $_POST["cnpj"];
@@ -14,7 +13,7 @@
 	$resultado = mysqli_query($con, $sql) or die(mysqli_error($con));
 
 	if ($resultado) {
-		header('Location: \quickfit/dashboard.php?page=fadd_acad');
+		header('Location: \quickfit/dashboard.php?page=home');
 		mysqli_close($con);
 	} else {
 		header('Location: \quickfit/dashboard.php?page=fadd_acad');

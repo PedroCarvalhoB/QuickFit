@@ -1,5 +1,5 @@
 <head>
-    <title>Cadastro de Usuários</title>
+    <title>Cadastro de Academia</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -11,7 +11,7 @@
 </head>
 
 <div id="main" class="container-fluid">
-	<h3 class="page-header">Cadastrar Academia</h3>
+	<h3 class="page-header">Cadastrar de Academia</h3>
 	<form action="?page=insere_acad" method="post">
 
 		<div id="linha01" class="row">
