@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!--<title> Drop Down Sidebar Menu | CodingLab </title>-->
+  <title> Login</title>
   <link rel="stylesheet" href="css/style.css">
   <!-- Boxiocns CDN Link -->
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -17,33 +17,37 @@
 </head>
 
 <body>
+
   <form action="validacao.php" method="post">
     <section class="vh-30 gradient-custom">
-      <div class="container py-5 h-70">
-        <div class="row d-flex justify-content-center align-items-center h-100">
-          <div class="col-12 col-md-8 col-lg-6 col-xl-5 ">
-            <div class="card text-white logincont" style="border-radius: 1rem;">
+      <div class="container py-5 h-70 ">
+        <div class="row d-flex justify-content-center align-items-center h-600  ">
+          <div class="col-12 col-md-8 col-lg-6 col-xl-5 " style="">
+            <div class="card text-white  logincont" style="border-radius: 1rem;">
               <div class="card-body p-5 text-center">
 
                 <div class="mb-md-5 mt-md-4 pb-5">
 
-                  <h2 class="fw-bold mb-2 text-uppercase titulo">Entrar</h2>
-                  <p class="text-white-50 mb-5">DIGITE SEU CPF E SUA SENHA PARA ENTRAR!</p>
+                  <h2 class="fw-bold mb-2 text-uppercase titulo">Entrar</h2>               
 
-                  <div class="form-outline form-white mb-4">
+                  <div class="form-outline form-white mb-4 caixatext">
                     <label class="form-label" for="typeEmailX">CPF</label>
-                    <input type="tex" name="cpf" id="typeEmailX" class="form-control form-control-lg" />
+                    <input type="tex" name="cpf" id="typeEmailX" placeholder="xxx.xxx.xxx-xx" class="form-control form-control-sm" />
                   </div>
 
-                  <div class="form-outline form-white mb-4">
+                  <div class="form-outline form-white mb-4 caixatext">
                     <label class="form-label" for="typePasswordX">Senha</label>
-                    <input type="password" name="senha" class="form-control form-control-lg" />
+                    <input type="password" name="senha" placeholder="***********" class="form-control form-control-sm" />
                   </div>
 
-                  <button class="btnsub" type="submit">Entrar</button>
+                  <button class="w-100 btnsub" type="submit">Entrar</button>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </form>
 
   <!-- Script  -->

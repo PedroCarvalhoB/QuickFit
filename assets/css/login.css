@@ -1,14 +1,18 @@
 body{
-    background-image: url(../images/slide-01.jpg);
+    background-image: url(../images/treinadora.jpeg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
 .titulo{
+    position: relative;
+    top: -35px;
     color: #ed563b;
 }
 .btnsub {
+    position: relative;
+    top: 20px;
     display: inline-block;
     font-size: 18px;
     padding: 11px 17px;
@@ -28,5 +32,9 @@ body{
     background-color: #f9735b;
 }
 .logincont{
+    margin: auto;
+    width: 390px;
+    height: 400px;    
     background-color: rgba(19, 15, 15, 0.678);
 }
+

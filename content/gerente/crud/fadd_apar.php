@@ -21,7 +21,7 @@
                 </div>
             </div>
 
-            <hr>
+            <br>
 
             <form action="?page=insere_apar" method="post">
                 <!-- 1ª LINHA -->
@@ -49,6 +49,7 @@
                         <input type="number" class="form-control" name="quant" required>
                     </div>
                 </div>
+                <br>
                 <hr />
                 <div id="actions" class="row botoes">
                     <div class="col-md-12">

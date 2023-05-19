@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Cadastro de Exercício</title>
+    <title>Cadastro de Usuários</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -18,11 +18,11 @@
         <div id="main" class="container-fluid">
             <div id="top" class="row">
                 <div class="col-md-11">
-                    <h2>Cadastro de Exercício</h2>
+                    <h2>Cadastrar Exercícios</h2>
                 </div>
             </div>
 
-            <hr>
+            <br>
 
             <form action="?page=insere_exec" method="post">
                 <!-- 1ª LINHA -->
@@ -35,12 +35,18 @@
                         <label for="nome_usu">Imagem</label>
                         <input type="file" class="form-control" name="imagem" required>
                     </div>
+                </div>
+                <br>
+                <div class="row">
                     <div class="form-group col-md-6">
-                        <label for="desc_exec">Descrição</label>
-                        <input type="text" class="form-control" name="desc_exec" required>
+                        <label for="desc_exec">Descrição do Exercício</label>
+                        <textarea class="form-control" style="resize: none;" id="textAreaExample1" rows="4"></textarea>
                     </div>
                 </div>
-                <hr />
+
+                <br>
+                <hr/>
+
                 <div id="actions" class="row botoes">
                     <div class="col-md-12">
                         <button type="submit" class="btnsub">Salvar</button>
