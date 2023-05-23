@@ -40,7 +40,7 @@
                 <div class="row">
                     <div class="form-group col-md-6">
                         <label for="desc_exec">Descrição do Exercício</label>
-                        <textarea class="form-control" style="resize: none;" id="textAreaExample1" rows="4"></textarea>
+                        <textarea class="form-control" style="resize: none;" name="desc_exec" id="textAreaExample1" rows="6"></textarea>
                     </div>
                 </div>
 
