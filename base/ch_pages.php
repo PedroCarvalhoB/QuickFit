@@ -53,7 +53,14 @@ if (isset($_GET['page'])) {
         case 'insere_apar':
             include "content/gerente/crud/insere_apar.php";
             break;
+        
+        case 'fadd_apar_exec':
+            include "content/gerente/crud/fadd_apar_exec.php";
+            break;
 
+        case 'insere_apar_exec':
+            include "content/gerente/crud/insere_apar_exec.php";
+            break;
 
         default:
             include "content/home.php";
