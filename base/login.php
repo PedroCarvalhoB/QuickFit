@@ -31,13 +31,13 @@
                   <h2 class="fw-bold mb-2 text-uppercase titulo">Entrar</h2>               
 
                   <div class="form-outline form-white mb-4 caixatext">
-                    <label class="form-label" for="typeEmailX">CPF</label>
-                    <input type="tex" name="cpf" id="typeEmailX" placeholder="xxx.xxx.xxx-xx" class="form-control form-control-sm" />
+                    <label class="form-label" for="cpf">CPF</label>
+                    <input type="tex" name="cpf" id="cpf" placeholder="CPF" class="form-control form-control-sm" />
                   </div>
 
                   <div class="form-outline form-white mb-4 caixatext">
                     <label class="form-label" for="typePasswordX">Senha</label>
-                    <input type="password" name="senha" placeholder="***********" class="form-control form-control-sm" />
+                    <input type="password" name="senha" placeholder="Senha" class="form-control form-control-sm" />
                   </div>
 
                   <button class="w-100 btnsub" type="submit">Entrar</button>
@@ -51,11 +51,14 @@
   </form>
 
   <!-- Script  -->
+  <script src="../assets/js/jquery-3.3.1.min.js" type="text/javascript" ></script>
   <script src="js/dash.js"></script>
 
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
   </script>
 
+  <script src="../assets/js/jquery.inputmask.bundle.js" type="text/javascript"></script>
+  <script src="../assets/js/script_mask.js" type="text/javascript"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
 </body>
