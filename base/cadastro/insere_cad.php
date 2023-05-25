@@ -14,9 +14,9 @@ $nomepai          = $_POST["nome_pai"];
 $nomemae          = $_POST["nome_mae"];
 $senha            = $_POST["senha_usu"];
 $rg               = $_POST["rg_usu"];
+$acad             = $_POST["acad"];
 // $org              = $_POST["orgao_reg"];
 // $num_reg          = $_POST["num_reg_func"];
-// $acad             = $_POST["id_acad"];
 
 $fdt_nasc     = implode("-", array_reverse(explode("/", $dt_nasc)));
 
@@ -55,33 +55,56 @@ $sql .= "'$rg','$sexo','$fdt_nasc','$nomepai','$nomemae','$nivel','$senha', 1);"
 
 // echo $sql; exit;
 
-$resultado = mysqli_query($con, $sql) or die(mysqli_error($erro));
+$resultado = mysqli_query($con, $sql) or die(mysqli_error($con));
+
+
+
+
+// Inserir dados na tabela matriculado //
+
+$id_usu          = mysqli_insert_id($con);
+$data_hj         = date('Y/m/d');
+
+$sql_matr = "insert into matriculado values ('0','$acad','$id_usu',1,'$data_hj',NULL);";
+
+$resultado_matr = mysqli_query($con, $sql_matr) or die(mysqli_error($con));
+
+
+
 
 // Caso seja Professor //
+
 if ($tipo == 'PROFESSOR') {
 
     $org              = $_POST["orgao_reg"];
     $num_reg          = $_POST["num_reg_func"];
 
-    $id_usu = mysqli_insert_id($con);
-    $sql2 = "insert into professor values ('0','$id_usu','$num_reg','$org');";
+    $sql_prof = "insert into professor values ('0','$id_usu','$num_reg','$org');";
 
-    $resultado_prof = mysqli_query($con, $sql2) or die(mysqli_error($erro));
+    $resultado_prof = mysqli_query($con, $sql_prof) or die(mysqli_error($con));
 }
+
+
+
 
 // Caso seja Gerente //
+
 if ($tipo == 'GERENTE') {
 
-    $acad             = $_POST["acad"];
-    $data_cad         = date('Y/m/d');
+    // $acad             = $_POST["acad"];
 
-    $id_usu = mysqli_insert_id($con);
-    $sql3 = "insert into gerencia values ('0','$id_usu','$acad','$data_cad',1);";
+    // $sql3 = "insert into gerencia values ('0','$id_usu','$acad','$data_cad',1);";
+    $sql_geren = "insert into gerencia values ('0','$id_usu','$acad','$data_hj',1);";
+    // echo $sql3; exit;
 
-    $resultado_geren = mysqli_query($con, $sql3) or die(mysqli_error($erro));
+    $resultado_geren = mysqli_query($con, $sql_geren) or die(mysqli_error($con));
 }
 
-if ($resultado || $resultado_prof || $resultado_geren) {
+
+
+
+
+if ($resultado || $resultado_prof || $resultado_geren || $resultado_matr) {
     header('Location: \QuickFit-main/base/login.php');
     mysqli_close($con);
 } else {

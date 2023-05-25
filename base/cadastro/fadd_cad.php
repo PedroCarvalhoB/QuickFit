@@ -71,7 +71,7 @@
         <div class="row">
             <div class="form-group col-md-3">
                 <label for="cpf">CPF</label>
-                <input type="text" class="form-control" name="cpf" required>
+                <input type="text" class="form-control" name="cpf" id="cpf" required>
             </div>
 
             <div class="form-group col-md-3">
@@ -110,7 +110,7 @@
         <div class="row">
             <div class="form-group col-md-3">
                 <label for="cep">CEP</label>
-                <input type="text" class="form-control" name="cep" required>
+                <input type="text" class="form-control" name="cep" id="cep" required>
             </div>
             <div class="form-group col-md-7">
                 <label for="">Logradouro</label>
@@ -146,19 +146,8 @@
 
         <br>
 
-        <!-- Linha Professor -->
-        <div class="row" id="prof">
-            <div class="form-group col-md-3">
-                <label for="complemento">Orgão Regulamentador</label>
-                <input type="text" class="form-control" name="orgao_reg" >
-            </div>
-            <div class="form-group col-md-3">
-                <label for="">Número de Registro</label>
-                <input type="text" class="form-control" name="num_reg_func" >
-            </div>
-        </div>
-        
-        <div class="row" id="geren">
+        <!-- 5ª LINHA -->
+        <div class="row">
             <div class="form-group col-md-2">
                 <label for="acad">Academia</label>
                 <select class="form-select" name="acad" required>
@@ -172,6 +161,37 @@
                 </select>
             </div>
         </div>
+
+
+        <br>
+
+        <!-- Linha Professor -->
+        <div class="row" id="prof">
+            <div class="form-group col-md-3">
+                <label for="complemento">Orgão Regulamentador</label>
+                <input type="text" class="form-control" name="orgao_reg" >
+            </div>
+            <div class="form-group col-md-3">
+                <label for="">Número de Registro</label>
+                <input type="text" class="form-control" name="num_reg_func" >
+            </div>
+        </div>
+        
+        <!-- Linha Gerente -->
+        <!-- <div class="row" id="geren">
+            <div class="form-group col-md-2">
+                <label for="acad">Academia</label>
+                <select class="form-select" name="acad" required>
+                    <?php
+                        $data = mysqli_query($con, "select * from academia order by nome_acad asc;") or die(mysqli_error($con));
+
+                        while($info = mysqli_fetch_array($data)){
+                            echo "<option value='".$info['id_acad']."'>".$info['nome_acad']."</option>";
+                        }
+                    ?>
+                </select>
+            </div>
+        </div> -->
 
         <hr />
         
@@ -187,6 +207,9 @@
     </main>
 
     <!-- Bootstrap JavaScript Libraries -->
+    <script src="../../assets/js/jquery-3.3.1.min.js" type="text/javascript" ></script>
+    <script src="../../assets/js/jquery.inputmask.bundle.js" type="text/javascript"></script>
+    <script src="../../assets/js/script_mask.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
 
