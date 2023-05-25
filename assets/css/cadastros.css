@@ -58,3 +58,11 @@ body {
 .botoes {
     padding: 10px;
 }
+
+#prof {
+    display: none;
+}
+
+#geren {
+    display: none;
+}
