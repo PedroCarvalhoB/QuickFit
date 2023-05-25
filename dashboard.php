@@ -38,18 +38,14 @@ if (!isset($_SESSION))
       break;
 
     case 3:
-      include "content/personal/sidebar.php";
-      break;
-
-    case 4:
       include "content/funcionario/sidebar.php";
       break;
 
-    case 5:
+    case 4:
       include "content/gerente/sidebar.php";
       break;
 
-    case 6:
+    case 5:
       include "content/admin/sidebar.php";
       break;
 
