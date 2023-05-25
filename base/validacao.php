@@ -4,7 +4,7 @@
 
 if (!empty($_POST) and (empty($_POST['cpf']) or empty($_POST['senha']))) {
 
-	header("Location: index.php"); exit;
+	header("Location: ../index.php"); exit;
 
 }
 
