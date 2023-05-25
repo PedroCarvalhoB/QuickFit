@@ -6,10 +6,9 @@
 
 		<div class="col-md-2">
 			<!-- Chama o Formulário para adicionar alunos -->
-			<a href="?page=fadd_usu" class="btn btn-primary pull-right h2">Novo Usuário</a> 
+			<a href="?page=fadd_cad" class="btn btn-primary pull-right h2">Novo Usuário</a> 
 		</div>
 	</div>
-	<div>	<?php include "mensagens.php"; ?>	</div>
 	<!--top - Lista dos Campos-->
 	<hr/>
 	<div id="bloco-list-pag">	

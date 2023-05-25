@@ -62,5 +62,15 @@
                 <li><a href="#">Ombros</a></li>
             </ul>
         </li>
+
+        <li>
+            <a href="?page=logout">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span class="link_name">Sair</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="?page=logout">Sair</a></li>
+            </ul>
+        </li>
     </ul>
 </div>

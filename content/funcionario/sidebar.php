@@ -13,15 +13,17 @@
                 <li><a class="link_name" href="?page=home">Home</a></li>
             </ul>
         </li>
+
         <li>
-            <a href="?page=view_alu">
+            <a href="?page=lista_usu">
                 <i class="fa-solid fa-user"></i>
-                <span class="link_name">Perfil</span>
+                <span class="link_name">Lista de Alunos</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?page=view_alu">Perfil</a></li>
+                <li><a class="link_name" href="?page=lista_usu">Lista de Alunos</a></li>
             </ul>
         </li>
+
         <li>
             <a href="?page=logout">
                 <i class="fa-solid fa-right-from-bracket"></i>
