@@ -6,6 +6,10 @@ if (isset($_GET['page'])) {
             include "content/home.php";
             break;
 
+        case 'lista_usu':
+            include "content/lista_usu.php";
+            break;
+
         case 'logout':
             include "base/logout.php";
             break;
@@ -53,13 +57,29 @@ if (isset($_GET['page'])) {
         case 'insere_apar':
             include "content/gerente/crud/insere_apar.php";
             break;
-        
+
         case 'fadd_apar_exec':
             include "content/gerente/crud/fadd_apar_exec.php";
             break;
 
         case 'insere_apar_exec':
             include "content/gerente/crud/insere_apar_exec.php";
+            break;
+
+        case 'fadd_ava':
+            include "content/professor/crud/fadd_ava.php";
+            break;
+
+        case 'insere_ava':
+            include "content/professor/crud/insere_ava.php";
+            break;
+
+        case 'fadd_trein':
+            include "content/professor/crud/fadd_trein.php";
+            break;
+
+        case 'insere_ava':
+            include "content/professor/crud/insere_trein.php";
             break;
 
         default:
