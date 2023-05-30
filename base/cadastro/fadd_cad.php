@@ -201,7 +201,9 @@
                 <a href="../../index.php" class="btncancel">Cancelar</a>
             </div>
         </div>
-
+        
+        <br>
+        
     </form>
 </div>
     </main>

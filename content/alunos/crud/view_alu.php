@@ -84,6 +84,7 @@
 					<?php echo "<a href=?page=fedita_alu&id_usu=" . $row['id_usu'] . " class='btnsub'>Editar</a>"; ?>
 				</div>
 			</div>
+			<br>
 		</div>
 
 	</main>

@@ -125,6 +125,11 @@
 						<button type="submit" class="btnsub">Salvar Alterações</button>
 					</div>
 				</div>
+				
+				<br>
+			
+			</form>
+
 		</div>
 	</main>
 	<!-- Bootstrap JavaScript Libraries -->

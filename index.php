@@ -89,7 +89,7 @@ https://templatemo.com/tm-548-training-studio
     </div>
     <!-- ***** Main Banner Area End ***** -->
 
-    <!-- ***** Features Item Start ***** -->
+    <!-- ***** Sobre Nós Start ***** -->
     <section class="section" id="features">
         <div class="container">
             <div class="row">
@@ -133,9 +133,9 @@ https://templatemo.com/tm-548-training-studio
             </div>
         </div>
     </section>
-    <!-- ***** Features Item End ***** -->
+    <!-- ***** Sobre Nós End ***** -->
 
-    <!-- ***** Call to Action Start ***** -->
+    <!-- ***** Motivaçao Start ***** -->
     <section class="section" id="call-to-action">
         <div class="container">
             <div class="row">
@@ -151,9 +151,9 @@ https://templatemo.com/tm-548-training-studio
             </div>
         </div>
     </section>
-    <!-- ***** Call to Action End ***** -->
+    <!-- ***** Motivação End ***** -->
 
-    <!-- ***** Our Classes Start ***** -->
+    <!-- ***** Nosso Funcionamento Start ***** -->
     <section class="section" id="our-classes">
         <div class="container">
             <div class="row">
@@ -204,7 +204,7 @@ https://templatemo.com/tm-548-training-studio
             </div>
         </div>
     </section>
-    <!-- ***** Our Classes End ***** -->
+    <!-- ***** Nosso Funcionamento End ***** -->
     <hr>
     <!-- ***** Footer Start ***** -->
     <footer>
