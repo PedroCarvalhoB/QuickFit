@@ -22,6 +22,10 @@
 		$id = $_SESSION['UsuarioID'];
 		$sql = mysqli_query($con, "select * from usuario where id_usu = '" . $id . "';");
 		$row = mysqli_fetch_array($sql);
+
+		$id_acad = $_SESSION['UsuarioAcad'];
+		$sql_acad = mysqli_query($con, "select * from academia where id_acad = '" . $id_acad . "';");
+		$row_acad = mysqli_fetch_array($sql_acad);
 		?>
 		<div id="main" class="container-fluid">
 			<h3 class="page-header">Visualizar registro do Aluno - <?php echo $id; ?> </h3>
@@ -49,13 +53,17 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-6">
+				<div class="col-md-4">
 					<p><strong>Nome do Pai</strong></p>
 					<p><?php echo $row['nome_pai']; ?></p>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-4">
 					<p><strong>Nome da Mãe</strong></p>
 					<p><?php echo $row['nome_mae']; ?></p>
+				</div>
+				<div class="col-md-4">
+					<p><strong>Academia</strong></p>
+					<p><?php echo $row_acad['nome_acad']; ?></p>
 				</div>
 			</div>
 			<div class="row">
