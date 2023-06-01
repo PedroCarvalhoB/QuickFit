@@ -24,9 +24,11 @@ $senha = mysqli_real_escape_string($con, $_POST['senha']);
 
 // Valida��o do usu�rio/senha digitados
 
-$sql  = "select id_usu, cpf, nivel from usuario where (cpf = '". $cpf ."') ";
+$sql = "select u.id_usu, u.cpf, u.nivel, a.id_acad from usuario u, academia a, matriculado m ";
 
-$sql .= "and (senha_usu = '". $senha ."') and (status_usu = 1) limit 1";
+$sql .= "where (a.id_acad = m.id_acad) and (u.id_usu = m.id_usu) and (u.cpf = '".$cpf."') ";
+
+$sql .= "and (u.senha_usu = '".$senha."') and  (u.status_usu = 1) limit 1;";
 
 
 
@@ -52,16 +54,15 @@ if (mysqli_num_rows($query) != 1) {
 
 
 
-
 	////// 4.0 - Salvando os dados na sess�o do PHP ////////
-
-
-
-
+	
+	
+	
 	// Se a sess�o n�o existir, inicia uma
-
+	
+	
 	if (!isset($_SESSION)) session_start();
-
+	
 
 
 
@@ -73,6 +74,7 @@ if (mysqli_num_rows($query) != 1) {
 
 	$_SESSION['UsuarioNivel'] = $resultado['nivel'];
 
+	$_SESSION['UsuarioAcad'] = $resultado['id_acad'];
 
 
 
@@ -93,7 +95,6 @@ if (mysqli_num_rows($query) != 1) {
     switch ($_SESSION['UsuarioNivel']) {
 		case 1:
 		header("Location: ../dashboard.php?page=home_alu");
-        
         break;
 
       case 2:
