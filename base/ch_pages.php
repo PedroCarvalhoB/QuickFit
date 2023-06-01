@@ -6,8 +6,24 @@ if (isset($_GET['page'])) {
             include "content/home.php";
             break;
 
-        case 'lista_usu':
-            include "content/lista_usu.php";
+        case 'home_adm':
+            include "content/admin/home.php";
+            break;
+
+        case 'home_alu':
+            include "content/aluno/home.php";
+            break;
+
+        case 'home_func':
+            include "content/funcionario/home.php";
+            break;
+
+        case 'home_ger':
+            include "content/gerente/home.php";
+            break;
+
+        case 'home_prof':
+            include "content/professor/home.php";
             break;
 
         case 'logout':
@@ -20,6 +36,18 @@ if (isset($_GET['page'])) {
 
         case 'insere_cad':
             include "insere_cad.php";
+            break;
+
+        case 'lista_usu':
+            include "content/usuario/lista_usu.php";
+            break;
+
+        case 'view_usu':
+            include "content/usuario/view_usu";
+            break;
+
+        case 'fedita_usu':
+            include "content/usuario/fedita_usu";
             break;
 
         case 'fedita_alu':

@@ -5,64 +5,33 @@
     </div>
     <ul class="nav-links">
         <li>
-            <a href="?page=home">
+            <a href="?page=home_adm">
                 <i class='bx bxs-home'></i>
                 <span class="link_name">Home</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?page=home">Home</a></li>
+                <li><a class="link_name" href="?page=home_adm">Home</a></li>
             </ul>
         </li>
+       
         <li>
             <div class="iocn-link">
-                <a href="#">
+                <a>
                     <i class='bx bxs-user'></i>
-                    <span class="link_name">Dados</span>
+                    <span class="link_name">Academia</span>
                 </a>
                 <i class='bx bxs-chevron-down arrow'></i>
             </div>
             <ul class="sub-menu">
-                <li><a class="link_name" href="#">Dados</a></li>
-                <li><a href="?page=lista_alu">Alunos</a></li>
-                <li><a href="?page=lista_usu">Usuários</a></li>
-                <li><a href="?page=lista_prod">Produtos</a></li>
-                <li><a href="?page=lista_disc">Disciplinas</a></li>
+                <li><a class="link_name">Dados</a></li>
+                <li><a href="?page=fadd_acad">Cadastrar Academia</a></li>
+                <li><a href="?page=lol">Lista de Academias</a></li>
+                <li><a href="?page=fadd_apar">Adicionar Aparelho</a></li>
+                <li><a href="?page=fadd_exec">Adicionar Exercicio</a></li>
+                <li><a href="?page=fadd_apar_exec">Execução de Exercicio</a></li>
             </ul>
         </li>
-        <li>
-            <div class="iocn-link">
-                <a href="#">
-                    <i class='bx bx-dumbbell'></i>
-                    <span class="link_name">Treinos</span>
-                </a>
-                <i class='bx bxs-chevron-down arrow'></i>
-            </div>
-            <ul class="sub-menu">
-                <li><a class="link_name" href="#">Treinos</a></li>
-                <li><a href="#">Treino A</a></li>
-                <li><a href="#">Treino B</a></li>
-                <li><a href="#">Treino C</a></li>
-            </ul>
-        </li>
-        <li>
-            <div class="iocn-link">
-                <a href="#">
-                    <i class="fa-solid fa-person-walking"></i>
-                    <span class="link_name">Exercícios</span>
-                </a>
-                <i class='bx bxs-chevron-down arrow'></i>
-            </div>
-            <ul class="sub-menu">
-                <li><a class="link_name" href="#">Exercícios</a></li>
-                <li><a href="#">Braços</a></li>
-                <li><a href="#">Costas</a></li>
-                <li><a href="#">Peitoral</a></li>
-                <li><a href="#">Pernas</a></li>
-                <li><a href="#">Abdomen</a></li>
-                <li><a href="#">Ombros</a></li>
-            </ul>
-        </li>
-
+        
         <li>
             <a href="?page=logout">
                 <i class="fa-solid fa-right-from-bracket"></i>

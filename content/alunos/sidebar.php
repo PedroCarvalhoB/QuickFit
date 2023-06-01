@@ -5,12 +5,12 @@
     </div>
     <ul class="nav-links">
         <li>
-            <a href="?page=home">
+            <a href="?page=home_alu">
                 <i class='bx bxs-home'></i>
                 <span class="link_name">Home</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?page=home">Home</a></li>
+                <li><a class="link_name" href="?page=home_alu">Home</a></li>
             </ul>
         </li>
         <li>

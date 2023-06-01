@@ -5,18 +5,18 @@
     </div>
     <ul class="nav-links">
         <li>
-            <a href="?page=home">
+            <a href="?page=home_ger">
                 <i class='bx bxs-home'></i>
                 <span class="link_name">Home</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?page=home">Home</a></li>
+                <li><a class="link_name" href="?page=home_ger">Home</a></li>
             </ul>
         </li>
        
         <li>
             <div class="iocn-link">
-                <a href=" ">
+                <a>
                     <i class='bx bxs-user'></i>
                     <span class="link_name">Academia</span>
                 </a>

@@ -88,7 +88,34 @@ if (mysqli_num_rows($query) != 1) {
 
 	// }
 
-	header("Location: ../dashboard.php");
+	include "ch_pages.php";
+	
+    switch ($_SESSION['UsuarioNivel']) {
+		case 1:
+		header("Location: ../dashboard.php?page=home_alu");
+        
+        break;
+
+      case 2:
+        header("Location: ../dashboard.php?page=home_prof");
+        break;
+
+      case 3:
+        header("Location: ../dashboard.php?page=home_func");
+        break;
+
+      case 4:
+        header("Location: ../dashboard.php?page=home_ger");
+        break;
+
+      case 5:
+        header("Location: ../dashboard.php?page=home_adm");
+        break;
+
+      default:
+        header("Location: home.php");
+        break;
+    }
 
 }
 
