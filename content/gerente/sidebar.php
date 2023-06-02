@@ -17,13 +17,15 @@
         <li>
             <div class="iocn-link">
                 <a>
-                    <i class='bx bxs-user'></i>
+                    <i class="fa fa-list" aria-hidden="true"></i>
+
                     <span class="link_name">Academia</span>
                 </a>
                 <i class='bx bxs-chevron-down arrow'></i>
             </div>
             <ul class="sub-menu">
-                <li><a class="link_name">Dados</a></li>
+                <li><a class="link_name">Academia</a></li>
+                <li><a href="?page=lista_usu">Lista de Usuários</a></li>
                 <li><a href="?page=fadd_acad">Cadastrar Academia</a></li>
                 <li><a href="?page=lol">Lista de Academias</a></li>
                 <li><a href="?page=fadd_apar">Adicionar Aparelho</a></li>

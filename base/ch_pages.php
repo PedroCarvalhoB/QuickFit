@@ -43,11 +43,11 @@ if (isset($_GET['page'])) {
             break;
 
         case 'view_usu':
-            include "content/usuario/view_usu";
+            include "content/usuario/view_usu.php";
             break;
 
         case 'fedita_usu':
-            include "content/usuario/fedita_usu";
+            include "content/usuario/fedita_usu.php";
             break;
 
         case 'fedita_alu':
