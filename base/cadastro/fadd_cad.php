@@ -1,4 +1,4 @@
-<?php include '../config.php'?>
+<!--  -->
 <!doctype html>
 <html lang="en">
 
@@ -10,7 +10,7 @@
 
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../assets/css/cadastros.css">
+    <link rel="stylesheet" href="assets/css/cadastros.css">
 </head>
 
 <body>
@@ -42,7 +42,7 @@
 
     <hr>
 
-    <form action="insere_cad.php" method="post">
+    <form action="?page=insere_usu" method="post">
         <!-- 1ª LINHA -->
         <div class="row">
             <div class="form-group col-md-2">
