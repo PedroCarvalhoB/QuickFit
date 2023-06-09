@@ -47,7 +47,19 @@ if (isset($_GET['page'])) {
             break;
 
         case 'fedita_usu':
-            include "content/usuario/fedita_usu.php";
+            include "content/usuario/crud/fedita_usu.php";
+            break;
+
+        case 'atualiza_usu':
+            include "content/usuario/crud/atualiza_usu.php";
+            break;
+
+        case 'block_usu':
+            include "content/usuario/crud/block_usu.php";
+            break;
+
+        case 'ativo_usu':
+            include "content/usuario/crud/ativo_usu.php";
             break;
 
         case 'fedita_alu':
@@ -107,7 +119,7 @@ if (isset($_GET['page'])) {
             break;
 
         case 'insere_treino':
-            include "content/professor/crud/insere_treino.php";
+            include "content/professor/crud/insere_treinoA.php";
             break;
 
         default:
