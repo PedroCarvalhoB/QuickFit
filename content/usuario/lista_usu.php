@@ -46,7 +46,7 @@
 
 						if($info['status_usu'] == 1){
 							echo "<td>Ativo</td>";
-						}else if($info['ativo'] == 0){
+						}else if($info['status_usu'] == 0){
 							echo "<td>NÃO</td>";
 						}
 						echo "<td>".date('d/m/Y',strtotime($info['dt_nasc']))."</td>";

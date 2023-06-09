@@ -8,38 +8,44 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Bootstrap CSS v5.2.1 -->
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-	
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
 </head>
 
 <body>
 	<main>
 		<?php
-		if (!isset($_SESSION))
-			session_start();
+		//	if (!isset($_SESSION))
+		//	session_start();
 		?>
 		<?php
 		//include "base\conexao.php";
-		$id = $_SESSION['UsuarioID'];
+		// $id = $_SESSION['UsuarioID'];
+		// $nivel = $_SESSION['UsuarioNivel'];
+		$id = (int) $_GET['id'];
 		$sql = mysqli_query($con, "select * from usuario where id_usu = '" . $id . "';");
 		$row = mysqli_fetch_array($sql);
 		?>
 		<div id="main" class="container-fluid">
-		
-			<h3 class="page-header">Editar registro do Usuário - <?php echo $id; ?></h3>
+
+			<h3 class="page-header">Editar registro do Usuário -
+				<?php echo $id; ?>
+			</h3>
 
 			<br>
 
 			<!-- Área de campos do formulário de edição-->
 
-			<form action="?page=atualiza_alu&id_usu=<?php echo $row['id_usu']; ?>" method="post">
+			<form action="?page=atualiza_usu&id_usu=<?php echo $row['id_usu']; ?>" method="post">
 
 				<!-- 1ª LINHA -->
 				<input type="hidden" name="id_usu" value="<?php echo $row['id_usu']; ?>">
 				<div class="row">
 					<div class="form-group col-md-3">
 						<label for="matri_usu">Matrícula</label>
-						<input type="text" class="form-control" name="matri_usu" value="<?php echo $row['matri_usu']; ?>">
+						<input type="text" class="form-control" name="matri_usu"
+							value="<?php echo $row['matri_usu']; ?>">
 					</div>
 					<div class="form-group col-md-6">
 						<label for="nome_usu">Nome Completo</label>
@@ -102,7 +108,8 @@
 				<div class="row">
 					<div class="form-group col-md-4">
 						<label for="complemento">Complemento</label>
-						<input type="text" class="form-control" name="complemento" value="<?php echo $row['complemento']; ?>">
+						<input type="text" class="form-control" name="complemento"
+							value="<?php echo $row['complemento']; ?>">
 					</div>
 					<div class="form-group col-md-3">
 						<label for="">Bairro</label>
@@ -121,23 +128,37 @@
 
 				<div id="actions" class="row botoes">
 					<div class="col-md-12">
-						<a href="?page=view_alu" class="btncancel">Voltar</a>
+						<?php
+						// switch ($nivel) {
+						// 	case 1:
+						// 		echo '<a href="?page=view_alu" class="btncancel">Voltar</a>';
+						// 		break;
+						// 	default:
+						// 		echo '<a href="?page=lista_usu" class="btncancel">Voltar</a>';
+						// 		break;
+						// }
+						?>
+
+						<a href="?page=lista_usu" class="btncancel">Voltar</a>
+
 						<button type="submit" class="btnsub">Salvar Alterações</button>
 					</div>
 				</div>
-				
+
 				<br>
-			
+
 			</form>
 
 		</div>
 	</main>
 	<!-- Bootstrap JavaScript Libraries -->
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+		integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+		</script>
 
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js" integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
-	</script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+		integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+		</script>
 </body>
 
 </html>

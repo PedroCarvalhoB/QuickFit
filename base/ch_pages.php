@@ -58,8 +58,8 @@ if (isset($_GET['page'])) {
             include "content/usuario/crud/block_usu.php";
             break;
 
-        case 'ativo_usu':
-            include "content/usuario/crud/ativo_usu.php";
+        case 'ativa_usu':
+            include "content/usuario/crud/ativa_usu.php";
             break;
 
         case 'fedita_alu':

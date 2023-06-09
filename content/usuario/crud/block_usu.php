@@ -2,16 +2,16 @@
 $id = (int) $_GET['id'];
 
 $sql = "update usuario set ";
-$sql .= "ativo='0' ";
-$sql .= "where id = '".$id."';";
+$sql .= "status_usu='0' ";
+$sql .= "where id_usu = '".$id."';";
 
 $resultado = mysqli_query($con, $sql)or die(mysqli_error($con));
 
 if($resultado){
-	header('Location: \siscrud/index.php?page=lista_usu&msg=3');
+	header('Location: \quickfit/dashboard.php?page=lista_usu');
 	mysqli_close($con);
 }else{
-	header('Location: \siscrud/index.php?page=lista_usu&msg=6');
+	header('Location: \quickfit/dashboard.php?page=lista_usu');
 	mysqli_close($con);
 }
 
