@@ -27,7 +27,7 @@ if (!isset($_SESSION))
   <?php
   switch ($_SESSION['UsuarioNivel']) {
     case 1:
-      include "content/alunos/sidebar.php";
+      include "content/aluno/sidebar.php";
       break;
 
     case 2:

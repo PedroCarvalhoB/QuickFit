@@ -63,15 +63,15 @@ if (isset($_GET['page'])) {
             break;
 
         case 'fedita_alu':
-            include "content/alunos/crud/fedita_alu.php";
+            include "content/aluno/crud/fedita_alu.php";
             break;
 
         case 'view_alu':
-            include "content/alunos/crud/view_alu.php";
+            include "content/aluno/crud/view_alu.php";
             break;
 
         case 'atualiza_alu':
-            include "content/alunos/crud/atualiza_alu.php";
+            include "content/aluno/crud/atualiza_alu.php";
             break;
 
         case 'fadd_exec':
