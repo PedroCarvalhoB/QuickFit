@@ -35,7 +35,21 @@ $sql .= "and (u.senha_usu = '".$senha."') and  (u.status_usu = 1) limit 1;";
 
 $query = mysqli_query($con, $sql);
 
+// Salva os dados encontados na vari�vel $resultado
 
+$resultado = mysqli_fetch_assoc($query);
+
+if ($resultado['nivel'] == null) {
+
+	$sql  = "select id_usu, cpf, nivel from usuario where (cpf = '". $cpf ."') ";
+
+	$sql .= "and (senha_usu = '". $senha ."') and (status_usu = 1) limit 1";
+
+	$query = mysqli_query($con, $sql);
+
+	$resultado = mysqli_fetch_assoc($query);
+
+}
 
 
 if (mysqli_num_rows($query) != 1) {
@@ -47,12 +61,6 @@ if (mysqli_num_rows($query) != 1) {
 	echo "Login invalido!"; exit;
 
 } else {
-
-	// Salva os dados encontados na vari�vel $resultado
-
-	$resultado = mysqli_fetch_assoc($query);
-
-
 
 	////// 4.0 - Salvando os dados na sess�o do PHP ////////
 	
