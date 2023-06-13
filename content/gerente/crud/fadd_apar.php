@@ -31,18 +31,19 @@
                         <input type="text" class="form-control" name="nome_apar" required>
                     </div>
 
-                    <div class="form-group col-md-2">
+                    <!-- PRECISA SER MUDADO PARA APARECER AS ACADEMIAS VINCULADAS AOU GERENTE -->
+                    <!-- <div class="form-group col-md-2">
                         <label for="acad">Academia</label>
                         <select class="form-select" name="acad" required>
                             <?php
-                                $data = mysqli_query($con, "select * from academia order by nome_acad asc;") or die(mysqli_error($con));
+                                // $data = mysqli_query($con, "select * from academia order by nome_acad asc;") or die(mysqli_error($con));
 
-                                while($info = mysqli_fetch_array($data)){
-                                    echo "<option value='".$info['id_acad']."'>".$info['nome_acad']."</option>";
-                                }
+                                // while($info = mysqli_fetch_array($data)){
+                                //     echo "<option value='".$info['id_acad']."'>".$info['nome_acad']."</option>";
+                                // }
                             ?>
                         </select>
-                    </div>
+                    </div> -->
 
                     <div class="form-group col-md-2">
                         <label for="quant">Quantidade</label>

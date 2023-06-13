@@ -1,11 +1,15 @@
 <?php
+if (!isset($_SESSION))
+session_start();
+
+
 
 $nome             = $_POST["nome_apar"];
-$acad             = $_POST["acad"];
+$acad             = $_SESSION['UsuarioAcad'];
 $quant            = $_POST["quant"];
 
 $sql = "insert into aparelho values ";
-$sql .= "('0','$acad','$nome', '$quant');";
+$sql .= "('0','$acad','select id_apar from aparelho where nome_aparelho like '$nome'', '$quant');";
 
 
 $resultado = mysqli_query($con, $sql) or die(mysqli_error($erro));
