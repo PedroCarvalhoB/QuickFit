@@ -10,7 +10,7 @@
 
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="../cadastro/">
+    
 </head>
 
 <body>
@@ -207,11 +207,13 @@
     </form>
 </div>
     </main>
+    <script src=" assets/js/jquery-3.3.1.min.js" type="text/javascript" ></script>
+
+    <script src="assets/js/jquery.inputmask.bundle.js" type="text/javascript"></script>
+
+    <script src="assets/js/script_mask.js" type="text/javascript"></script>
 
     <!-- Bootstrap JavaScript Libraries -->
-    <script src="../../assets/js/jquery-3.3.1.min.js" type="text/javascript" ></script>
-    <script src="../../assets/js/jquery.inputmask.bundle.js" type="text/javascript"></script>
-    <script src="../../assets/js/script_mask.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
     </script>
 
