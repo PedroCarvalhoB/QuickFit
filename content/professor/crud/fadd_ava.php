@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Cadastro de Usuários</title>
+    <title>Cadastro de Avaliação</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,7 +17,7 @@
     <div id="main" class="container-fluid">
     <div id="top" class="row">
         <div class="col-md-11 titulo">
-            <h2>Cadastro de Usuarios</h2>
+            <h2>Cadastro de Avaliação</h2>
         </div>
     </div>
 

@@ -114,12 +114,20 @@ if (isset($_GET['page'])) {
             include "content/professor/crud/insere_ava.php";
             break;
 
+        case 'view_ava':
+            include "content/aluno/crud/view_ava.php";
+            break;
+
         case 'fadd_treino':
             include "content/professor/crud/fadd_treino.php";
             break;
 
         case 'insere_treino':
             include "content/professor/crud/insere_treinoA.php";
+            break;
+
+        case 'view_treino':
+            include "content/aluno/crud/view_treino.php";
             break;
 
         default:

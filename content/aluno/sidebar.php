@@ -22,6 +22,24 @@
                 <li><a class="link_name" href="?page=view_alu">Perfil</a></li>
             </ul>
         </li>
+
+        <li>
+            <div class="iocn-link">
+                <a>
+                    <i class="fa fa-list" aria-hidden="true"></i>
+
+                    <span class="link_name">Visualizar</span>
+                </a>
+                <i class='bx bxs-chevron-down arrow'></i>
+            </div>
+            <ul class="sub-menu">
+                <li><a class="link_name">Visualizar</a></li>
+                <li><a href="?page=view_ava">Ver Avaliação</a></li>
+                <li><a href="?page=view_treino">Ver Treino</a></li>
+            </ul>
+        </li>
+
+        <hr/>
         <li>
             <a href="?page=logout">
                 <i class="fa-solid fa-right-from-bracket"></i>
