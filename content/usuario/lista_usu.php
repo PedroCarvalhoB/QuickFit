@@ -20,7 +20,7 @@
 					$pagina = (isset($_GET['pagina'])) ? (int)$_GET['pagina'] : 1;
 					$inicio = ($quantidade * $pagina) - $quantidade;
 
-					$sql= "select * from usuario order by id_usu asc limit $inicio, $quantidade;";
+					$sql= "select * from usuario where tipo_usu = 'ALUNO' order by id_usu asc limit $inicio, $quantidade;";
 
 					$data_all = mysqli_query($con,$sql ) or die(mysqli_error($erro));
 
@@ -68,7 +68,7 @@
 		<div id="bottom" class="row">
 			<div class="col-md-12">
 				<?php
-					$sqlTotal 		= "select id_usu from usuario;";
+					$sqlTotal 		= "select id_usu from usuario where tipo_usu = 'ALUNO';";
 					$qrTotal  		= mysqli_query($con, $sqlTotal) or die (mysqli_error($con));
 					$numTotal 		= mysqli_num_rows($qrTotal);
 					$totalpagina = (ceil($numTotal/$quantidade)<=0) ? 1 : ceil($numTotal/$quantidade);
