@@ -80,7 +80,11 @@ https://templatemo.com/tm-548-training-studio
         <div class="video-overlay header-text">
             <div class="caption">
                 <h6>Trabalhe duro, fique forte</h6>
-                <h2>fácil com nosso <em>sistema</em></h2>
+                <h2>fácil com nosso <em>sistema</em</h2>
+
+                <div class="main-button scroll-to-section">
+                    <a href="base/login.php">Entrar na Conta</a>
+                </div>
             </div>
         </div>
     </div>
@@ -140,6 +144,10 @@ https://templatemo.com/tm-548-training-studio
                     <div class="cta-content">
                         <h2>Não <em>pense</em>, comece <em>hoje</em>!</h2>
                         <p>O sucesso na academia não é apenas uma questão de força física, mas de força de vontade e determinação.</p>
+                        
+                        <div class="main-button scroll-to-section">
+                            <a href="base/login.php">Entrar na Conta</a>
+                        </div>
                     </div>
                 </div>
             </div>

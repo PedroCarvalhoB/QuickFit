@@ -6,7 +6,7 @@
     <ul class="nav-links">
         <li>
             <a href="?page=home_prof">
-                <i class='bx bxs-home'></i>
+                <i class="fa-solid fa-house"></i>
                 <span class="link_name">Home</span>
             </a>
             <ul class="sub-menu blank">
@@ -26,7 +26,7 @@
 
         <li>
             <a href="?page=fadd_trein">
-                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-book"></i>
                 <span class="link_name">Criar Treinamento</span>
             </a>
             <ul class="sub-menu blank">
@@ -34,11 +34,11 @@
             </ul>
         </li>
 
-        <hr>
+        
 
         <li>
             <a href="?page=lista_usu">
-                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-list"></i>
                 <span class="link_name">Lista de Alunos</span>
             </a>
             <ul class="sub-menu blank">

@@ -39,7 +39,6 @@
             </ul>
         </li>
 
-        <hr/>
         <li>
             <a href="?page=logout">
                 <i class="fa-solid fa-right-from-bracket"></i>

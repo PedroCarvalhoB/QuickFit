@@ -10,7 +10,7 @@
 
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/cadastros.css">
+    <link rel="stylesheet" href="../cadastro/">
 </head>
 
 <body>
@@ -48,8 +48,8 @@
             <div class="form-group col-md-2">
                 <label for="tipo_usu">Tipo</label>
                 <select class="form-select" name="tipo_usu" id="selec" onchange="showDiv('prof', this)">
-                    <option value="ALUNO">Aluno</option>
-                    <option value="PROFESSOR">Professor</option>
+                    <option value="ALUNO">Aluno(a)</option>
+                    <option value="PROFESSOR">Professor(a)</option>
                     <option value="RECEPCIONISTA">Recepcionista</option>
                     <option value="GERENTE">Gerente</option>
                     <option value="ADMIN">Administrador(a)</option>

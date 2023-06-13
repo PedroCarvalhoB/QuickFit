@@ -61,7 +61,7 @@
 
 				<!-- 2ª LINHA -->
 				<div class="row">
-					<div class="form-group col-md-5">
+					<div class="form-group col-md-4">
 						<label for="nome_pai">Nome do Pai</label>
 						<input type="text" class="form-control" name="nome_pai" value="<?php echo $row['nome_pai']; ?>">
 					</div>
@@ -69,7 +69,7 @@
 						<label for="nome_mae">Nome da Mãe</label>
 						<input type="text" class="form-control" name="nome_mae" value="<?php echo $row['nome_mae']; ?>">
 					</div>
-					<div class="form-group col-md-2">
+					<div class="form-group col-md-3">
 						<label for="sexo">SEXO</label><br>
 						<?php
 						if ($row["sexo"] == "M")
@@ -94,7 +94,7 @@
 					</div>
 					<div class="form-group col-md-7">
 						<label for="">Logradouro</label>
-						<input type="text" class="form-control" name="">
+						<input type="text" class="form-control" name="" >
 					</div>
 					<div class="form-group col-md-2">
 						<label for="numero">Número</label>

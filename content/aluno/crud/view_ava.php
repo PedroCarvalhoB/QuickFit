@@ -28,6 +28,9 @@
 		?>
 		<div id="main" class="container-fluid">
 			<h3 class="page-header">Visualizar registro da Avaliação - <?php echo $id; ?> </h3>
+			
+			<hr>
+
 			<div class="row">
 				<div class="col-md-3">
 					<p><strong>Aluno</strong></p>
@@ -46,7 +49,7 @@
 					<p><?php echo $row['imc']; ?></p>
 				</div>
 			</div>
-            
+            <br>
 			<div class="row">
 				<div class="col-md-4">
 					<p><strong>Objetivo</strong></p>

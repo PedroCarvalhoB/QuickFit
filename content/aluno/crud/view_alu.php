@@ -29,20 +29,23 @@
 		?>
 		<div id="main" class="container-fluid">
 			<h3 class="page-header">Visualizar registro do Aluno - <?php echo $id; ?> </h3>
+			
+			<hr>
+			
 			<div class="row">
 				<div class="col-md-2">
 					<p><strong>Matrícula</strong></p>
 					<p><?php echo $row['matri_usu']; ?></p>
 				</div>
-				<div class="col-md-6">
+				<div class="col-md-4">
 					<p><strong>Nome Completo</strong></p>
 					<p><?php echo $row['nome_usu']; ?></p>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-3">
 					<p><strong>Data Nascimento</strong></p>
 					<p><?php echo date('d-m-Y', strtotime($row['dt_nasc'])); ?></p>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-3">
 					<p><strong>Sexo</strong></p>
 					<p><?php
 						if ($row["sexo"] == "M")
@@ -52,6 +55,9 @@
 						?></p>
 				</div>
 			</div>
+
+			<br>
+
 			<div class="row">
 				<div class="col-md-4">
 					<p><strong>Nome do Pai</strong></p>
@@ -61,29 +67,34 @@
 					<p><strong>Nome da Mãe</strong></p>
 					<p><?php echo $row['nome_mae']; ?></p>
 				</div>
-				<div class="col-md-4">
-					<p><strong>Academia</strong></p>
-					<p><?php echo $row_acad['nome_acad']; ?></p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
+				<div class="col-md-3">
 					<p><strong>CPF</strong></p>
 					<p><?php echo $row['cpf']; ?></p>
 				</div>
+				
 			</div>
+
+			<br>
+
+
+			<br>
+
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<p><strong>CEP</strong></p>
 					<p><?php echo $row['cep']; ?></p>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<p><strong>Número</strong></p>
 					<p><?php echo $row['numero']; ?></p>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<p><strong>Complemento</strong></p>
 					<p><?php echo $row['complemento']; ?></p>
+				</div>
+				<div class="col-md-3">
+					<p><strong>Academia</strong></p>
+					<p><?php echo $row_acad['nome_acad']; ?></p>
 				</div>
 			</div>
 			<hr />
