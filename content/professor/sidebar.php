@@ -25,12 +25,12 @@
         </li>
 
         <li>
-            <a href="?page=fadd_trein">
+            <a href="?page=fadd_treino">
                 <i class="fa-solid fa-book"></i>
                 <span class="link_name">Criar Treinamento</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?page=fadd_trein">Criar Treinamento</a></li>
+                <li><a class="link_name" href="?page=fadd_treino">Criar Treinamento</a></li>
             </ul>
         </li>
 

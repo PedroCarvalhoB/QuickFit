@@ -123,7 +123,7 @@ if (isset($_GET['page'])) {
             break;
 
         case 'insere_treino':
-            include "content/professor/crud/insere_treinoA.php";
+            include "content/professor/crud/insere_treino.php";
             break;
 
         case 'view_treino':
