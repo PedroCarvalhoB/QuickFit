@@ -27,7 +27,7 @@
                 <li><a class="link_name">Academia</a></li>
                 <li><a href="?page=lista_usu">Lista de Usuários</a></li>
                 <li><a href="?page=fadd_acad">Cadastrar Academia</a></li>
-                <li><a href="?page=lol">Lista de Academias</a></li>
+                <!-- <li><a href="?page=lol">Lista de Academias</a></li> -->
                 <li><a href="?page=fadd_apar">Adicionar Aparelho</a></li>
                 <li><a href="?page=fadd_exec">Adicionar Exercicio</a></li>
                 <li><a href="?page=fadd_apar_exec">Execução de Exercicio</a></li>

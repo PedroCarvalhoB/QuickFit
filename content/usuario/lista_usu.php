@@ -1,4 +1,9 @@
-﻿<div id="main" class="container-fluid">
+﻿<?php
+if (!isset($_SESSION))
+  session_start();
+?>
+
+<div id="main" class="container-fluid">
 	<div id="top" class="row">
 		<div class="col-md-10">
 			<h2>Usuários</h2>
@@ -6,7 +11,13 @@
 
 		<div class="col-md-2">
 			<!-- Chama o Formulário para adicionar alunos -->
-			<a href="?page=fadd_cad" class="btnsub">Novo Usuário</a>
+			<?php 
+				$nivel = $_SESSION['UsuarioNivel'];
+				
+				if ($nivel >= 3) {
+					echo '<a href="?page=fadd_cad" class="btnsub">Novo Usuário</a>';
+				}
+			?>
 		</div>
 	</div>
 	<!--top - Lista dos Campos-->
@@ -15,9 +26,6 @@
 		<div id="list" class="row">
 			<div class="table-responsive col-xs-12">
 				<?php
-
-				if (!isset($_SESSION))
-					session_start();
 				$acad = $_SESSION['UsuarioAcad'];
 
 				$quantidade = 10;

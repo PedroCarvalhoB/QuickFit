@@ -1,3 +1,8 @@
+<?php
+if (!isset($_SESSION))
+  session_start();
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -44,7 +49,12 @@
                         <label for="apar">Aparelho</label>
                         <select class="form-select" name="apar" required>
                             <?php
-                                $data = mysqli_query($con, "select * from aparelho order by nome_apar asc;") or die(mysqli_error($con));
+                                $acad = $_SESSION['UsuarioAcad'];
+
+                                $data = mysqli_query($con, "select * from aparelho AS a
+                                INNER JOIN apar_acad AS apac ON apac.id_apar = a.id_apar
+                                WHERE apac.id_acad = $acad
+                                order by nome_apar asc;") or die(mysqli_error($con));
 
                                 while($info = mysqli_fetch_array($data)){
                                     echo "<option value='".$info['id_apar']."'>".$info['nome_apar']."</option>";
