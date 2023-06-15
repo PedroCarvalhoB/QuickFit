@@ -26,21 +26,9 @@
     <form action="?page=insere_treino" method="post">
         <!-- 1ª LINHA -->
         <div class="row">
-            <div class="form-group col-md-3">
-                <label for="cpf">Nome do exercício</label>
-                <input type="text" class="form-control" name="cpf" id="cpf" required>
-            </div>
-            <div class="form-group col-md-3">
-                <label for="altura">Nome do aparelho</label>
-                <input type="number" class="form-control" name="altura" step="any" required>
-            </div>
-            <div class="form-group col-md-3">
-                <label for="peso">Número de série</label>
-                <input type="number" class="form-control" name="peso" step="any" required>
-            </div>
-            <div class="form-group col-md-3">
-                <label for="imc">IMC</label>
-                <input type="number" class="form-control" name="imc" step="any" required>
+            <div class="form-group col-md-4">
+                <label for="imc">CPF do aluno</label>
+                <input type="number" class="form-control" name="cpf" required>
                 
             </div>
         </div>
@@ -50,8 +38,10 @@
         <!-- 2ª LINHA -->
         <div class="row">
             <div class="form-group col-md-7">
-                <label for="objetivo">Objetivo</label>
-                <input type="text" class="form-control" name="objetivo"required>
+                <label for="objetivo">Treino</label>&nbsp;&nbsp;&nbsp;  
+                <input type="radio" name="treino" value="A">A &nbsp;
+                <input type="radio" name="treino" value="B">B &nbsp;
+                <input type="radio" name="treino" value="C">C &nbsp;
             </div>
         </div>
 
