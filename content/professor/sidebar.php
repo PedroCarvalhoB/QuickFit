@@ -16,7 +16,7 @@
 
         <li>
             <a href="?page=fadd_ava">
-                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-book"></i>
                 <span class="link_name">Criar Avaliação</span>
             </a>
             <ul class="sub-menu blank">
@@ -26,7 +26,7 @@
 
         <li>
             <a href="?page=fadd_treino">
-                <i class="fa-solid fa-book"></i>
+                <i class='fa-solid fa-dumbbell'></i>
                 <span class="link_name">Criar Treinamento</span>
             </a>
             <ul class="sub-menu blank">

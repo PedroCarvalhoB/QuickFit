@@ -91,7 +91,7 @@ https://templatemo.com/tm-548-training-studio
     <!-- ***** Main Banner Area End ***** -->
 
     <!-- ***** Sobre Nós Start ***** -->
-    <section class="section" id="features">
+    <section class="section" id="features" style="padding: 10px;">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 offset-lg-3">

@@ -6,7 +6,7 @@ if (!isset($_SESSION))
 <div id="main" class="container-fluid">
 	<div id="top" class="row">
 		<div class="col-md-10">
-			<h2>Usuários</h2>
+			<h2>Alunos</h2>
 		</div>
 
 		<div class="col-md-2">
@@ -15,7 +15,7 @@ if (!isset($_SESSION))
 				$nivel = $_SESSION['UsuarioNivel'];
 				
 				if ($nivel >= 3) {
-					echo '<a href="?page=fadd_cad" class="btnsub">Novo Usuário</a>';
+					echo '<a href="?page=fadd_cad" class="btnsub">Novo Aluno</a>';
 				}
 			?>
 		</div>
@@ -64,14 +64,26 @@ if (!isset($_SESSION))
 						echo "<td>NÃO</td>";
 					}
 					echo "<td>" . date('d/m/Y', strtotime($info['dt_nasc'])) . "</td>";
-					echo "<td><div class='btn-group btn-group-xs'>";
-					echo "<a class='btn btn-info btn-xs' href=?page=view_usu&id=" . $info['id_usu'] . "> Visualizar </a>";
-					echo "<a class='btn btn-warning btn-xs' href=?page=fedita_usu&id=" . $info['id_usu'] . "> Editar </a>";
+					echo "<td><div class='btn-group btn-group-sm'>";
+
+					// Visualizar
+					echo "<a class='btn' href=?page=view_usu&id=" . $info['id_usu'] . " > <i class='fa-solid fa-eye'></i> </a>"; 
+
+					// Editar
+					echo "<a class='btn' href=?page=fedita_usu&id=" . $info['id_usu'] . "> <i class='fa-solid fa-pen'></i> </a>";
+
+					// Block e Desblock
 					if ($info['status_usu'] == 1) {
-						echo "<a class='btn btn-danger btn-xs'  href=?page=block_usu&id=" . $info['id_usu'] . "> Bloquear </a>";
+						echo "<a class='btn'  href=?page=block_usu&id=" . $info['id_usu'] . "> <i class='fa-solid fa-ban'></i> </a>";
 					} else if ($info['status_usu'] == 0) {
-						echo "<a class='btn btn-success btn-xs'  href=?page=ativa_usu&id=" . $info['id_usu'] . ">&nbsp;&nbsp;&nbsp;Ativar&nbsp;&nbsp;</a></div></td>";
+						echo "<a class='btn'  href=?page=ativa_usu&id=" . $info['id_usu'] . "><i class='fa-solid fa-check'></i></a></div></td>";
 					}
+
+					// Treinamento 
+					echo "<a class='btn' href=#" . $info['id_usu'] . "> <i class='fa-solid fa-dumbbell'></i> </a>";
+
+					// Avaliação
+					echo "<a class='btn' href=#" . $info['id_usu'] . "> <i class='fa-solid fa-book'></i> </a>";
 				}
 				echo "</tr></tbody></table>";
 				?>
