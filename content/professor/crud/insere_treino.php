@@ -18,7 +18,7 @@ $sql_id = 'select u.id_usu from usuario u where u.cpf = "'.$cpf.'";';
 $query_id = mysqli_query($con, $sql_id);
 $array_id = mysqli_fetch_array($query_id);
 
-$sql_ava = 'select a.id_aval from avaliacao a where a.id_alu = "'.$array_id["id_usu"].'";'
+$sql_ava = 'select a.id_aval from avaliacao a where a.id_alu = "'.$array_id["id_usu"].'"';
 $query_ava = mysqli_query($con, $sql_ava);
 $array_ava = mysqli_fetch_array($query_ava);
 
