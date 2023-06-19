@@ -14,6 +14,12 @@
 
 <body>
     <main>
+        <?php 
+            // $id = (int) $_GET['id'];
+            // $sql = mysqli_query($con, "select * from usuario where id_usu = '" . $id . "';");
+            // $row = mysqli_fetch_array($sql);
+            // value="<?php echo $row['id_usu']"
+        ?>
     <div id="main" class="container-fluid">
     <div id="top" class="row">
         <div class="col-md-11 titulo">
@@ -60,7 +66,7 @@
         <div id="actions" class="row botoes">
             <div class="col-md-12">
                 <button type="submit" class="btnsub">Salvar</button>
-                <a href="../../index.php" class="btncancel">Cancelar</a>
+                <a href="?page=lista_ava" class="btncancel">Cancelar</a>
             </div>
         </div>
         

@@ -38,10 +38,10 @@ $resultado = mysqli_query($con, $sql) or die(mysqli_error($con));
 
 
 if ($resultado) {
-    header('Location: \QuickFit/dashboard.php?page=fadd_ava');
+    header('Location: \QuickFit/dashboard.php?page=lista_ava');
     mysqli_close($con);
 } else {
-    header('Location: \QuickFit/dashboard.php?page=home_prof');
+    header('Location: \QuickFit/dashboard.php?page=fadd_prof');
     mysqli_close($con);
 }
 ?>

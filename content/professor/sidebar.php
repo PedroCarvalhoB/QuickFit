@@ -15,22 +15,22 @@
         </li>
 
         <li>
-            <a href="?page=fadd_ava">
+            <a href="?page=lista_ava">
                 <i class="fa-solid fa-book"></i>
-                <span class="link_name">Criar Avaliação</span>
+                <span class="link_name">Avaliação</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?page=fadd_ava">Criar Avaliação</a></li>
+                <li><a class="link_name" href="?page=fadd_ava">Avaliação</a></li>
             </ul>
         </li>
 
         <li>
             <a href="?page=fadd_treino">
                 <i class='fa-solid fa-dumbbell'></i>
-                <span class="link_name">Criar Treinamento</span>
+                <span class="link_name">Treinamento</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?page=fadd_treino">Criar Treinamento</a></li>
+                <li><a class="link_name" href="?page=fadd_treino">Treinamento</a></li>
             </ul>
         </li>
 

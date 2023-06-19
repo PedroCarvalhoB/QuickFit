@@ -1,6 +1,6 @@
 ﻿<?php
 if (!isset($_SESSION))
-  session_start();
+	session_start();
 ?>
 
 <div id="main" class="container-fluid">
@@ -11,12 +11,12 @@ if (!isset($_SESSION))
 
 		<div class="col-md-2">
 			<!-- Chama o Formulário para adicionar alunos -->
-			<?php 
-				$nivel = $_SESSION['UsuarioNivel'];
-				
-				if ($nivel >= 3) {
-					echo '<a href="?page=fadd_cad" class="btnsub">Novo Aluno</a>';
-				}
+			<?php
+			$nivel = $_SESSION['UsuarioNivel'];
+
+			if ($nivel >= 3) {
+				echo '<a href="?page=fadd_cad" class="btnsub">Novo Aluno</a>';
+			}
 			?>
 		</div>
 	</div>
@@ -27,6 +27,7 @@ if (!isset($_SESSION))
 			<div class="table-responsive col-xs-12">
 				<?php
 				$acad = $_SESSION['UsuarioAcad'];
+				$nivel = $_SESSION['UsuarioNivel'];
 
 				$quantidade = 10;
 
@@ -67,23 +68,34 @@ if (!isset($_SESSION))
 					echo "<td><div class='btn-group btn-group-sm'>";
 
 					// Visualizar
-					echo "<a class='btn' href=?page=view_usu&id=" . $info['id_usu'] . " > <i class='fa-solid fa-eye'></i> </a>"; 
+					echo "<a class='btn' href=?page=view_usu&id=" . $info['id_usu'] . " > <i class='fa-solid fa-eye'></i> </a>";
 
-					// Editar
-					echo "<a class='btn' href=?page=fedita_usu&id=" . $info['id_usu'] . "> <i class='fa-solid fa-pen'></i> </a>";
+					switch ($nivel) {
+						case 2:
+							// Avaliação
+							echo "<a class='btn' href=?page=fadd_ava&id=" . $info['id_usu'] . "> <i class='fa-solid fa-book'></i> </a>";
+							
+							// Treinamento 
+							echo "<a class='btn' href=?page=fadd_treino&id=" . $info['id_usu'] . "> <i class='fa-solid fa-dumbbell'></i> </a>";
 
-					// Block e Desblock
-					if ($info['status_usu'] == 1) {
-						echo "<a class='btn'  href=?page=block_usu&id=" . $info['id_usu'] . "> <i class='fa-solid fa-ban'></i> </a>";
-					} else if ($info['status_usu'] == 0) {
-						echo "<a class='btn'  href=?page=ativa_usu&id=" . $info['id_usu'] . "><i class='fa-solid fa-check'></i></a></div></td>";
+							break;
+
+						case 4:
+							// Editar
+							echo "<a class='btn' href=?page=fedita_usu&id=" . $info['id_usu'] . "> <i class='fa-solid fa-pen'></i> </a>";
+
+							// Block e Desblock				
+							if ($info['status_usu'] == 1) {
+								echo "<a class='btn'  href=?page=block_usu&id=" . $info['id_usu'] . "> <i class='fa-solid fa-ban'></i> </a>";
+							} else if ($info['status_usu'] == 0) {
+								echo "<a class='btn'  href=?page=ativa_usu&id=" . $info['id_usu'] . "><i class='fa-solid fa-check'></i></a></div></td>";
+							}
+
+							break;
+
+						default:
+							break;
 					}
-
-					// Treinamento 
-					echo "<a class='btn' href=#" . $info['id_usu'] . "> <i class='fa-solid fa-dumbbell'></i> </a>";
-
-					// Avaliação
-					echo "<a class='btn' href=#" . $info['id_usu'] . "> <i class='fa-solid fa-book'></i> </a>";
 				}
 				echo "</tr></tbody></table>";
 				?>
