@@ -1,3 +1,24 @@
+// Função que verifica se o navegador tem suporte AJAX
+function AjaxF(){
+	var ajax;
+	try{
+		ajax = new XMLHttpRequest();
+	}catch(e){
+		try{
+			ajax = new ActiveXObject("Msxml2.XMLHTTP");
+		}
+		catch(e){
+			try{
+				ajax = new ActiveXObject("Microsoft.XMLHTTP");
+			}catch(e){
+				alert("Seu browser n�o da suporte � AJAX!");
+				return false;
+			}
+		}
+	}
+	return ajax;
+}
+
 // Função pesquisa USUÁRIO
 function PesquisaConteudoUsu(){
 	var ajax = AjaxF();	
@@ -12,7 +33,7 @@ function PesquisaConteudoUsu(){
 	if(document.getElementById('search_usu').value!=''){
 		var dados = "nome="+document.getElementById('search_usu').value;
 	
-		ajax.open("GET", "filtro_usu.php?"+dados, false);
+		ajax.open("GET", "content/usuario/crud/filtro_usu.php?"+dados, false);
 		ajax.setRequestHeader("Content-Type", "text/html");
 		ajax.send();
 	}
