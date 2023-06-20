@@ -5,19 +5,8 @@ if (!isset($_SESSION))
 
 <div id="main" class="container-fluid">
 	<div id="top" class="row">
-		<div class="col-md-3">
+		<div class="col-md-10">
 			<h2>Alunos</h2>
-		</div>
-		
-		<div class="col-md-7">
-			<div class="input-group h2">
-				<input name="data-[search]" onKeydown="Javascript: if (event.keyCode==13) PesquisaConteudoUsu();" class="form-control" id="search_usu" type="text" placeholder="Pesquisar Usuários">
-				<span class="input-group-btn">
-					<button class="btn btn-primary" onclick="PesquisaConteudoUsu()" type="submit"> 
-						<span>Pesquisar</span>
-					</button>
-				</span>
-			</div>
 		</div>
 
 		<div class="col-md-2">
@@ -46,7 +35,15 @@ if (!isset($_SESSION))
 				$inicio = ($quantidade * $pagina) - $quantidade;
 
 				// $sql= "select * from usuario where tipo_usu = 'ALUNO' order by id_usu asc limit $inicio, $quantidade;";
-				$sql = "SELECT * FROM usuario AS u INNER JOIN matriculado AS m ON m.id_usu = u.id_usu WHERE tipo_usu = 'ALUNO' AND id_acad = $acad ORDER BY u.id_usu ASC limit $inicio, $quantidade;";
+				switch ($nivel) {
+					case 5:
+						$sql = "SELECT * FROM usuario ORDER BY id_usu ASC limit $inicio, $quantidade;";
+						break;
+
+					default:
+						$sql = "SELECT * FROM usuario AS u INNER JOIN matriculado AS m ON m.id_usu = u.id_usu WHERE tipo_usu = 'ALUNO' AND id_acad = $acad ORDER BY u.id_usu ASC limit $inicio, $quantidade;";
+						break;
+				}
 
 				$data_all = mysqli_query($con, $sql) or die(mysqli_error($erro));
 
@@ -85,13 +82,13 @@ if (!isset($_SESSION))
 						case 2:
 							// Avaliação
 							echo "<a class='btn' href=?page=fadd_ava&id=" . $info['id_usu'] . "> <i class='fa-solid fa-book'></i> </a>";
-							
+
 							// Treinamento 
 							echo "<a class='btn' href=?page=fadd_treino&id=" . $info['id_usu'] . "> <i class='fa-solid fa-dumbbell'></i> </a>";
 
 							break;
 
-						case 4:
+						case 4 && 5:
 							// Editar
 							echo "<a class='btn' href=?page=fedita_usu&id=" . $info['id_usu'] . "> <i class='fa-solid fa-pen'></i> </a>";
 
@@ -117,7 +114,16 @@ if (!isset($_SESSION))
 		<div id="bottom" class="row">
 			<div class="col-md-12">
 				<?php
-				$sqlTotal = "SELECT * FROM usuario AS u INNER JOIN matriculado AS m ON m.id_usu = u.id_usu WHERE tipo_usu = 'ALUNO' AND id_acad = $acad ORDER BY u.id_usu ASC limit $inicio, $quantidade;";
+				switch ($nivel) {
+					case 5:
+						$sqlTotal = "SELECT * FROM usuario ORDER BY id_usu ASC ";
+						break;
+
+					default:
+						$sqlTotal = "SELECT * FROM usuario AS u INNER JOIN matriculado AS m ON m.id_usu = u.id_usu WHERE tipo_usu = 'ALUNO' AND id_acad = $acad ORDER BY u.id_usu ASC";
+						break;
+				}
+
 				$qrTotal = mysqli_query($con, $sqlTotal) or die(mysqli_error($con));
 				$numTotal = mysqli_num_rows($qrTotal);
 				$totalpagina = (ceil($numTotal / $quantidade) <= 0) ? 1 : ceil($numTotal / $quantidade);
