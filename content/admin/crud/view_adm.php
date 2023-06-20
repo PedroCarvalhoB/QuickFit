@@ -23,9 +23,9 @@
 		$sql = mysqli_query($con, "select * from usuario where id_usu = '" . $id . "';");
 		$row = mysqli_fetch_array($sql);
 
-		$id_acad = $_SESSION['UsuarioAcad'];
-		$sql_acad = mysqli_query($con, "select * from academia where id_acad = '" . $id_acad . "';");
-		$row_acad = mysqli_fetch_array($sql_acad);
+		// $id_acad = $_SESSION['UsuarioAcad'];
+		// $sql_acad = mysqli_query($con, "select * from academia where id_acad = '" . $id_acad . "';");
+		// $row_acad = mysqli_fetch_array($sql_acad);
 		?>
 		<div id="main" class="container-fluid">
 			<h3 class="page-header">Visualizar registro do Administrador - <?php echo $id; ?> </h3>

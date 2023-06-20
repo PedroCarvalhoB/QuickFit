@@ -23,7 +23,7 @@
 		//include "base\conexao.php";
 		// $id = $_SESSION['UsuarioID'];
 		// $nivel = $_SESSION['UsuarioNivel'];
-		$id = (int) $_GET['id'];
+		$id = (int) $_GET['id_usu'];
 		$sql = mysqli_query($con, "select * from usuario where id_usu = '" . $id . "';");
 		$row = mysqli_fetch_array($sql);
 		?>
@@ -37,7 +37,7 @@
 
 			<!-- Área de campos do formulário de edição-->
 
-			<form action="?page=atualiza_usu&id_usu=<?php echo $row['id_usu']; ?>" method="post">
+			<form action="?page=atualiza_adm&id_usu=<?php echo $row['id_usu']; ?>" method="post">
 
 				<!-- 1ª LINHA -->
 				<input type="hidden" name="id_usu" value="<?php echo $row['id_usu']; ?>">
