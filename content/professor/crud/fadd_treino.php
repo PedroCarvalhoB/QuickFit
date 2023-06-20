@@ -31,7 +31,7 @@
         <form action="?page=insere_treino" method="post">
             <!-- 1ª LINHA -->
             <div class="row">
-                <input type="hidden" name="id" value="<?php $id ?>">
+                <input type="hidden" name="id" value="<?php echo $row['id_usu'] ?>">
                 <div class="form-group col-md-2">
                     <label for="objetivo">Treino</label>&nbsp;&nbsp;&nbsp;  
                     <input type="radio" name="treino" value="A">A &nbsp;
@@ -80,16 +80,23 @@
                     <input type="number" class="form-control" name="num_repeat" required>
                 </div>
             </div>
-
-            <hr />
-
-            <br>
             
-            <div id="bloco-list-pag">
-                <div id="list" class="row">
-                    <div class="table-responsive col-xs-12">
+            <div id="actions" class="row botoes">
+                <div class="col-md-12">
+                    <button type="submit" class="btnsub">Salvar</button>
+                </div>
+            </div>
+        </form>
 
-                        <?php
+        <hr />
+
+        <br>
+            
+        <div id="bloco-list-pag">
+            <div id="list" class="row">
+                <div class="table-responsive col-xs-12">
+
+                    <?php
 
                         $id = $_SESSION['UsuarioID'];
                         $acad = $_SESSION['UsuarioAcad'];
@@ -100,10 +107,13 @@
                         $inicio = ($quantidade * $pagina) - $quantidade;
 
                         // $sql= "select * from usuario where tipo_usu = 'ALUNO' order by id_usu asc limit $inicio, $quantidade;";
-                        $sql = "SELECT * FROM usuario AS u 
-                        INNER JOIN matriculado AS m ON u.id_usu = m.id_usu
-                        WHERE tipo_usu = 'ALUNO' AND id_acad = $acad 
-                        ORDER BY u.id_usu ASC limit $inicio, $quantidade;";
+                        $sql = "SELECT * FROM execucao e
+                        INNER JOIN treinamento t ON e.id_treinamento = t.id_treinamento
+                        INNER JOIN aparelho a ON e.id_apar = a.id_apar
+                        INNER JOIN exercicio er ON e.id_exec = er.id_exec
+                        INNER JOIN usuario u ON t.id_alu = u.id_usu
+                        WHERE t.dt_final IS NULL AND t.id_alu = ".$row['id_usu']." 
+                        GROUP BY e.id_execucao ORDER BY t.treino ASC limit $inicio, $quantidade;";
 
                         $data_all = mysqli_query($con, $sql) or die(mysqli_error($con));
 
@@ -111,62 +121,46 @@
                         echo "<thead><tr>";
                         echo "<td><strong>ID</strong></td>";
                         echo "<td><strong>Aluno</strong></td>";
-                        echo "<td><strong>Possui Treino</strong></td>";
-                        echo "<td><strong>Data Início Treino.</strong></td>";
+                        echo "<td><strong>Treino</strong></td>";
+                        echo "<td><strong>Aparelho</strong></td>";
+                        echo "<td><strong>Exercício</strong></td>";
+                        echo "<td><strong>Séries</strong></td>";
+                        echo "<td><strong>Repetições</strong></td>";
                         echo "<td class='actions'><strong>Ações</strong></td>";
                         echo "</tr></thead><tbody>";
 
                         while ($info = mysqli_fetch_array($data_all)) {
-                            $sql_trei = "SELECT * FROM usuario AS u 
-                            INNER JOIN matriculado AS m ON u.id_usu = m.id_usu
-                            INNER JOIN treinamento as t on u.id_usu = t.id_alu
-                            WHERE tipo_usu = 'ALUNO' AND id_acad = $acad and u.id_usu = ".$info['id_usu']."
-                            ORDER BY u.id_usu ASC limit $inicio, $quantidade;";
+                            echo "<tr>";
+                            echo "<td>" . $info['id_alu'] . "</td>";
+                            echo "<td>" . $info['nome_usu'] . "</td>";
+                            echo "<td>" . $info['treino'] . "</td>";
+                            echo "<td>" . $info['nome_apar'] . "</td>";
+                            echo "<td>" . $info['nome_exec'] . "</td>";
+                            echo "<td>" . $info['num_serie'] . "</td>";
+                            echo "<td>" . $info['num_repeat'] . "</td>";
+                            echo "<td><div class='btn-group btn-group-sm'>";
 
-                            $data_trei = mysqli_query($con, $sql_trei) or die(mysqli_error($con));
-
-                            $info_trei = mysqli_fetch_array($data_trei);
-
-                            if (mysqli_num_rows($data_trei) == 0) {
-                                echo "<tr>";
-                                echo "<td>" . $info['id_usu'] . "</td>";
-                                echo "<td>" . $info['nome_usu'] . "</td>";
-                                echo "<td>Não</td>";
-                                echo "<td>Null</td>";
-                                echo "<td><div class='btn-group btn-group-sm'>";
-            
-                            } else {
-                                echo "<tr>";
-                                echo "<td>" . $info['id_usu'] . "</td>";
-                                echo "<td>" . $info['nome_usu'] . "</td>";
-                                echo "<td>Sim</td>";
-                                echo "<td>" . date('d/m/Y', strtotime($info_trei['dt_inicio'])) . "</td>";
-                                echo "<td><div class='btn-group btn-group-sm'>";
-            
-                            }
-
-                            // Visualizar
-                            echo "<a class='btn' href=?page=view_usu&id=" . $info['id_usu'] . " > <i class='fa-solid fa-eye'></i> </a>"; 
-
-                            // Treinamento 
-                                echo "<a class='btn' href=?page=fadd_treino&id=" . $info['id_usu'] . "> <i class='fa-solid fa-dumbbell'></i> </a>";
+                            echo "<a href=?page=excluir_exec&id_exec=".$info['id_exec']."&id_alu=".$info['id_alu']." class='btn btn-danger btn-xs'> Excluir </a></td>";
 
                         }
                         echo "</tr></tbody></table>";
 
-                        ?>
+                    ?>
                         
-                    </div><!-- Div Table -->
-                </div><!--list-->
+                </div><!-- Div Table -->
+            </div><!--list-->
 
-                <!-- PAGINAÇÃO -->
-                <div id="bottom" class="row">
-                    <div class="col-md-12">
-                        <?php
-                        $sqlTotal = "SELECT * FROM usuario AS u 
-                        INNER JOIN matriculado AS m ON u.id_usu = m.id_usu
-                        WHERE tipo_usu = 'ALUNO' AND id_acad = $acad 
-                        ORDER BY u.id_usu ASC limit $inicio, $quantidade;";
+            <!-- PAGINAÇÃO -->
+            <div id="bottom" class="row">
+                <div class="col-md-12">
+                    <?php
+                        $sqlTotal = "SELECT * FROM execucao e
+                        INNER JOIN treinamento t ON e.id_treinamento = t.id_treinamento
+                        INNER JOIN aparelho a ON e.id_apar = a.id_apar
+                        INNER JOIN exercicio er ON e.id_exec = er.id_exec
+                        INNER JOIN usuario u ON t.id_alu = u.id_usu
+                        WHERE t.dt_final IS NULL AND t.id_alu = ".$row['id_usu']." 
+                        GROUP BY e.id_execucao ORDER BY t.treino ASC limit $inicio, $quantidade;";
                         $qrTotal = mysqli_query($con, $sqlTotal) or die(mysqli_error($con));
                         $numTotal = mysqli_num_rows($qrTotal);
                         $totalpagina = (ceil($numTotal / $quantidade) <= 0) ? 1 : ceil($numTotal / $quantidade);
@@ -190,22 +184,18 @@
                         echo "<li class='page-item'><a class='page-link' href=\"?page=lista_treino&pagina=$posterior\"> Pr&oacute;xima</a></li> ";
                         echo "<li class='page-item'><a class='page-link' href=\"?page=lista_treino&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>";
 
-                        ?>
-                    </div>
-                </div><!--bottom-->
-            </div>
-
-            <br>
-
-            <hr>
-            
-            <div id="actions" class="row botoes">
-                <div class="col-md-12">
-                    <button type="submit" class="btnsub">Salvar</button>
-                    <a href="?page=lista_treino" class="btncancel">Cancelar</a>
+                    ?>
                 </div>
-            </div>
-        </form>
+            </div><!--bottom-->
+        </div>
+
+        <br>
+
+        <hr>
+        
+        <a href="?page=lista_treino" class="btncancel">Finalizar</a>
+
+        <br>
     </div>
     <!-- Bootstrap JavaScript Libraries -->
     <script src="../assets/js/jquery-3.3.1.min.js" type="text/javascript" ></script>
