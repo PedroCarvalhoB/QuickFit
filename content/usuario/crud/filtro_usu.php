@@ -3,37 +3,6 @@ if (!isset($_SESSION))
     session_start();
 ?>
 
-<div id="main" class="container-fluid">
-    <div id="top" class="row">
-        <div class="col-md-6">
-            <h2>Alunos</h2>
-        </div>
-
-        <div class="col-md-4">
-            <div class="input-group h2">
-                <input name="data-[search]" onKeydown="Javascript: if (event.keyCode==13) PesquisaConteudoUsu();"
-                    class="form-control" id="search_usu" type="text" placeholder="Pesquisar Usuários">
-                <span class="input-group-btn">
-                    <button class="btn btn-primary" onclick="PesquisaConteudoUsu()" type="submit">
-                        <span class="glyphicon glyphicon-search"></span>
-                    </button>
-                </span>
-            </div>
-        </div>
-
-        <div class="col-md-2">
-            <!-- Chama o Formulário para adicionar alunos -->
-            <?php
-            $nivel = $_SESSION['UsuarioNivel'];
-
-            if ($nivel >= 3) {
-                echo '<a href="?page=fadd_cad" class="btnsub">Novo Aluno</a>';
-            }
-            ?>
-        </div>
-    </div>
-    <!--top - Lista dos Campos-->
-    <hr />
     <div id="bloco-list-pag">
         <div id="list" class="row">
             <div class="table-responsive col-xs-12">
@@ -149,6 +118,3 @@ if (!isset($_SESSION))
             </div>
         </div><!--bottom-->
     </div>
-</div><!--main-->
-
-<script src="../js/funcao.js"></script>
