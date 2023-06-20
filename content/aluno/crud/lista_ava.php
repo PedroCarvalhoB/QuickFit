@@ -51,7 +51,7 @@ if (!isset($_SESSION))
 					echo "<td><div class='btn-group btn-group-sm'>";
 
 					// Visualizar
-					echo "<a class='btn' href=?page=view_ava> <i class='fa-solid fa-eye'></i> </a>"; 
+					echo "<a class='btn' href=?page=aluno_ava> <i class='fa-solid fa-eye'></i> </a>"; 
 				}
 				echo "</tr></tbody></table>";
 				?>

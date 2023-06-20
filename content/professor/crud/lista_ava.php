@@ -55,10 +55,10 @@ if (!isset($_SESSION))
 					echo "<td><div class='btn-group btn-group-sm'>";
 
 					// Visualizar
-					echo "<a class='btn' href=?page=view_usu&id=" . $info['id_usu'] . " > <i class='fa-solid fa-eye'></i> </a>"; 
+					echo "<a class='btn' href=?page=prof_ava&id=" . $info['id_usu'] . " > <i class='fa-solid fa-eye'></i> </a>"; 
 
 					// Avaliação
-					echo "<a class='btn' href=?page=fadd_ava&id=" . $info['id_usu'] . "> <i class='fa-solid fa-book'></i> </a>";
+					echo "<a class='btn' href=?page=fadd_ava&cpf=" . $info['cpf'] . "> <i class='fa-solid fa-book'></i> </a>";
 				}
 				echo "</tr></tbody></table>";
 				?>

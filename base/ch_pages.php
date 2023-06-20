@@ -82,12 +82,20 @@ if (isset($_GET['page'])) {
             include "content/gerente/crud/insere_exec.php";
             break;
 
+        case 'lista_acad':
+            include "content/gerente/crud/lista_acad.php";
+            break;
+
         case 'fadd_acad':
             include "content/gerente/crud/fadd_acad.php";
             break;
 
         case 'insere_acad':
             include "content/gerente/crud/insere_acad.php";
+            break;
+
+        case 'lista_apar':
+            include "content/gerente/crud/lista_apar.php";
             break;
 
         case 'fadd_apar':
@@ -112,6 +120,10 @@ if (isset($_GET['page'])) {
 
         case 'aluno_ava':
             include "content/aluno/crud/lista_ava.php";
+            break;
+
+        case 'prof_ava':
+            include "content/professor/crud/view_ava.php";
             break;
 
         case 'fadd_ava':
