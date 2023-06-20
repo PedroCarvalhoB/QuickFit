@@ -40,7 +40,7 @@ if (!isset($_SESSION))
 				echo "<td><strong>ID</strong></td>";
 				echo "<td><strong>Aluno</strong></td>";
                 echo "<td><strong>Possui Treino</strong></td>";
-				echo "<td><strong>Data Início Treino.</strong></td>";
+				echo "<td><strong>Data Início Treino</strong></td>";
 				echo "<td class='actions'><strong>Ações</strong></td>";
 				echo "</tr></thead><tbody>";
 

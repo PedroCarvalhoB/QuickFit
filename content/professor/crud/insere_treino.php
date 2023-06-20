@@ -36,8 +36,9 @@ if (mysqli_num_rows($query_treino) == 0) {
     
     $query_trei = mysqli_query($con, $sql_trei);
 }
-
-$array_select_treino = mysqli_fetch_array($query_treino);
+$sql_select_treino = "SELECT * FROM treinamento WHERE id_alu = '$id_alu' AND dt_final IS NULL AND treino = '$treino' GROUP BY id_alu;";
+$query_select_treino = mysqli_query($con, $sql_select_treino);
+$array_select_treino = mysqli_fetch_array($query_select_treino);
 
 $sql = "insert into execucao values (null,'$apar','$exec','".$array_select_treino['id_treinamento']."','$serie','$repeat');";
 
