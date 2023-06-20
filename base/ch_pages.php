@@ -106,6 +106,9 @@ if (isset($_GET['page'])) {
             include "content/gerente/crud/insere_apar.php";
             break;
 
+        case 'view_apar':
+            include "content/gerente/crud/view_apar.php";
+
         case 'fadd_apar_exec':
             include "content/gerente/crud/fadd_apar_exec.php";
             break;
@@ -150,12 +153,8 @@ if (isset($_GET['page'])) {
             include "content/professor/crud/insere_treino.php";
             break;
 
-        case 'fadd_execu':
-            include "content/professor/crud/fadd_execu.php";
-            break;
-
-        case 'insere_execu':
-            include "content/professor/crud/insere_execu.php";
+        case 'excluir_exec':
+            include "content/professor/crud/excluir_exec.php";
             break;
 
         case 'view_treino':
@@ -176,6 +175,11 @@ if (isset($_GET['page'])) {
 
         case 'fedita_prof':
             include "content/professor/crud/fedita_prof.php";
+            break;
+
+        case 'atualiza_adm':
+            include "content/admin/crud/atualiza_adm.php";
+            break;
                 
         default:
             include "content/home.php";
