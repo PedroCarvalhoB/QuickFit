@@ -69,6 +69,10 @@
 					</p>
 				</div>
 			</div>
+
+			<br>
+			<hr>
+			<a href="?page=aluno_ava" class="btncancel">Voltar</a>
 		</div>
 
 		<hr />

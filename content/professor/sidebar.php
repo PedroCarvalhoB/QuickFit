@@ -15,6 +15,26 @@
         </li>
 
         <li>
+            <a href="?page=view_prof">
+                <i class="fa-solid fa-user"></i>
+                <span class="link_name">Perfil</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="?page=view_prof">Perfil</a></li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="?page=lista_usu">
+                <i class="fa-solid fa-list"></i>
+                <span class="link_name">Alunos</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="?page=lista_usu">Lista de Alunos</a></li>
+            </ul>
+        </li>
+
+        <li>
             <a href="?page=lista_ava">
                 <i class="fa-solid fa-book"></i>
                 <span class="link_name">Avaliação</span>
@@ -25,26 +45,16 @@
         </li>
 
         <li>
-            <a href="?page=fadd_treino">
+            <a href="?page=lista_treino">
                 <i class='fa-solid fa-dumbbell'></i>
                 <span class="link_name">Treinamento</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?page=fadd_treino">Treinamento</a></li>
+                <li><a class="link_name" href="?page=lista_treino">Treinamento</a></li>
             </ul>
         </li>
 
-        
-
-        <li>
-            <a href="?page=lista_usu">
-                <i class="fa-solid fa-list"></i>
-                <span class="link_name">Lista de Alunos</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?page=lista_usu">Lista de Alunos</a></li>
-            </ul>
-        </li>
+        <br>
 
         <li>
             <a href="?page=logout">

@@ -162,6 +162,21 @@ if (isset($_GET['page'])) {
             include "content/aluno/crud/view_treino.php";
             break;
 
+        case 'view_adm':    
+            include "content/admin/crud/view_adm.php";
+            break;
+
+        case 'fedita_adm':
+            include "content/admin/crud/fedita_adm.php";
+            break;
+
+        case 'view_prof':
+            include "content/professor/crud/view_prof.php";
+            break;
+
+        case 'fedita_prof':
+            include "content/professor/crud/fedita_prof.php";
+                
         default:
             include "content/home.php";
             break;

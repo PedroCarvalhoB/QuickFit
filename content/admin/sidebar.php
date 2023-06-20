@@ -15,23 +15,35 @@
         </li>
        
         <li>
+            <a href="?page=view_adm">
+                <i class="fa-solid fa-user"></i>
+                <span class="link_name">Perfil</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="?page=view_adm">Perfil</a></li>
+            </ul>
+        </li>
+
+        <li>
             <div class="iocn-link">
                 <a>
-                    <i class='bx bxs-user'></i>
+                    <i class="fa-solid fa-list"></i>
                     <span class="link_name">Academia</span>
                 </a>
                 <i class='bx bxs-chevron-down arrow'></i>
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name">Dados</a></li>
+                <li><a href="?page=lista_usu">Lista de Usuários</a></li>
                 <li><a href="?page=fadd_acad">Cadastrar Academia</a></li>
                 <li><a href="?page=lol">Lista de Academias</a></li>
-                <li><a href="?page=fadd_apar">Adicionar Aparelho</a></li>
                 <li><a href="?page=fadd_exec">Adicionar Exercicio</a></li>
                 <li><a href="?page=fadd_apar_exec">Execução de Exercicio</a></li>
             </ul>
         </li>
         
+        <br>
+
         <li>
             <a href="?page=logout">
                 <i class="fa-solid fa-right-from-bracket"></i>
