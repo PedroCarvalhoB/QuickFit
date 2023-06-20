@@ -15,12 +15,12 @@
         </li>
 
         <li>
-            <a href="?page=view_usu">
+            <a href="?page=view_prof">
                 <i class="fa-solid fa-user"></i>
                 <span class="link_name">Perfil</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?page=view_usu">Perfil</a></li>
+                <li><a class="link_name" href="?page=view_prof">Perfil</a></li>
             </ul>
         </li>
 
