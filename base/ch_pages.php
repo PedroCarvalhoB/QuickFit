@@ -110,6 +110,10 @@ if (isset($_GET['page'])) {
             include "content/professor/crud/lista_ava.php";
             break;
 
+        case 'aluno_ava':
+            include "content/aluno/crud/lista_ava.php";
+            break;
+
         case 'fadd_ava':
             include "content/professor/crud/fadd_ava.php";
             break;
