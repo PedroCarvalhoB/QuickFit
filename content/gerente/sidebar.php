@@ -13,6 +13,16 @@
                 <li><a class="link_name" href="?page=home_ger">Home</a></li>
             </ul>
         </li>
+
+        <li>
+            <a href="#">
+                <i class="fa-solid fa-user"></i>
+                <span class="link_name">Perfil</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">Perfil</a></li>
+            </ul>
+        </li>
        
         <li>
             <div class="iocn-link">
@@ -25,14 +35,16 @@
             </div>
             <ul class="sub-menu">
                 <li><a class="link_name">Academia</a></li>
-                <li><a href="?page=lista_usu">Lista de Usuários</a></li>
-                <li><a href="?page=fadd_acad">Cadastrar Academia</a></li>
+                <li><a href="?page=lista_usu">Lista de Alunos</a></li>
+                <!-- <li><a href="?page=fadd_acad">Cadastrar Academia</a></li> -->
                 <!-- <li><a href="?page=lol">Lista de Academias</a></li> -->
                 <li><a href="?page=fadd_apar">Adicionar Aparelho</a></li>
                 <li><a href="?page=fadd_exec">Adicionar Exercicio</a></li>
                 <li><a href="?page=fadd_apar_exec">Execução de Exercicio</a></li>
             </ul>
         </li>
+        
+        <br>
         
         <li>
             <a href="?page=logout">

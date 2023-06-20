@@ -15,6 +15,16 @@
         </li>
 
         <li>
+            <a href="?page=view_usu">
+                <i class="fa-solid fa-user"></i>
+                <span class="link_name">Perfil</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="?page=view_usu">Perfil</a></li>
+            </ul>
+        </li>
+
+        <li>
             <a href="?page=lista_usu">
                 <i class="fa-solid fa-list"></i>
                 <span class="link_name">Alunos</span>
