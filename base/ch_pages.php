@@ -150,6 +150,13 @@ if (isset($_GET['page'])) {
             include "content/aluno/crud/view_treino.php";
             break;
 
+        case 'view_adm':    
+            include "content/admin/crud/view_adm.php";
+            break;
+
+        case 'fedita_adm':
+            include "content/admin/crud/fedita_adm.php";
+               
         default:
             include "content/home.php";
             break;
