@@ -36,7 +36,6 @@
             <ul class="sub-menu">
                 <li><a class="link_name">Academia</a></li>
                 <li><a href="?page=lista_usu">Lista de Usuários</a></li>
-                <li><a href="?page=lista_acad">Academia</a></li>
                 <li><a href="?page=lista_apar">Aparelho</a></li>
                 <li><a href="?page=fadd_apar_exec">Execução de Exercicio</a></li>
             </ul>
