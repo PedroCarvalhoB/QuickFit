@@ -15,6 +15,16 @@
         </li>
 
         <li>
+            <a href="?page=lista_usu">
+                <i class="fa-solid fa-list"></i>
+                <span class="link_name">Alunos</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="?page=lista_usu">Lista de Alunos</a></li>
+            </ul>
+        </li>
+
+        <li>
             <a href="?page=lista_ava">
                 <i class="fa-solid fa-book"></i>
                 <span class="link_name">Avaliação</span>
@@ -34,17 +44,7 @@
             </ul>
         </li>
 
-        
-
-        <li>
-            <a href="?page=lista_usu">
-                <i class="fa-solid fa-list"></i>
-                <span class="link_name">Lista de Alunos</span>
-            </a>
-            <ul class="sub-menu blank">
-                <li><a class="link_name" href="?page=lista_usu">Lista de Alunos</a></li>
-            </ul>
-        </li>
+        <br>
 
         <li>
             <a href="?page=logout">
