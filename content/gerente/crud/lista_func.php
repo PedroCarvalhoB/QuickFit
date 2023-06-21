@@ -33,7 +33,7 @@ if (!isset($_SESSION))
 
 				$pagina = (isset($_GET['pagina'])) ? (int) $_GET['pagina'] : 1;
 				$inicio = ($quantidade * $pagina) - $quantidade;
-                $sql = "SELECT * FROM usuario AS u INNER JOIN matriculado AS m ON m.id_usu = u.id_usu WHERE tipo_usu = 'PROFESSOR' or 'RECEPCIONISTA' AND id_acad = $acad ORDER BY u.id_usu ASC limit $inicio, $quantidade;";
+                $sql = "SELECT * FROM usuario AS u INNER JOIN matriculado AS m ON m.id_usu = u.id_usu WHERE tipo_usu <> 'ALUNO' AND id_acad = $acad ORDER BY u.id_usu ASC limit $inicio, $quantidade;";
 				
 
 				// $sql= "select * from usuario where tipo_usu = 'ALUNO' order by id_usu asc limit $inicio, $quantidade;";
@@ -113,7 +113,7 @@ if (!isset($_SESSION))
 						break;
 
 					default:
-						$sqlTotal = "SELECT * FROM usuario AS u INNER JOIN matriculado AS m ON m.id_usu = u.id_usu WHERE tipo_usu = 'ALUNO' AND id_acad = $acad ORDER BY u.id_usu ASC";
+						$sqlTotal = "SELECT * FROM usuario AS u INNER JOIN matriculado AS m ON m.id_usu = u.id_usu WHERE tipo_usu <> 'ALUNO' AND id_acad = $acad ORDER BY u.id_usu ASC";
 						break;
 				}
 

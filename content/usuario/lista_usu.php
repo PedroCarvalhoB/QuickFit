@@ -6,7 +6,7 @@ if (!isset($_SESSION))
 <div id="main" class="container-fluid">
 	<div id="top" class="row">
 		<div class="col-md-2">
-			<h2>Alunos</h2>
+			<h2>Usuários</h2>
 		</div>
 	
 		<div class="col-md-6">
@@ -29,7 +29,7 @@ if (!isset($_SESSION))
 			$nivel = $_SESSION['UsuarioNivel'];
 
 			if ($nivel >= 3) {
-				echo '<a "href="?page=fadd_cad" class="btnsub">Novo Aluno</a>';
+				echo '<a "href="?page=fadd_cad" class="btnsub">Novo Usuário</a>';
 			}
 			?>
 		</div>
