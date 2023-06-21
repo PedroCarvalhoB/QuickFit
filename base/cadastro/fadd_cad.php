@@ -35,7 +35,7 @@
     <main>
     <div id="main" class="container-fluid">
     <div id="top" class="row">
-        <div class="col-md-11 titulo">
+        <div class="col-md-11 ">
             <h2>Cadastro de Usuarios</h2>
         </div>
     </div>

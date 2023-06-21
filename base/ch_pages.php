@@ -180,7 +180,11 @@ if (isset($_GET['page'])) {
         case 'atualiza_adm':
             include "content/admin/crud/atualiza_adm.php";
             break;
-                
+
+        case 'lista_func':
+            include "content/gerente/crud/lista_func.php";
+            break;    
+
         default:
             include "content/home.php";
             break;
