@@ -1,26 +1,12 @@
-﻿<?php
+<?php
 if (!isset($_SESSION))
 	session_start();
 ?>
 
 <div id="main" class="container-fluid">
 	<div id="top" class="row">
-		<div class="col-md-2">
-			<h2>Usuários</h2>
-		</div>
-	
-		<div class="col-md-6">
-			<div class="input-group h2 ">
-				<input name="data-[search]" onKeydown="Javascript: if (event.keyCode==13) PesquisaConteudoUsu();" class="form-control" id="search_usu" type="text" placeholder="Pesquisar Usuários"
-				>
-
-				<span class="input-group-btn">
-					<button class="btn" onclick="PesquisaConteudoUsu()" type="submit"> 
-						<i class="fa-solid fa-magnifying-glass"></i>
-						
-					</button>
-				</span>
-			</div>
+		<div class="col-md-10">
+			<h2>Funcionários</h2>
 		</div>
 
 		<div class="col-md-2">
@@ -29,7 +15,7 @@ if (!isset($_SESSION))
 			$nivel = $_SESSION['UsuarioNivel'];
 
 			if ($nivel >= 3) {
-				echo '<a "href="?page=fadd_cad" class="btnsub">Novo Usuário</a>';
+				echo '<a href="?page=fadd_cad" class="btnsub">Novo Funcionário</a>';
 			}
 			?>
 		</div>
@@ -47,17 +33,10 @@ if (!isset($_SESSION))
 
 				$pagina = (isset($_GET['pagina'])) ? (int) $_GET['pagina'] : 1;
 				$inicio = ($quantidade * $pagina) - $quantidade;
+                $sql = "SELECT * FROM usuario AS u INNER JOIN matriculado AS m ON m.id_usu = u.id_usu WHERE tipo_usu <> 'ALUNO' AND id_acad = $acad ORDER BY u.id_usu ASC limit $inicio, $quantidade;";
+				
 
 				// $sql= "select * from usuario where tipo_usu = 'ALUNO' order by id_usu asc limit $inicio, $quantidade;";
-				switch ($nivel) {
-					case 5:
-						$sql = "SELECT * FROM usuario ORDER BY id_usu ASC limit $inicio, $quantidade;";
-						break;
-
-					default:
-						$sql = "SELECT * FROM usuario AS u INNER JOIN matriculado AS m ON m.id_usu = u.id_usu WHERE tipo_usu = 'ALUNO' AND id_acad = $acad ORDER BY u.id_usu ASC limit $inicio, $quantidade;";
-						break;
-				}
 
 				$data_all = mysqli_query($con, $sql) or die(mysqli_error($erro));
 
@@ -134,7 +113,7 @@ if (!isset($_SESSION))
 						break;
 
 					default:
-						$sqlTotal = "SELECT * FROM usuario AS u INNER JOIN matriculado AS m ON m.id_usu = u.id_usu WHERE tipo_usu = 'ALUNO' AND id_acad = $acad ORDER BY u.id_usu ASC";
+						$sqlTotal = "SELECT * FROM usuario AS u INNER JOIN matriculado AS m ON m.id_usu = u.id_usu WHERE tipo_usu <> 'ALUNO' AND id_acad = $acad ORDER BY u.id_usu ASC";
 						break;
 				}
 
@@ -148,18 +127,18 @@ if (!isset($_SESSION))
 				$posterior = (($pagina + 1) >= $totalpagina) ? $totalpagina : $pagina + 1;
 
 				echo "<ul class='pagination'>";
-				echo "<li class='page-item'><a class='page-link' href='?page=lista_usu&pagina=1'> Primeira</a></li> ";
-				echo "<li class='page-item'><a class='page-link' href=\"?page=lista_usu&pagina=$anterior\"> Anterior</a></li> ";
+				echo "<li class='page-item'><a class='page-link' href='?page=lista_func&pagina=1'> Primeira</a></li> ";
+				echo "<li class='page-item'><a class='page-link' href=\"?page=lista_func&pagina=$anterior\"> Anterior</a></li> ";
 
-				echo "<li class='page-item'><a class='page-link' href='?page=lista_usu&pagina=" . $pagina . "'><strong>" . $pagina . "</strong></a></li> ";
+				echo "<li class='page-item'><a class='page-link' href='?page=lista_func&pagina=" . $pagina . "'><strong>" . $pagina . "</strong></a></li> ";
 
 				for ($i = $pagina + 1; $i < $pagina + $exibir; $i++) {
 					if ($i <= $totalpagina)
-						echo "<li class='page-item'><a class='page-link' href='?page=lista_usu&pagina=" . $i . "'> " . $i . " </a></li> ";
+						echo "<li class='page-item'><a class='page-link' href='?page=lista_func&pagina=" . $i . "'> " . $i . " </a></li> ";
 				}
 
-				echo "<li class='page-item'><a class='page-link' href=\"?page=lista_usu&pagina=$posterior\"> Pr&oacute;xima</a></li> ";
-				echo "<li class='page-item'><a class='page-link' href=\"?page=lista_usu&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>";
+				echo "<li class='page-item'><a class='page-link' href=\"?page=lista_func&pagina=$posterior\"> Pr&oacute;xima</a></li> ";
+				echo "<li class='page-item'><a class='page-link' href=\"?page=lista_func&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>";
 
 				?>
 			</div>

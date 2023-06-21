@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i");
 
-.titulo {
-    margin-top: 15px;
-    font-family: 'Poppins', sans-serif;
-}
 
 .btnsub {
     display: inline-block;
@@ -17,8 +13,7 @@
     transition: all .3s;
     border: none;
     outline: none;
-    margin-top: -8px;
-
+    margin-top: -5px;
 }
 
 .btnsub:hover {
