@@ -1,31 +1,12 @@
 <?php
 if (!isset($_SESSION))
   session_start();
+
+include "../../../base/config.php";
+
 ?>
 
 <div id="main" class="container-fluid">
-	<div id="top" class="row">
-		<div class="col-md-3">
-			<h2>Treinos</h2>
-		</div>
-
-		<div class="col-md-7">
-			<div class="input-group h2">
-				<input name="data-[search]" onKeydown="Javascript: if (event.keyCode==13) PesquisaConteudoTreino();" class="form-control" id="search_usu" type="text" placeholder="Pesquisar Usuários">&nbsp;
-				<span class="input-group-btn">
-					<button class="btn btn-primary" onclick="PesquisaConteudoTreino()" type="submit"> 
-						<span>Pesquisar</span>
-					</button>
-				</span>
-			</div>
-		</div>
-
-		<!-- <div class='col-md-2'>
-			<a href="?page=fadd_treino" class="btnsub">Novo Treino</a>
-		</div> -->
-	</div>
-	<!--top - Lista dos Campos-->
-	<hr />
 	<div id="bloco-list-pag">
 		<div id="list" class="row">
 			<div class="table-responsive col-xs-12">
@@ -39,10 +20,7 @@ if (!isset($_SESSION))
 				$inicio = ($quantidade * $pagina) - $quantidade;
 
 				// $sql= "select * from usuario where tipo_usu = 'ALUNO' order by id_usu asc limit $inicio, $quantidade;";
-                $sql = "SELECT * FROM usuario AS u 
-                INNER JOIN matriculado AS m ON u.id_usu = m.id_usu
-                WHERE tipo_usu = 'ALUNO' AND id_acad = $acad 
-                ORDER BY u.id_usu ASC limit $inicio, $quantidade;";
+                $sql = "select * from usuario where nome_usu like '%" . $_GET['nome'] . "%' order by id_usu asc limit $inicio, $quantidade;";
 
 				$data_all = mysqli_query($con, $sql) or die(mysqli_error($con));
 
@@ -91,11 +69,16 @@ if (!isset($_SESSION))
 					echo "<a class='btn' href=?page=fadd_ava&id=" . $info['id_usu'] . "> <i class='fa-solid fa-book'></i> </a>";
 
                     // Treinamento 
-                        echo "<a class='btn' href=?page=lista_treino_alu&id=" . $info['id_usu'] . "> <i class='fa-solid fa-dumbbell'></i> </a>";
+                        echo "<a class='btn' href=?page=fadd_treino&id=" . $info['id_usu'] . "> <i class='fa-solid fa-dumbbell'></i> </a>";
 
 				}
 				echo "</tr></tbody></table>";
 				?>
+
+                <div class="col-xs-12">
+                    <a href="?page=lista_treino" class="btn btn-primary pull-left h2">Listar todos</a>
+                </div>
+
 			</div><!-- Div Table -->
 		</div><!--list-->
 
@@ -103,10 +86,7 @@ if (!isset($_SESSION))
 		<div id="bottom" class="row">
 			<div class="col-md-12">
 				<?php
-				$sqlTotal = "SELECT * FROM usuario AS u 
-                INNER JOIN matriculado AS m ON u.id_usu = m.id_usu
-                WHERE tipo_usu = 'ALUNO' AND id_acad = $acad 
-                ORDER BY u.id_usu ASC limit $inicio, $quantidade;";
+				$sqlTotal = "select * from usuario where nome_usu like '%" . $_GET['nome'] . "%' order by id_usu asc";
 				$qrTotal = mysqli_query($con, $sqlTotal) or die(mysqli_error($con));
 				$numTotal = mysqli_num_rows($qrTotal);
 				$totalpagina = (ceil($numTotal / $quantidade) <= 0) ? 1 : ceil($numTotal / $quantidade);
@@ -117,18 +97,18 @@ if (!isset($_SESSION))
 				$posterior = (($pagina + 1) >= $totalpagina) ? $totalpagina : $pagina + 1;
 
 				echo "<ul class='pagination'>";
-				echo "<li class='page-item'><a class='page-link' href='?page=lista_treino&pagina=1'> Primeira</a></li> ";
-				echo "<li class='page-item'><a class='page-link' href=\"?page=lista_treino&pagina=$anterior\"> Anterior</a></li> ";
+				echo "<li class='page-item'><a class='page-link' href='?page=filtro_treino&pagina=1'> Primeira</a></li> ";
+				echo "<li class='page-item'><a class='page-link' href=\"?page=filtro_treino&pagina=$anterior\"> Anterior</a></li> ";
 
-				echo "<li class='page-item'><a class='page-link' href='?page=lista_treino&pagina=" . $pagina . "'><strong>" . $pagina . "</strong></a></li> ";
+				echo "<li class='page-item'><a class='page-link' href='?page=filtro_treino&pagina=" . $pagina . "'><strong>" . $pagina . "</strong></a></li> ";
 
 				for ($i = $pagina + 1; $i < $pagina + $exibir; $i++) {
 					if ($i <= $totalpagina)
-						echo "<li class='page-item'><a class='page-link' href='?page=lista_treino&pagina=" . $i . "'> " . $i . " </a></li> ";
+						echo "<li class='page-item'><a class='page-link' href='?page=filtro_treino&pagina=" . $i . "'> " . $i . " </a></li> ";
 				}
 
-				echo "<li class='page-item'><a class='page-link' href=\"?page=lista_treino&pagina=$posterior\"> Pr&oacute;xima</a></li> ";
-				echo "<li class='page-item'><a class='page-link' href=\"?page=lista_treino&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>";
+				echo "<li class='page-item'><a class='page-link' href=\"?page=filtro_treino&pagina=$posterior\"> Pr&oacute;xima</a></li> ";
+				echo "<li class='page-item'><a class='page-link' href=\"?page=filtro_treino&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>";
 
 				?>
 			</div>

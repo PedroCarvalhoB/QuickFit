@@ -145,6 +145,10 @@ if (isset($_GET['page'])) {
             include "content/professor/crud/lista_treino.php";
             break;
 
+        case 'lista_treino_alu':
+            include "content/professor/crud/lista_treino_alu.php";
+            break;
+
         case 'fadd_treino':
             include "content/professor/crud/fadd_treino.php";
             break;
