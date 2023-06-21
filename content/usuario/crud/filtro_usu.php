@@ -85,7 +85,7 @@ include "../../../base/config.php";
                 ?>
 
                 <div class="col-xs-12">
-                    <a href="?page=lista_usu.php" class="btn btn-primary pull-left h2">Listar todos</a>
+                    <a href="?page=lista_usu" class="btn btn-primary pull-left h2">Listar todos</a>
                 </div>
             </div><!-- Div Table -->
         </div><!--list-->
