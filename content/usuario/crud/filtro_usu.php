@@ -1,7 +1,11 @@
 <?php
 if (!isset($_SESSION))
     session_start();
+
+include "../../../base/config.php";
+
 ?>
+
 
     <div id="bloco-list-pag">
         <div id="list" class="row">
@@ -16,7 +20,7 @@ if (!isset($_SESSION))
                 $inicio = ($quantidade * $pagina) - $quantidade;
 
                 // $sql= "select * from usuario where tipo_usu = 'ALUNO' order by id_usu asc limit $inicio, $quantidade;";
-                $sql = "select * from usuario where nome_usu like '%" . $_GET['nome'] . "%' order by id asc limit $inicio, $quantidade;";
+                $sql = "select * from usuario where nome_usu like '%" . $_GET['nome'] . "%' order by id_usu asc limit $inicio, $quantidade;";
 
                 $data_all = mysqli_query($con, $sql) or die(mysqli_error($erro));
 
@@ -81,7 +85,7 @@ if (!isset($_SESSION))
                 ?>
 
                 <div class="col-xs-12">
-                    <a href="lista_usu.php" class="btn btn-primary pull-left h2">Listar todos</a>
+                    <a href="?page=lista_usu.php" class="btn btn-primary pull-left h2">Listar todos</a>
                 </div>
             </div><!-- Div Table -->
         </div><!--list-->
@@ -90,7 +94,7 @@ if (!isset($_SESSION))
         <div id="bottom" class="row">
             <div class="col-md-12">
                 <?php
-                $sqlTotal = "SELECT * FROM usuario AS u INNER JOIN matriculado AS m ON m.id_usu = u.id_usu WHERE tipo_usu = 'ALUNO' AND id_acad = $acad ORDER BY u.id_usu ASC limit $inicio, $quantidade;";
+                $sqlTotal = "select * from usuario where nome_usu like '%" . $_GET['nome'] . "%' order by id_usu asc;";
                 $qrTotal = mysqli_query($con, $sqlTotal) or die(mysqli_error($con));
                 $numTotal = mysqli_num_rows($qrTotal);
                 $totalpagina = (ceil($numTotal / $quantidade) <= 0) ? 1 : ceil($numTotal / $quantidade);
@@ -101,18 +105,18 @@ if (!isset($_SESSION))
                 $posterior = (($pagina + 1) >= $totalpagina) ? $totalpagina : $pagina + 1;
 
                 echo "<ul class='pagination'>";
-                echo "<li class='page-item'><a class='page-link' href='?page=lista_usu&pagina=1'> Primeira</a></li> ";
-                echo "<li class='page-item'><a class='page-link' href=\"?page=lista_usu&pagina=$anterior\"> Anterior</a></li> ";
+                echo "<li class='page-item'><a class='page-link' href='?page=filtro_usu&pagina=1'> Primeira</a></li> ";
+                echo "<li class='page-item'><a class='page-link' href=\"?page=filtro_usu&pagina=$anterior\"> Anterior</a></li> ";
 
-                echo "<li class='page-item'><a class='page-link' href='?page=lista_usu&pagina=" . $pagina . "'><strong>" . $pagina . "</strong></a></li> ";
+                echo "<li class='page-item'><a class='page-link' href='?page=filtro_usu&pagina=" . $pagina . "'><strong>" . $pagina . "</strong></a></li> ";
 
                 for ($i = $pagina + 1; $i < $pagina + $exibir; $i++) {
                     if ($i <= $totalpagina)
-                        echo "<li class='page-item'><a class='page-link' href='?page=lista_usu&pagina=" . $i . "'> " . $i . " </a></li> ";
+                        echo "<li class='page-item'><a class='page-link' href='?page=filtro_usu&pagina=" . $i . "'> " . $i . " </a></li> ";
                 }
 
-                echo "<li class='page-item'><a class='page-link' href=\"?page=lista_usu&pagina=$posterior\"> Pr&oacute;xima</a></li> ";
-                echo "<li class='page-item'><a class='page-link' href=\"?page=lista_usu&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>";
+                echo "<li class='page-item'><a class='page-link' href=\"?page=filtro_usu&pagina=$posterior\"> Pr&oacute;xima</a></li> ";
+                echo "<li class='page-item'><a class='page-link' href=\"?page=filtro_usu&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>";
 
                 ?>
             </div>
