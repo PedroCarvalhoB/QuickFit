@@ -24,15 +24,15 @@
 
             <br>
 
-            <form action="?page=insere_exec" method="post">
+            <form enctype="multipart/form-data" action="?page=insere_exec" method="post">
                 <!-- 1ª LINHA -->
                 <div class="row">
                     <div class="form-group col-md-3">
-                        <label for="nome_usu">Nome do Exercício</label>
+                        <label for="nome_exec">Nome do Exercício</label>
                         <input type="text" class="form-control" name="nome_exec" required>
                     </div>
                     <div class="form-group col-md-3">
-                        <label for="nome_usu">Imagem</label>
+                        <label for="imagem">Imagem</label>
                         <input type="file" class="form-control" name="imagem" required>
                     </div>
                 </div>
