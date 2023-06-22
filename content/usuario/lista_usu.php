@@ -98,7 +98,7 @@ if (!isset($_SESSION))
 							echo "<a class='btn' href=?page=fadd_ava&id=" . $info['id_usu'] . "> <i class='fa-solid fa-book'></i> </a>";
 
 							// Treinamento 
-							echo "<a class='btn' href=?page=fadd_treino&id=" . $info['id_usu'] . "> <i class='fa-solid fa-dumbbell'></i> </a>";
+							echo "<a class='btn' href=?page=lista_treino_alu&id=" . $info['id_usu'] . "> <i class='fa-solid fa-dumbbell'></i> </a>";
 
 							break;
 

@@ -12,8 +12,9 @@
 		<div class="col-md-2">
 			<?php echo "<a href=?page=fadd_treino&id=".$row['id_usu']." class='btnsub'>Novo Treino</a>"; ?>
 		</div>
+        <hr>
 	</div>
-
+    
     <div id="bloco-list-pag">
         <div id="list" class="row">
             <div class="table-responsive col-xs-12">
@@ -28,7 +29,7 @@
                     $inicio = ($quantidade * $pagina) - $quantidade;
 
                     // $sql= "select * from usuario where tipo_usu = 'ALUNO' order by id_usu asc limit $inicio, $quantidade;";
-                    $sql = "SELECT *, up.nome_usu AS nome_prof FROM treinamento t
+                    $sql = "SELECT *, up.nome_usu AS nome_prof, u.nome_usu as nome_alu FROM treinamento t
                     INNER JOIN usuario u ON t.id_alu = u.id_usu
                     INNER JOIN usuario up ON t.id_prof = up.id_usu
                     WHERE id_alu = ".$row['id_usu']." AND t.treino = 'A'
@@ -41,7 +42,6 @@
                     echo "<thead><tr>";
                     echo "<td><strong>ID</strong></td>";
                     echo "<td><strong>Nome Professor</strong></td>";
-                    echo "<td><strong>Treino</strong></td>";
                     echo "<td><strong>Data de criagem</strong></td>";
                     echo "<td class='actions'><strong>Ações</strong></td>";
                     echo "</tr></thead><tbody>";
@@ -50,12 +50,11 @@
                         echo "<tr>";
                         echo "<td>" . $info['id_treinamento'] . "</td>";
                         echo "<td>" . $info['nome_prof'] . "</td>";
-                        echo "<td>" . $info['treino'] . "</td>";
                         echo "<td>" . date('d/m/Y', strtotime($info['dt_inicio'])) . "</td>";
                         echo "<td><div class='btn-group btn-group-sm'>";
 
                         // Visualizar
-                        echo "<a class='btn' href=?page=view_usu&id=" . $info['id_usu'] . " > <i class='fa-solid fa-eye'></i> </a>";
+                        echo "<a class='btn' href=?page=view_treino&id=".$info['id_alu']."&dt=".$info['dt_inicio']." > <i class='fa-solid fa-eye'></i> </a>";
     
                     }
                     echo "</tr></tbody></table>";
@@ -69,13 +68,11 @@
         <div id="bottom" class="row">
             <div class="col-md-12">
                 <?php
-                    $sqlTotal = "SELECT * FROM execucao e
-                    INNER JOIN treinamento t ON e.id_treinamento = t.id_treinamento
-                    INNER JOIN aparelho a ON e.id_apar = a.id_apar
-                    INNER JOIN exercicio er ON e.id_exec = er.id_exec
+                    $sqlTotal = "SELECT *, up.nome_usu AS nome_prof FROM treinamento t
                     INNER JOIN usuario u ON t.id_alu = u.id_usu
-                    WHERE t.dt_final IS NULL AND t.id_alu = ".$row['id_usu']." 
-                    GROUP BY e.id_execucao ORDER BY t.treino ASC limit $inicio, $quantidade;";
+                    INNER JOIN usuario up ON t.id_prof = up.id_usu
+                    WHERE id_alu = ".$row['id_usu']." AND t.treino = 'A'
+                    GROUP BY t.id_treinamento ASC ORDER BY dt_inicio DESC;";
                     $qrTotal = mysqli_query($con, $sqlTotal) or die(mysqli_error($con));
                     $numTotal = mysqli_num_rows($qrTotal);
                     $totalpagina = (ceil($numTotal / $quantidade) <= 0) ? 1 : ceil($numTotal / $quantidade);
@@ -104,11 +101,11 @@
 
             <hr />
 
-                <div id="actions" class="row botoes">
-                    <div class="col-md-12">
-                        <a href="?page=lista_treino" class="btncancel">Voltar</a>
-                    </div>
+            <div id="actions" class="row botoes">
+                <div class="col-md-12">
+                    <a href="?page=lista_treino" class="btncancel">Voltar</a>
                 </div>
+            </div>
         </div><!--bottom-->
     </div>
 </div>

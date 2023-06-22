@@ -171,7 +171,7 @@ if (isset($_GET['page'])) {
             break;
 
         case 'view_treino':
-            include "content/aluno/crud/view_treino.php";
+            include "content/professor/crud/view_treino.php";
             break;
 
         case 'view_adm':    
