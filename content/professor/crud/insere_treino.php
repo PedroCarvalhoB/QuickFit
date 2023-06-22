@@ -9,7 +9,7 @@ $con = mysqli_connect($DB_HOST, $DB_USER, $DB_PASS, $DB_NAME);
 
 if (!isset($_SESSION))
 	session_start();
-
+    
 $id_alu     = $_POST['id'];
 $id_prof    = $_SESSION['UsuarioID'];
 $exec       = $_POST['id_exec'];
@@ -18,6 +18,7 @@ $treino     = $_POST['treino'];
 $serie      = $_POST['num_serie'];
 $repeat     = $_POST['num_repeat'];
 $dt         = date('Y-m-d');
+
 
 $sql_treino = "SELECT * FROM treinamento WHERE id_alu = '$id_alu' AND dt_final IS NULL AND treino = '$treino' GROUP BY id_alu;";
 $query_treino = mysqli_query($con, $sql_treino);

@@ -3,8 +3,8 @@ $id = (int) $_GET['id'];
 $sql = mysqli_query($con, "select * from usuario where id_usu = '" . $id . "';");
 $row = mysqli_fetch_array($sql);
 
-$dt = $_GET['dt'];
-$sql_dt = mysqli_query($con, "select * from treinamento where dt_inicio = '" . $dt . "';");
+$dt = (int) $_GET['id_trei'];
+$sql_dt = mysqli_query($con, "select * from treinamento where id_treinamento = '" . $dt . "';");
 $row_dt = mysqli_fetch_array($sql_dt);
 ?>
 
@@ -35,7 +35,7 @@ $row_dt = mysqli_fetch_array($sql_dt);
                 INNER JOIN aparelho a ON e.id_apar = a.id_apar
                 INNER JOIN exercicio er ON e.id_exec = er.id_exec
                 INNER JOIN usuario u ON t.id_alu = u.id_usu
-                WHERE t.id_alu = ".$row['id_usu']." AND dt_inicio = ".$row_dt['dt_inicio']."
+                WHERE t.id_alu = ".$row['id_usu']." AND dt_inicio = '".$row_dt['dt_inicio']."'
                 GROUP BY e.id_execucao ORDER BY t.treino ASC limit $inicio, $quantidade;";
 
                 $data_all = mysqli_query($con, $sql) or die(mysqli_error($con));
@@ -79,7 +79,7 @@ $row_dt = mysqli_fetch_array($sql_dt);
                 INNER JOIN aparelho a ON e.id_apar = a.id_apar
                 INNER JOIN exercicio er ON e.id_exec = er.id_exec
                 INNER JOIN usuario u ON t.id_alu = u.id_usu
-                WHERE t.id_alu = " . $row['id_usu'] . " AND dt_inicio = ".$row_dt['dt_inicio']."
+                WHERE t.id_alu = " . $row['id_usu'] . " AND dt_inicio = '".$row_dt['dt_inicio']."'
                 GROUP BY e.id_execucao ORDER BY t.treino ASC;";
                 $qrTotal = mysqli_query($con, $sqlTotal) or die(mysqli_error($con));
                 $numTotal = mysqli_num_rows($qrTotal);
@@ -91,18 +91,18 @@ $row_dt = mysqli_fetch_array($sql_dt);
                 $posterior = (($pagina + 1) >= $totalpagina) ? $totalpagina : $pagina + 1;
 
                 echo "<ul class='pagination'>";
-                echo "<li class='page-item'><a class='page-link' href='?page=view_treino&pagina=1'> Primeira</a></li> ";
-                echo "<li class='page-item'><a class='page-link' href=\"?page=view_treino&pagina=$anterior\"> Anterior</a></li> ";
+                echo "<li class='page-item'><a class='page-link' href='?page=view_treino&pagina=1&id=".$row['id_usu']."&id_trei=$dt'> Primeira</a></li> ";
+                echo "<li class='page-item'><a class='page-link' href=\"?page=view_treino&pagina=$anterior&id=".$row['id_usu']."&id_trei=$dt\"> Anterior</a></li> ";
 
-                echo "<li class='page-item'><a class='page-link' href='?page=view_treino&pagina=" . $pagina . "'><strong>" . $pagina . "</strong></a></li> ";
+                echo "<li class='page-item'><a class='page-link' href='?page=view_treino&pagina=" . $pagina . "&id=".$row['id_usu']."&id_trei=$dt'><strong>" . $pagina . "</strong></a></li> ";
 
                 for ($i = $pagina + 1; $i < $pagina + $exibir; $i++) {
                     if ($i <= $totalpagina)
-                        echo "<li class='page-item'><a class='page-link' href='?page=view_treino&pagina=" . $i . "'> " . $i . " </a></li> ";
+                        echo "<li class='page-item'><a class='page-link' href='?page=view_treino&pagina=" . $i . "&id=".$row['id_usu']."&id_trei=$dt'> " . $i . " </a></li> ";
                 }
 
-                echo "<li class='page-item'><a class='page-link' href=\"?page=view_treino&pagina=$posterior\"> Pr&oacute;xima</a></li> ";
-                echo "<li class='page-item'><a class='page-link' href=\"?page=view_treino&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>";
+                echo "<li class='page-item'><a class='page-link' href=\"?page=view_treino&pagina=$posterior&id=".$row['id_usu']."&id_trei=$dt\"> Pr&oacute;xima</a></li> ";
+                echo "<li class='page-item'><a class='page-link' href=\"?page=view_treino&pagina=$totalpagina&id=".$row['id_usu']."&id_trei=$dt\"> &Uacute;ltima</a></li></ul>";
 
                 ?>
                 <hr />

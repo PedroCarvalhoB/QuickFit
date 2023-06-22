@@ -81,37 +81,5 @@ include "../../../base/config.php";
 
 			</div><!-- Div Table -->
 		</div><!--list-->
-
-		<!-- PAGINAÇÃO -->
-		<div id="bottom" class="row">
-			<div class="col-md-12">
-				<?php
-				$sqlTotal = "select * from usuario where nome_usu like '%" . $_GET['nome'] . "%' order by id_usu asc";
-				$qrTotal = mysqli_query($con, $sqlTotal) or die(mysqli_error($con));
-				$numTotal = mysqli_num_rows($qrTotal);
-				$totalpagina = (ceil($numTotal / $quantidade) <= 0) ? 1 : ceil($numTotal / $quantidade);
-
-				$exibir = 3;
-
-				$anterior = (($pagina - 1) <= 0) ? 1 : $pagina - 1;
-				$posterior = (($pagina + 1) >= $totalpagina) ? $totalpagina : $pagina + 1;
-
-				echo "<ul class='pagination'>";
-				echo "<li class='page-item'><a class='page-link' href='?page=filtro_treino&pagina=1'> Primeira</a></li> ";
-				echo "<li class='page-item'><a class='page-link' href=\"?page=filtro_treino&pagina=$anterior\"> Anterior</a></li> ";
-
-				echo "<li class='page-item'><a class='page-link' href='?page=filtro_treino&pagina=" . $pagina . "'><strong>" . $pagina . "</strong></a></li> ";
-
-				for ($i = $pagina + 1; $i < $pagina + $exibir; $i++) {
-					if ($i <= $totalpagina)
-						echo "<li class='page-item'><a class='page-link' href='?page=filtro_treino&pagina=" . $i . "'> " . $i . " </a></li> ";
-				}
-
-				echo "<li class='page-item'><a class='page-link' href=\"?page=filtro_treino&pagina=$posterior\"> Pr&oacute;xima</a></li> ";
-				echo "<li class='page-item'><a class='page-link' href=\"?page=filtro_treino&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>";
-
-				?>
-			</div>
-		</div><!--bottom-->
 	</div>
 </div><!--main-->

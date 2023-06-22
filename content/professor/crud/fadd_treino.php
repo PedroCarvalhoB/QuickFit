@@ -171,18 +171,18 @@
                         $posterior = (($pagina + 1) >= $totalpagina) ? $totalpagina : $pagina + 1;
 
                         echo "<ul class='pagination'>";
-                        echo "<li class='page-item'><a class='page-link' href='?page=lista_treino&pagina=1'> Primeira</a></li> ";
-                        echo "<li class='page-item'><a class='page-link' href=\"?page=lista_treino&pagina=$anterior\"> Anterior</a></li> ";
+                        echo "<li class='page-item'><a class='page-link' href='?page=fadd_treino&pagina=1&id=".$row['id_usu']."'> Primeira</a></li> ";
+                        echo "<li class='page-item'><a class='page-link' href=\"?page=fadd_treino&pagina=$anterior&id=".$row['id_usu']."\"> Anterior</a></li> ";
 
-                        echo "<li class='page-item'><a class='page-link' href='?page=lista_treino&pagina=" . $pagina . "'><strong>" . $pagina . "</strong></a></li> ";
+                        echo "<li class='page-item'><a class='page-link' href='?page=fadd_treino&pagina=" . $pagina . "&id=".$row['id_usu']."'><strong>" . $pagina . "</strong></a></li> ";
 
                         for ($i = $pagina + 1; $i < $pagina + $exibir; $i++) {
                             if ($i <= $totalpagina)
-                                echo "<li class='page-item'><a class='page-link' href='?page=lista_treino&pagina=" . $i . "'> " . $i . " </a></li> ";
+                                echo "<li class='page-item'><a class='page-link' href='?page=fadd_treino&pagina=" . $i . "&id=".$row['id_usu']."'> " . $i . " </a></li> ";
                         }
 
-                        echo "<li class='page-item'><a class='page-link' href=\"?page=lista_treino&pagina=$posterior\"> Pr&oacute;xima</a></li> ";
-                        echo "<li class='page-item'><a class='page-link' href=\"?page=lista_treino&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>";
+                        echo "<li class='page-item'><a class='page-link' href=\"?page=fadd_treino&pagina=$posterior&id=".$row['id_usu']."\"> Pr&oacute;xima</a></li> ";
+                        echo "<li class='page-item'><a class='page-link' href=\"?page=fadd_treino&pagina=$totalpagina&id=".$row['id_usu']."\"> &Uacute;ltima</a></li></ul>";
 
                     ?>
                 </div>
