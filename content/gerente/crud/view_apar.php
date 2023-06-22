@@ -1,6 +1,6 @@
 <?php
 if (!isset($_SESSION))
-  session_start();
+    session_start();
 ?>
 <!doctype html>
 <html lang="en">
@@ -19,6 +19,17 @@ if (!isset($_SESSION))
 
 <body>
     <main>
+        <?php
+        $id = $_GET['id'];
+        $id_acad = $_SESSION['UsuarioAcad'];
+
+        $sql = mysqli_query($con, "select * from apar_acad as apac inner join aparelho as ap on ap.id_apar = apac.id_apar where id_acad = $id_acad and ap.id_apar = '" . $id . "';");
+        $row = mysqli_fetch_array($sql);
+
+        $sql_acad = mysqli_query($con, "select * from academia where id_acad = '" . $id_acad . "';");
+        $row_acad = mysqli_fetch_array($sql_acad);
+        ?>
+
         <div id="main" class="container-fluid">
             <div id="top" class="row">
                 <div class="col-md-11">
@@ -32,38 +43,32 @@ if (!isset($_SESSION))
                 <!-- 1ª LINHA -->
                 <div class="row">
                     <div class="form-group col-md-3">
-                        <label for="nome_apar"><?php echo $row['nome_apar'] ?></label>
+                        <p><strong>Nome</strong></p>
+                        <p>
+                            <?php echo $row['nome_apar'] ?>
+                        </p>
                     </div>
 
                     <!-- PRECISA SER MUDADO PARA APARECER AS ACADEMIAS VINCULADAS AOU GERENTE -->
                     <div class="form-group col-md-2">
-                        <label for="acad">Academia</label>
-                        <select class="form-select" name="acad" required>
-                            <?php
-                            $id = $_SESSION['UsuarioID'];
-                            $data = mysqli_query($con, "select * from academia AS a
-                            INNER JOIN gerencia AS g ON a.id_acad = g.id_acad
-                            WHERE g.id_usu = $id
-                            order by nome_acad asc;") or die(mysqli_error($con));
-                            
-                            while($info = mysqli_fetch_array($data)){
-                                echo "<option value='".$info['id_acad']."'>".$info['nome_acad']."</option>";
-                            }
-                            ?>
-                        </select>
+                        <p><strong>Academia</strong></p>
+                        <p>
+                            <?php echo $row_acad['nome_acad'] ?>
+                        </p>
                     </div>
 
                     <div class="form-group col-md-2">
-                        <label for="quant">Quantidade</label>
-                        <input type="number" class="form-control" name="quant" required>
+                        <p><strong>Quantidade</strong></p>
+                        <p>
+                            <?php echo $row['quant_apar'] ?>
+                        </p>
                     </div>
                 </div>
                 <br>
                 <hr />
                 <div id="actions" class="row botoes">
                     <div class="col-md-12">
-                        <button type="submit" class="btnsub">Salvar</button>
-                        <!-- <a href="../../index.php" class="btncancel">Cancelar</a> -->
+                        <a href="?page=lista_apar" class="btncancel">Cancelar</a>
                     </div>
                 </div>
             </form>

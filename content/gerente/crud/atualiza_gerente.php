@@ -20,10 +20,10 @@
     $resultado = mysqli_query($con, $sql)or die(mysqli_error($erro));
 
     if($resultado){
-        header('Location: \quickfit/dashboard.php?page=view_gerente&msg=2');
+        header('Location: \quickfit/dashboard.php?page=view_gerente');
         mysqli_close($con);
     }else{
-        header('Location: \quickfit/dashboard.php?page=view_gerente&msg=4');
+        header('Location: \quickfit/dashboard.php?page=view_gerente');
         mysqli_close($con);
     }
 ?>

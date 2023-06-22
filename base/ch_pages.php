@@ -83,7 +83,7 @@ if (isset($_GET['page'])) {
             break;
 
         case 'lista_acad':
-            include "content/gerente/crud/lista_acad.php";
+            include "content/admin/crud/lista_acad.php";
             break;
 
         case 'fadd_acad':
@@ -108,6 +108,11 @@ if (isset($_GET['page'])) {
 
         case 'view_apar':
             include "content/gerente/crud/view_apar.php";
+            break;
+
+        case 'lista_exec':
+            include "content/admin/crud/lista_exec.php";
+            break;
 
         case 'fadd_apar_exec':
             include "content/gerente/crud/fadd_apar_exec.php";
@@ -115,6 +120,10 @@ if (isset($_GET['page'])) {
 
         case 'insere_apar_exec':
             include "content/gerente/crud/insere_apar_exec.php";
+            break;
+
+        case 'view_exec':
+            include "content/admin/crud/view_exec.php";
             break;
 
         case 'lista_ava':

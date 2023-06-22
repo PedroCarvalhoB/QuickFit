@@ -37,7 +37,7 @@
                 <li><a class="link_name">Academia</a></li>
                 <li><a href="?page=lista_usu">Lista de Alunos</a></li>
                 <li><a href="?page=lista_func">Lista de Funcionários</a></li>
-                <li><a href="?page=lista_apar">Aparelho</a></li>
+                <li><a href="?page=lista_apar">Lista de Aparelhos</a></li>
                 <li><a href="?page=fadd_apar_exec">Execução de Exercicio</a></li>
             </ul>
         </li>

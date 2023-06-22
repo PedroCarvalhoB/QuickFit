@@ -13,7 +13,7 @@
                 <li><a class="link_name" href="?page=home_adm">Home</a></li>
             </ul>
         </li>
-       
+
         <li>
             <a href="?page=view_adm">
                 <i class="fa-solid fa-user"></i>
@@ -35,13 +35,11 @@
             <ul class="sub-menu">
                 <li><a class="link_name">Dados</a></li>
                 <li><a href="?page=lista_usu">Lista de Usuários</a></li>
-                <li><a href="?page=fadd_acad">Cadastrar Academia</a></li>
-                <li><a href="?page=lol">Lista de Academias</a></li>
-                <li><a href="?page=fadd_exec">Adicionar Exercicio</a></li>
-                <li><a href="?page=fadd_apar_exec">Execução de Exercicio</a></li>
+                <li><a href="?page=lista_acad">Lista de Academias</a></li>
+                <li><a href="?page=lista_exec">Lista de Exercicios</a></li>
             </ul>
         </li>
-        
+
         <br>
 
         <li>

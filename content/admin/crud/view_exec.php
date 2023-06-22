@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Cadastro de Exercícios</title>
+    <title>Cadastro de Usuários</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,6 +15,11 @@
 
 <body>
     <main>
+        <?php
+        $id = $_GET['id'];
+        $sql = mysqli_query($con, "select * from exercicio where id_exec = '" . $id . "';");
+        $row = mysqli_fetch_array($sql);
+        ?>
         <div id="main" class="container-fluid">
             <div id="top" class="row">
                 <div class="col-md-11">
@@ -28,29 +33,38 @@
                 <!-- 1ª LINHA -->
                 <div class="row">
                     <div class="form-group col-md-3">
-                        <label for="nome_usu">Nome do Exercício</label>
-                        <input type="text" class="form-control" name="nome_exec" required>
+                        <p><strong>Nome do Exercício</strong></p>
+                        <p>
+                            <?php echo $row['nome_exec'] ?>
+                        </p>
                     </div>
                     <div class="form-group col-md-3">
-                        <label for="nome_usu">Imagem</label>
-                        <input type="file" class="form-control" name="imagem" required>
+                        <p><strong>Grupo Muscular</strong></p>
+                        <p>
+                            <?php echo $row['grupo_muscular'] ?>
+                        </p>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <p><strong>Descrição</strong></p>
+                        <p>
+                            <?php echo $row['desc_exec'] ?>
+                        </p>
                     </div>
                 </div>
                 <br>
                 <div class="row">
-                    <div class="form-group col-md-6">
-                        <label for="desc_exec">Descrição do Exercício</label>
-                        <textarea class="form-control" style="resize: none;" name="desc_exec" id="textAreaExample1" rows="6"></textarea>
-                    </div>
+                    <p><strong>Imagem</strong></p>
+                    <p>
+                        <?php echo $row['imagem'] ?>
+                    </p>
                 </div>
 
                 <br>
-                <hr/>
+                <hr />
 
                 <div id="actions" class="row botoes">
                     <div class="col-md-12">
-                        <button type="submit" class="btnsub">Salvar</button>
-                        <!-- <a href="../../index.php" class="btncancel">Cancelar</a> -->
+                        <a href="?page=lista_exec" class="btncancel">Cancelar</a>
                     </div>
                 </div>
             </form>
