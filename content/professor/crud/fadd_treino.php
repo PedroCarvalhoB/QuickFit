@@ -193,7 +193,8 @@
 
         <hr>
         
-        <a href="?page=lista_treino" class="btncancel">Finalizar</a>
+        <!-- <a href="?page=lista_treino_alu&id=" class="btncancel">Finalizar</a> -->
+        <?php echo "<a href=?page=lista_treino_alu&id=".$row['id_usu']." class='btncancel'>Finalizar</a>"; ?>
 
         <br>
     </div>
@@ -209,4 +210,3 @@
 </body>
 
 </html>
-
