@@ -1,3 +1,47 @@
+<style>
+.btnblock{
+    display: inline-block;
+    font-size: 12px;
+    padding: 11px 17px;
+    background-color: red;
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all .3s;
+    border: none;
+    outline: none;
+    margin-top: -8px;
+    margin-left: 5px;
+}
+.btnblock:hover {
+    background-color: rgba(250, 0, 0, 0.640);
+    color: white;
+}
+
+.btnativar{
+    display: inline-block;
+    font-size: 12px;
+    padding: 11px 17px;
+    background-color: #008000;
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all .3s;
+    border: none;
+    outline: none;
+    margin-top: -8px;
+    margin-left: 5px;
+}
+.btnativar:hover{
+    background-color: #32CD32;
+    color: white;
+}
+</style>
+
 <?php
 if (!isset($_SESSION))
     session_start();
@@ -110,9 +154,9 @@ $row = mysqli_fetch_array($sql);
                     echo "<a href=?page=fedita_usu&id=" . $row['id_usu'] . " class='btnsub'>Editar</a>";
 
                     if ($row["status_usu"] == 1) {
-                        echo "<a href=?page=block_usu&id=" . $row['id_usu'] . " class='btn btn-danger'>Bloquear</a>";
+                        echo "<a href=?page=block_usu&id=" . $row['id_usu'] . " class='btnblock'>Bloquear</a>";
                     } else if ($row["status_usu"] == 0) {
-                        echo "<a href=?page=ativa_usu&id=" . $row['id_usu'] . " class='btn btn-success'>&nbsp;&nbsp;&nbsp;Ativar&nbsp;&nbsp;</a>";
+                        echo "<a href=?page=ativa_usu&id=" . $row['id_usu'] . " class='btnativar'>&nbsp;&nbsp;&nbsp;Ativar&nbsp;&nbsp;</a>";
                     }
                     break;
 
@@ -122,4 +166,5 @@ $row = mysqli_fetch_array($sql);
             ?>
         </div>
     </div>
+    <br>
 </div>

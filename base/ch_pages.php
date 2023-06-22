@@ -187,8 +187,20 @@ if (isset($_GET['page'])) {
 
         case 'lista_func':
             include "content/gerente/crud/lista_func.php";
-            break;    
+            break;
+            
+        case 'view_gerente':
+            include "content/gerente/crud/view_gerente.php";    
+            break;
 
+        case 'fedita_gerente':
+            include "content/gerente/crud/fedita_gerente.php";
+            break;
+            
+        case 'atualiza_gerente':
+            include "content/gerente/crud/atualiza_gerente.php";
+            break;
+                
         default:
             include "content/home.php";
             break;

@@ -30,9 +30,10 @@
 				<input type="text" class="form-control" name="cnpj">
 			</div>
 
-
 		</div>
 
+		<br>
+		
 		<div id="linha02" class="row">
 
 			<div class="form-group col-md-3">
