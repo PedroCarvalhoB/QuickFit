@@ -1,13 +1,14 @@
 <?php
 
 $nome             = $_POST["nome_exec"];
+$grupo            = $_POST["grupo_muscular"];
 $img              = $_FILES['imagem']['tmp_name'];
 $descr            = $_POST["desc_exec"];
 
 $img2             = rename($img, "assets/videos_exercicios/.mp4");
 
 $sql = "insert into exercicio values ";
-$sql .= "('0','$nome', 'teste', concat(sum(last_insert_id(), 1),'.mp4'), '$descr');";
+$sql .= "('0','$nome', '$grupo', concat(sum(last_insert_id()+1),'.mp4'), '$descr');";
 
 //echo $sql; exit;
 

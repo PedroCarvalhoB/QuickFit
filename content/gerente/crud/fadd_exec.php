@@ -32,10 +32,21 @@
                         <input type="text" class="form-control" name="nome_exec" required>
                     </div>
                     <div class="form-group col-md-3">
+                        <label for="grupo_muscular">Grupo Muscular Trabalhado</label>
+                        <input type="text" class="form-control" name="grupo_muscular" required>
+                    </div>
+                    
+                </div>
+                
+                <br>
+
+                <div class="row">
+                    <div class="form-group col-md-3">
                         <label for="imagem">Imagem</label>
                         <input type="file" class="form-control" name="imagem" required>
                     </div>
                 </div>
+
                 <br>
                 <div class="row">
                     <div class="form-group col-md-6">
@@ -49,8 +60,8 @@
 
                 <div id="actions" class="row botoes">
                     <div class="col-md-12">
+                        <a href="?page=lista_exec" class="btncancel">Cancelar</a>
                         <button type="submit" class="btnsub">Salvar</button>
-                        <!-- <a href="../../index.php" class="btncancel">Cancelar</a> -->
                     </div>
                 </div>
             </form>

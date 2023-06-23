@@ -22,7 +22,6 @@ if (!isset($_SESSION))
 				</span>
 			</div>
 		</div>
-
 		<div class="col-md-2">
 			<!-- Chama o Formulário para adicionar alunos -->
 			<?php
@@ -33,6 +32,7 @@ if (!isset($_SESSION))
 			}
 			?>
 		</div>
+
 	</div>
 	<!--top - Lista dos Campos-->
 	<hr />

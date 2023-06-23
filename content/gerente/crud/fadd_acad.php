@@ -12,6 +12,9 @@
 
 <div id="main" class="container-fluid">
 	<h2 class="page-header ">Cadastrar Academia</h2>
+
+	<br>
+
 	<form action="?page=insere_acad" method="post">
 
 		<div id="linha01" class="row">
@@ -53,9 +56,12 @@
 
 		</div>
 
+		<br>
 		<hr />
+		
 		<div id="actions" class="row">
 			<div class="col-md-12">
+				<a href="?page=lista_acad" class="btncancel">Cancelar</a>
 				<button type="submit" class="btnsub">Salvar</button>
 			</div>
 		</div>
