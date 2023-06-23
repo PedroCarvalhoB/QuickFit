@@ -20,7 +20,10 @@ include "../../../base/config.php";
 				$inicio = ($quantidade * $pagina) - $quantidade;
 
 				// $sql= "select * from usuario where tipo_usu = 'ALUNO' order by id_usu asc limit $inicio, $quantidade;";
-                $sql = "select * from usuario where nome_usu like '%" . $_GET['nome'] . "%' order by id_usu asc limit $inicio, $quantidade;";
+                // $sql = "select * from usuario where tipo_usu = 'ALUNO' and nome_usu like '%" . $_GET['nome'] . "%' order by id_usu asc";
+                $sql = "select * from usuario u
+                INNER JOIN matriculado m ON u.id_usu = m.id_usu
+                WHERE u.tipo_usu = 'ALUNO' AND m.id_acad = '$acad' AND u.nome_usu LIKE '%" . $_GET['nome'] . "%' order BY u.id_usu asc;";
 
 				$data_all = mysqli_query($con, $sql) or die(mysqli_error($con));
 
@@ -69,7 +72,7 @@ include "../../../base/config.php";
 					echo "<a class='btn' href=?page=fadd_ava&id=" . $info['id_usu'] . "> <i class='fa-solid fa-book'></i> </a>";
 
                     // Treinamento 
-                        echo "<a class='btn' href=?page=fadd_treino&id=" . $info['id_usu'] . "> <i class='fa-solid fa-dumbbell'></i> </a>";
+                    echo "<a class='btn' href=?page=lista_treino_alu&id=" . $info['id_usu'] . "> <i class='fa-solid fa-dumbbell'></i> </a>";
 
 				}
 				echo "</tr></tbody></table>";

@@ -20,7 +20,19 @@ include "../../../base/config.php";
                 $inicio = ($quantidade * $pagina) - $quantidade;
 
                 // $sql= "select * from usuario where tipo_usu = 'ALUNO' order by id_usu asc limit $inicio, $quantidade;";
-                $sql = "select * from usuario where nome_usu like '%" . $_GET['nome'] . "%' order by id_usu asc limit $inicio, $quantidade;";
+                // $sql = "select * from usuario where nome_usu like '%" . $_GET['nome'] . "%' order by id_usu asc limit $inicio, $quantidade;";
+                switch ($nivel) {
+					case 5:
+						$sql = "select * from usuario where nome_usu like '%" . $_GET['nome'] . "%' order by id_usu asc";
+						break;
+
+					default:
+						$sql = "select * from usuario u
+                        INNER JOIN matriculado m ON u.id_usu = m.id_usu
+                        WHERE u.tipo_usu = 'ALUNO' AND m.id_acad = '$acad' AND u.nome_usu LIKE '%" . $_GET['nome'] . "%' order BY u.id_usu ASC";
+						break;
+				}
+
 
                 $data_all = mysqli_query($con, $sql) or die(mysqli_error($erro));
 
@@ -91,34 +103,35 @@ include "../../../base/config.php";
         </div><!--list-->
 
         <!-- PAGINAÇÃO -->
-        <div id="bottom" class="row">
+        <!-- <div id="bottom" class="row">
             <div class="col-md-12">
                 <?php
-                $sqlTotal = "select * from usuario where nome_usu like '%" . $_GET['nome'] . "%' order by id_usu asc;";
-                $qrTotal = mysqli_query($con, $sqlTotal) or die(mysqli_error($con));
-                $numTotal = mysqli_num_rows($qrTotal);
-                $totalpagina = (ceil($numTotal / $quantidade) <= 0) ? 1 : ceil($numTotal / $quantidade);
+                // $sqlTotal = "select * from usuario where nome_usu like '%" . $_GET['nome'] . "%' order by id_usu asc;";
+                // $qrTotal = mysqli_query($con, $sqlTotal) or die(mysqli_error($con));
+                // $numTotal = mysqli_num_rows($qrTotal);
+                // $totalpagina = (ceil($numTotal / $quantidade) <= 0) ? 1 : ceil($numTotal / $quantidade);
 
-                $exibir = 3;
+                // $exibir = 3;
 
-                $anterior = (($pagina - 1) <= 0) ? 1 : $pagina - 1;
-                $posterior = (($pagina + 1) >= $totalpagina) ? $totalpagina : $pagina + 1;
+                // $anterior = (($pagina - 1) <= 0) ? 1 : $pagina - 1;
+                // $posterior = (($pagina + 1) >= $totalpagina) ? $totalpagina : $pagina + 1;
 
-                echo "<ul class='pagination'>";
-                echo "<li class='page-item'><a class='page-link' href='?page=filtro_usu&pagina=1'> Primeira</a></li> ";
-                echo "<li class='page-item'><a class='page-link' href=\"?page=filtro_usu&pagina=$anterior\"> Anterior</a></li> ";
+                // echo "<ul class='pagination'>";
+                // echo "<li class='page-item'><a class='page-link' href='?page=filtro_usu&pagina=1'> Primeira</a></li> ";
+                // echo "<li class='page-item'><a class='page-link' href=\"?page=filtro_usu&pagina=$anterior\"> Anterior</a></li> ";
 
-                echo "<li class='page-item'><a class='page-link' href='?page=filtro_usu&pagina=" . $pagina . "'><strong>" . $pagina . "</strong></a></li> ";
+                // echo "<li class='page-item'><a class='page-link' href='?page=filtro_usu&pagina=" . $pagina . "'><strong>" . $pagina . "</strong></a></li> ";
 
-                for ($i = $pagina + 1; $i < $pagina + $exibir; $i++) {
-                    if ($i <= $totalpagina)
-                        echo "<li class='page-item'><a class='page-link' href='?page=filtro_usu&pagina=" . $i . "'> " . $i . " </a></li> ";
-                }
+                // for ($i = $pagina + 1; $i < $pagina + $exibir; $i++) {
+                //     if ($i <= $totalpagina)
+                //         echo "<li class='page-item'><a class='page-link' href='?page=filtro_usu&pagina=" . $i . "'> " . $i . " </a></li> ";
+                // }
 
-                echo "<li class='page-item'><a class='page-link' href=\"?page=filtro_usu&pagina=$posterior\"> Pr&oacute;xima</a></li> ";
-                echo "<li class='page-item'><a class='page-link' href=\"?page=filtro_usu&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>";
+                // echo "<li class='page-item'><a class='page-link' href=\"?page=filtro_usu&pagina=$posterior\"> Pr&oacute;xima</a></li> ";
+                // echo "<li class='page-item'><a class='page-link' href=\"?page=filtro_usu&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>";
 
                 ?>
             </div>
-        </div><!--bottom-->
+        </div> -->
+        <!--bottom-->
     </div>
