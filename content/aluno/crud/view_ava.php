@@ -68,19 +68,18 @@
 						<?php echo $row['objetivo']; ?>
 					</p>
 				</div>
+
+				<div class="col-md-4">
+					<p><strong>Data da Avaliação</strong></p>
+					<p>
+						<?php echo date('d-m-Y', strtotime($row['dt_aval'])); ?>
+					</p>
+				</div>
 			</div>
 
-			<br>
 			<hr>
+			
 			<a href="?page=aluno_ava" class="btncancel">Voltar</a>
-		</div>
-
-		<hr />
-
-		<div id="actions" class="row botoes">
-			<div class="col-md-12">
-				<a href="?page=aluno_ava" class="btncancel">Voltar</a>
-			</div>
 		</div>
 
 	</main>
