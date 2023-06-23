@@ -28,7 +28,7 @@ if (!isset($_SESSION))
 			$nivel = $_SESSION['UsuarioNivel'];
 
 			if ($nivel >= 3) {
-				echo '<a "href="?page=fadd_cad" class="btnsub">Novo Usuário</a>';
+				echo '<a href="?page=fadd_cad" class="btnsub">Novo Usuário</a>';
 			}
 			?>
 		</div>
