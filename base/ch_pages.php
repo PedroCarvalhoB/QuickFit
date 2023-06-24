@@ -174,6 +174,10 @@ if (isset($_GET['page'])) {
             include "content/professor/crud/view_treino.php";
             break;
 
+        case 'bloquear_treino':
+            include "content/professor/crud/bloquear_treino.php";
+            break;
+
         case 'view_adm':    
             include "content/admin/crud/view_adm.php";
             break;

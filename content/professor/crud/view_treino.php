@@ -11,7 +11,7 @@ $row_dt = mysqli_fetch_array($sql_dt);
 <div id="main" class="container-fluid">
     <div id="top" class="row">
         <div class="col-md-11 titulo">
-            <h2>Vizualizando Treino<?php echo " ".$row_dt['dt_inicio']." ";?></h2>
+            <h2>Vizualizando Treino</h2>
         </div>
         <hr>
     </div>

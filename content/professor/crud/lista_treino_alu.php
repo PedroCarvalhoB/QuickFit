@@ -10,7 +10,7 @@
 		</div>
 
 		<div class="col-md-2">
-			<?php echo "<a href=?page=fadd_treino&id=".$row['id_usu']." class='btnsub'>Novo Treino</a>"; ?>
+			<?php echo "<a href=?page=bloquear_treino&id=".$row['id_usu']." class='btnsub'>Novo Treino</a>"; ?>
 		</div>
         <hr>
 	</div>
