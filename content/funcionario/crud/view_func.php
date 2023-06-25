@@ -28,7 +28,7 @@
 		$row_acad = mysqli_fetch_array($sql_acad);
 		?>
 		<div id="main" class="container-fluid">
-			<h3 class="page-header">Visualizar registro do Professor - <?php echo $id; ?> </h3>
+			<h3 class="page-header">Visualizar registro do Aluno - <?php echo $id; ?> </h3>
 			
 			<hr>
 			
@@ -54,8 +54,10 @@
 							echo 'Feminino';
 						?></p>
 				</div>
+				
+				
 			</div>
-
+			
 			<br>
 
 			<div class="row">
@@ -110,7 +112,7 @@
 			<hr />
 			<div id="actions" class="row">
 				<div class="col-md-12">
-					<?php echo "<a href=?page=fedita_prof&id_usu=" . $row['id_usu'] . " class='btnsub'>Editar</a>"; ?>
+					<?php echo "<a href=?page=fedita_func&id_usu=" . $row['id_usu'] . " class='btnsub'>Editar</a>"; ?>
 				</div>
 			</div>
 			<br>

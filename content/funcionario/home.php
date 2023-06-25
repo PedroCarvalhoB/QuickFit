@@ -7,6 +7,8 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>Bem vindo a  home de nosso site, Funcionário! Volte ao trabalho.</h1>
+    <main style="padding: 10px;">
+        <h2>Bem vindo a  home de nosso site, Funcionário! Volte ao trabalho.</h2>
+    </main>
 </body>
 </html>

@@ -7,6 +7,8 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>Bem vindo a  home de nosso site</h1>
+    <main style="padding: 10px;">
+        <h1>Bem vindo a  home de nosso site</h1>
+    </main>
 </body>
 </html>

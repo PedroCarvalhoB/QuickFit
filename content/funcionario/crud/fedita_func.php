@@ -1,8 +1,8 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 
 <head>
-	<title>Perfil</title>
+	<title>Editar Perfil</title>
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -26,13 +26,13 @@
 		?>
 		<div id="main" class="container-fluid">
 		
-			<h3 class="page-header">Editar registro do Aluno - <?php echo $id; ?></h3>
+			<h3 class="page-header">Editar registro do Recepcionista - <?php echo $id; ?></h3>
 
 			<br>
 
 			<!-- Área de campos do formulário de edição-->
 
-			<form action="?page=atualiza_alu&id_usu=<?php echo $row['id_usu']; ?>" method="post">
+			<form action="?page=atualiza_func&id_usu=<?php echo $row['id_usu']; ?>" method="post">
 
 				<!-- 1ª LINHA -->
 				<input type="hidden" name="id_usu" value="<?php echo $row['id_usu']; ?>">
@@ -68,8 +68,8 @@
 						<?php
 						if ($row["sexo"] == "M")
 							echo '<input type="radio"name="sexo"id="sexo"value="M" checked>Masculino 
-						&nbsp; &nbsp; 
-						<br>
+						&nbsp; &nbsp;
+                        <br> 
 						<input type="radio"name="sexo"id="sexo"value="F">Feminino';
 						else
 							echo '<input type="radio"name="sexo"id="sexo"value="M">Masculino 
@@ -122,7 +122,7 @@
 
 				<div id="actions" class="row botoes">
 					<div class="col-md-12">
-						<a href="?page=view_alu" class="btncancel">Voltar</a>
+						<a href="?page=view_func" class="btncancel">Voltar</a>
 						<button type="submit" class="btnsub">Salvar Alterações</button>
 					</div>
 				</div>

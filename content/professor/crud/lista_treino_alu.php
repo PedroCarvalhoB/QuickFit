@@ -12,9 +12,9 @@
 		<div class="col-md-2">
 			<?php echo "<a href=?page=bloquear_treino&id=".$row['id_usu']." class='btnsub'>Novo Treino</a>"; ?>
 		</div>
-        <hr>
 	</div>
     
+    <hr>
     <div id="bloco-list-pag">
         <div id="list" class="row">
             <div class="table-responsive col-xs-12">

@@ -54,6 +54,17 @@
 							echo 'Feminino';
 						?></p>
 				</div>
+				
+				
+			</div>
+			
+			<br>
+
+			<div class="row">
+				<div class="col-md-3">
+					<p><strong>Academia</strong></p>
+					<p><?php echo $row_acad['nome_acad']; ?></p>
+				</div>
 			</div>
 
 			<br>
@@ -92,10 +103,7 @@
 					<p><strong>Complemento</strong></p>
 					<p><?php echo $row['complemento']; ?></p>
 				</div>
-				<div class="col-md-3">
-					<p><strong>Academia</strong></p>
-					<p><?php echo $row_acad['nome_acad']; ?></p>
-				</div>
+				
 			</div>
 			<hr />
 			<div id="actions" class="row">

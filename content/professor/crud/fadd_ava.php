@@ -68,8 +68,8 @@
 
                 <div id="actions" class="row botoes">
                     <div class="col-md-12">
-                        <button type="submit" class="btnsub">Salvar</button>
                         <a href="?page=lista_ava" class="btncancel">Cancelar</a>
+                        <button type="submit" class="btnsub">Salvar</button>
                     </div>
                 </div>
 
