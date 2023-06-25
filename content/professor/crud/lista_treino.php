@@ -42,7 +42,7 @@ if (!isset($_SESSION))
                 $sql = "SELECT * FROM usuario AS u 
                 INNER JOIN matriculado AS m ON u.id_usu = m.id_usu
                 WHERE tipo_usu = 'ALUNO' AND id_acad = $acad 
-                ORDER BY u.id_usu ASC limit $inicio, $quantidade;";
+                ORDER BY u.id_usu ASC;";
 
 				$data_all = mysqli_query($con, $sql) or die(mysqli_error($con));
 

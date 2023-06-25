@@ -158,6 +158,10 @@ if (isset($_GET['page'])) {
             include "content/professor/crud/filtro_ava.php";
             break;
 
+        case 'filtro_treino':
+            include "content/professor/crud/filtro_treino.php";
+            break;
+
         case 'view_ava':
             include "content/aluno/crud/view_ava.php";
             break;
