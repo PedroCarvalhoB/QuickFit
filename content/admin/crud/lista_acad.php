@@ -48,7 +48,8 @@ if (!isset($_SESSION))
                 echo "<td><strong>Nome</strong></td>";
                 echo "<td><strong>CNPJ</strong></td>";
                 echo "<td><strong>CEP</strong></td>";
-                // echo "<td class='actions'><strong>Ações</strong></td>";
+                echo "<td><strong>Ativo</strong></td>";
+                echo "<td class='actions'><strong>Ações</strong></td>";
                 echo "</tr></thead><tbody>";
 
                 while ($info = mysqli_fetch_array($data_all)) {
@@ -57,9 +58,21 @@ if (!isset($_SESSION))
                     echo "<td>" . $info['nome_acad'] . "</td>";
                     echo "<td>" . $info['cnpj'] . "</td>";
                     echo "<td>" . $info['cep'] . "</td>";
+                    if ($info['status_acad'] == 1) {
+						echo "<td>SIM</td>";
+					} else if ($info['status_acad'] == 0) {
+						echo "<td>NÃO</td>";
+					}
                     echo "<td><div class='btn-group btn-group-sm'>";
-                    // Visualizar
-                    // echo "<a class='btn' href=?page=view_apar&id=" . $info['id_apar'] . " > <i class='fa-solid fa-eye'></i> </a>";
+
+                    // Block e Desblock				
+                    if ($info['status_acad'] == 1) {
+                        echo "<a class='btn'  href=?page=block_acad&id=" . $info['id_acad'] . "> <i class='fa-solid fa-ban'></i> </a>";
+                    } else if ($info['status_acad'] == 0) {
+                        echo "<a class='btn'  href=?page=ativa_acad&id=" . $info['id_acad'] . "><i class='fa-solid fa-check'></i></a></div></td>";
+                    }
+
+
                 }
                 echo "</tr></tbody></table>";
                 ?>

@@ -5,8 +5,19 @@ if (!isset($_SESSION))
 
 <div id="main" class="container-fluid">
 	<div id="top" class="row">
-		<div class="col-md-10">
+		<div class="col-md-2">
 			<h2>Avaliações</h2>
+		</div>
+
+		<div class="col-md-6">
+			<div class="input-group h2">
+				<input name="data-[search]" onKeydown="Javascript: if (event.keyCode==13) PesquisaConteudoAva();" class="form-control" id="search_usu" type="text" placeholder="Pesquisar Usuários">&nbsp;
+				<span class="input-group-btn">
+					<button class="btn" onclick="PesquisaConteudoAva()" type="submit"> 
+					<i class="fa-solid fa-magnifying-glass"></i>
+					</button>
+				</span>
+			</div>
 		</div>
 
 		<div class='col-md-2'>
