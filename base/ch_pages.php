@@ -70,6 +70,10 @@ if (isset($_GET['page'])) {
             include "content/aluno/crud/view_alu.php";
             break;
 
+        case 'view_treino_alu':
+            include "content/aluno/crud/view_treino_alu.php";
+            break;
+
         case 'atualiza_alu':
             include "content/aluno/crud/atualiza_alu.php";
             break;

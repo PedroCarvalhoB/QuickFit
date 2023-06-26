@@ -35,7 +35,7 @@
             <ul class="sub-menu">
                 <li><a class="link_name">Visualizar</a></li>
                 <li><a href="?page=aluno_ava">Avaliação</a></li>
-                <li><a href="?page=view_treino">Treino</a></li>
+                <li><a href="?page=view_treino_alu">Treino</a></li>
             </ul>
         </li>
         
