@@ -24,18 +24,22 @@
         </li>
 
         <li>
-            <div class="iocn-link">
-                <a>
-                    <i class="fa fa-list" aria-hidden="true"></i>
+            <a href="?page=aluno_ava">
+                <i class="fa-solid fa-book"></i>
+                <span class="link_name">Avaliação</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="?page=aluno_ava">Avaliação</a></li>
+            </ul>
+        </li>
 
-                    <span class="link_name">Visualizar</span>
-                </a>
-                <i class='bx bxs-chevron-down arrow'></i>
-            </div>
-            <ul class="sub-menu">
-                <li><a class="link_name">Visualizar</a></li>
-                <li><a href="?page=aluno_ava">Avaliação</a></li>
-                <li><a href="?page=view_treino_alu">Treino</a></li>
+        <li>
+            <a href="?page=view_treino_alu">
+                <i class="fa-solid fa-dumbbell"></i>
+                <span class="link_name">Treinos</span>
+            </a>
+            <ul class="sub-menu blank">
+                <li><a class="link_name" href="?page=view_treino_alu">Treinos</a></li>
             </ul>
         </li>
         
