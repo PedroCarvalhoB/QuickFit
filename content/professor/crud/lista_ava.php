@@ -1,6 +1,6 @@
 <?php
 if (!isset($_SESSION))
-  session_start();
+	session_start();
 ?>
 
 <div id="main" class="container-fluid">
@@ -11,10 +11,11 @@ if (!isset($_SESSION))
 
 		<div class="col-md-6">
 			<div class="input-group h2">
-				<input name="data-[search]" onKeydown="Javascript: if (event.keyCode==13) PesquisaConteudoAva();" class="form-control" id="search_usu" type="text" placeholder="Pesquisar Usuários">&nbsp;
+				<input name="data-[search]" onKeydown="Javascript: if (event.keyCode==13) PesquisaConteudoAva();"
+					class="form-control" id="search_usu" type="text" placeholder="Pesquisar Usuários">&nbsp;
 				<span class="input-group-btn">
-					<button class="btn" onclick="PesquisaConteudoAva()" type="submit"> 
-					<i class="fa-solid fa-magnifying-glass"></i>
+					<button class="btn" onclick="PesquisaConteudoAva()" type="submit">
+						<i class="fa-solid fa-magnifying-glass"></i>
 					</button>
 				</span>
 			</div>
@@ -31,6 +32,7 @@ if (!isset($_SESSION))
 			<div class="table-responsive col-xs-12">
 				<?php
 				$id = $_SESSION['UsuarioID'];
+				$acad = $_SESSION['UsuarioAcad'];
 
 				$quantidade = 10;
 
@@ -48,28 +50,44 @@ if (!isset($_SESSION))
 				echo "<thead><tr>";
 				echo "<td><strong>ID</strong></td>";
 				echo "<td><strong>Aluno</strong></td>";
-				echo "<td><strong>Peso</strong></td>";
-				echo "<td><strong>Altura</strong></td>";
-				echo "<td><strong>IMC</strong></td>";
-				echo "<td><strong>Data Aval.</strong></td>";
+				echo "<td><strong>Possui Treino</strong></td>";
+				echo "<td><strong>Data Início Treino</strong></td>";
 				echo "<td class='actions'><strong>Ações</strong></td>";
 				echo "</tr></thead><tbody>";
 
 				while ($info = mysqli_fetch_array($data_all)) {
-					echo "<tr>";
-					echo "<td>" . $info['id_aval'] . "</td>";
-					echo "<td>" . $info['nome_usu'] . "</td>";
-					echo "<td>" . $info['peso'] . "</td>";
-					echo "<td>" . $info['altura'] . "</td>";
-					echo "<td>" . $info['imc'] . "</td>";
-					echo "<td>" . date('d/m/Y', strtotime($info['dt_aval'])) . "</td>";
-					echo "<td><div class='btn-group btn-group-sm'>";
 
-					// Visualizar
-					echo "<a class='btn' href=?page=prof_ava&id=" . $info['id_usu'] . " > <i class='fa-solid fa-eye'></i> </a>"; 
+					$sql_ava = "SELECT * FROM avaliacao AS a
+					INNER JOIN usuario AS u ON id_alu = u.id_usu
+					WHERE u.id_usu = " . $info['id_alu'] . "
+				ORDER BY u.id_usu ASC limit $inicio, $quantidade;";
 
-					// Avaliação
-					echo "<a class='btn' href=?page=fadd_ava&cpf=" . $info['cpf'] . "> <i class='fa-solid fa-book'></i> </a>";
+					$data_ava = mysqli_query($con, $sql_ava) or die(mysqli_error($con));
+
+					$info_ava = mysqli_fetch_array($data_ava);
+
+					if (mysqli_num_rows($data_ava) == 0) {
+						echo "<tr>";
+						echo "<td>" . $info_ava['id_usu'] . "</td>";
+						echo "<td>" . $info_ava['nome_usu'] . "</td>";
+						echo "<td>Não</td>";
+						echo "<td>Null</td>";
+						echo "<td><div class='btn-group btn-group-sm'>";
+
+					} else {
+						echo "<tr>";
+						echo "<td>" . $info_ava['id_usu'] . "</td>";
+						echo "<td>" . $info_ava['nome_usu'] . "</td>";
+						echo "<td>Sim</td>";
+						echo "<td>" . date('d/m/Y', strtotime($info_ava['dt_aval'])) . "</td>";
+						echo "<td><div class='btn-group btn-group-sm'>";
+
+						// Visualizar
+						echo "<a class='btn' href=?page=lista_ava_alu&id=" . $info_ava['id_alu'] . " > <i class='fa-solid fa-eye'></i> </a>";
+
+						// Avaliação
+						echo "<a class='btn' href=?page=fadd_ava&cpf=" . $info_ava['cpf'] . "> <i class='fa-solid fa-book'></i> </a>";
+					}
 				}
 				echo "</tr></tbody></table>";
 				?>
@@ -82,7 +100,7 @@ if (!isset($_SESSION))
 				<?php
 				$sqlTotal = "SELECT * FROM avaliacao AS a
                 INNER JOIN usuario AS u ON id_alu = id_usu
-                WHERE id_prof = $id limit $inicio, $quantidade;";
+                WHERE id_alu = $id;";
 				$qrTotal = mysqli_query($con, $sqlTotal) or die(mysqli_error($con));
 				$numTotal = mysqli_num_rows($qrTotal);
 				$totalpagina = (ceil($numTotal / $quantidade) <= 0) ? 1 : ceil($numTotal / $quantidade);

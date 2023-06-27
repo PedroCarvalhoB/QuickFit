@@ -17,7 +17,9 @@
     <main>
         <?php
         $id = (int) $_GET['id'];
-        $sql = mysqli_query($con, "select * from avaliacao where id_alu = '" . $id . "';");
+        $id_aval = (int) $_GET['id_aval'];
+
+        $sql = mysqli_query($con, "select * from avaliacao where id_aval = '" . $id_aval . "';");
         $row = mysqli_fetch_array($sql);
 
         $sql_alu = mysqli_query($con, "select * from usuario where id_usu = '" . $id . "';");
