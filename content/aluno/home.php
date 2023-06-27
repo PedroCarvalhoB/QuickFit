@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <main style="padding: 10px;"> 
+    <main style="padding: 10px;">
         <?php
         if (!isset($_SESSION)) {
             session_start();
@@ -22,7 +22,7 @@
         <div id="main" class="container-fluid">
             <div id="top" class="row">
                 <div class="col-md-11 titulo">
-                    <h2>Olá, seja bem-vido(a) de volta à sua área de treinos!</h2>
+                    <h2>Olá, seja bem-vido(a) de volta!</h2>
                 </div>
             </div>
 
@@ -74,13 +74,12 @@
                                 echo "<td><div class='btn-group btn-group-sm'>";
                             }
                             echo "</tr></tbody></table>";
+                            echo "<hr>";
+                            echo "<br><br>";
                         }
                         ?>
-                        <br>
                     </div><!-- Div Table -->
 
-                    <hr>
-                    <br>
 
                     <div>
                         <?php
@@ -115,13 +114,11 @@
                                 echo "<td><div class='btn-group btn-group-sm'>";
                             }
                             echo "</tr></tbody></table>";
+                            echo "<hr>";
+                            echo "<br><br>";
                         }
                         ?>
-                        <br>
                     </div>
-
-                    <hr>
-                    <br>
 
                     <div>
                         <?php
@@ -178,8 +175,29 @@
                         $qrTotal = mysqli_query($con, $sqlTotal) or die(mysqli_error($con));
                         $numTotal = mysqli_num_rows($qrTotal);
 
-                        if ($numTotal = 0) {
-                            echo "<h2>Você ainda não tem um treino <br> Vá ao professor e peça para fazê-lo.</h2>";
+                        if ($numTotal != 0) {
+                            $totalpagina = (ceil($numTotal / $quantidade) <= 0) ? 1 : ceil($numTotal / $quantidade);
+
+                            $exibir = 3;
+
+                            $anterior = (($pagina - 1) <= 0) ? 1 : $pagina - 1;
+                            $posterior = (($pagina + 1) >= $totalpagina) ? $totalpagina : $pagina + 1;
+
+                            echo "<ul class='pagination'>";
+                            echo "<li class='page-item'><a class='page-link' href='?page=view_treino_alu&pagina=1&id=$id'> Primeira</a></li> ";
+                            echo "<li class='page-item'><a class='page-link' href=\"?page=view_treino_alu&pagina=$anterior&id=$id\"> Anterior</a></li> ";
+
+                            echo "<li class='page-item'><a class='page-link' href='?page=view_treino_alu&pagina=" . $pagina . "&id=$id'><strong>" . $pagina . "</strong></a></li> ";
+
+                            for ($i = $pagina + 1; $i < $pagina + $exibir; $i++) {
+                                if ($i <= $totalpagina)
+                                    echo "<li class='page-item'><a class='page-link' href='?page=view_treino_alu&pagina=" . $i . "&id=$id'> " . $i . " </a></li> ";
+                            }
+
+                            echo "<li class='page-item'><a class='page-link' href=\"?page=view_treino_alu&pagina=$posterior&id=$id\"> Pr&oacute;xima</a></li> ";
+                            echo "<li class='page-item'><a class='page-link' href=\"?page=view_treino_alu&pagina=$totalpagina&id=$id\"> &Uacute;ltima</a></li></ul>";
+                        } else {
+                            echo "<h2>Você ainda não possui um treino, vá até seu professor professor e peça para fazê-lo.</h2>";
                         }
 
                         ?>
