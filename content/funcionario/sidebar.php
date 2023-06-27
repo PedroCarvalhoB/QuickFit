@@ -30,7 +30,7 @@
                 <span class="link_name"> Alunos</span>
             </a>
             <ul class="sub-menu blank">
-                <li><a class="link_name" href="?page=lista_usu">Lista de Usuário</a></li>
+                <li><a class="link_name" href="?page=lista_usu">Lista de Alunos</a></li>
             </ul>
         </li>
 

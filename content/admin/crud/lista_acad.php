@@ -6,7 +6,7 @@ if (!isset($_SESSION))
 <div id="main" class="container-fluid">
     <div id="top" class="row">
         <div class="col-md-10">
-            <h2>Academia</h2>
+            <h2>Academias Parceiras</h2>
         </div>
 
         <div class="col-md-2">
