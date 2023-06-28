@@ -77,7 +77,7 @@
 
                     <div>
                         <?php
-                        $sql = "SELECT * FROM execucao e
+                        $sql_b = "SELECT * FROM execucao e
                             INNER JOIN treinamento t ON e.id_treinamento = t.id_treinamento
                             INNER JOIN aparelho a ON e.id_apar = a.id_apar
                             INNER JOIN exercicio er ON e.id_exec = er.id_exec
@@ -85,10 +85,10 @@
                             WHERE t.id_alu = '$id' and t.treino = 'b' AND dt_final IS NULL
                             GROUP BY e.id_execucao ORDER BY t.treino ASC ;";
 
-                        $data_all = mysqli_query($con, $sql) or die(mysqli_error($con));
-                        $check = mysqli_num_rows($data_all);
+                        $data_all_b = mysqli_query($con, $sql_b) or die(mysqli_error($con));
+                        $check_b = mysqli_num_rows($data_all_b);
 
-                        if ($check != 0) {
+                        if ($check_b != 0) {
                             echo "<h3>Treino B</h3>";
                             echo "<table class='table table-striped' cellspacing='0' cellpading='0'>";
                             echo "<thead><tr>";
@@ -98,7 +98,7 @@
                             echo "<td><strong>Repetições</strong></td>";
                             echo "</tr></thead><tbody>";
 
-                            while ($info = mysqli_fetch_array($data_all)) {
+                            while ($info = mysqli_fetch_array($data_all_b)) {
                                 echo "<tr>";
                                 echo "<td>" . $info['nome_apar'] . "</td>";
                                 echo "<td>" . $info['nome_exec'] . "</td>";
@@ -114,7 +114,7 @@
 
                     <div>
                         <?php
-                        $sql = "SELECT * FROM execucao e
+                        $sql_c = "SELECT * FROM execucao e
                             INNER JOIN treinamento t ON e.id_treinamento = t.id_treinamento
                             INNER JOIN aparelho a ON e.id_apar = a.id_apar
                             INNER JOIN exercicio er ON e.id_exec = er.id_exec
@@ -122,10 +122,10 @@
                             WHERE t.id_alu = '$id' and t.treino = 'c' AND dt_final IS NULL
                             GROUP BY e.id_execucao ORDER BY t.treino ASC;";
 
-                        $data_all = mysqli_query($con, $sql) or die(mysqli_error($con));
-                        $check = mysqli_num_rows($data_all);
+                        $data_all_c = mysqli_query($con, $sql_c) or die(mysqli_error($con));
+                        $check_c = mysqli_num_rows($data_all_c);
                         
-                        if ($check != 0) {
+                        if ($check_c != 0) {
                             echo "<h3>Treino C</h3>";
                             echo "<table class='table table-striped' cellspacing='0' cellpading='0'>";
                             echo "<thead><tr>";
@@ -135,7 +135,7 @@
                             echo "<td><strong>Repetições</strong></td>";
                             echo "</tr></thead><tbody>";
 
-                            while ($info = mysqli_fetch_array($data_all)) {
+                            while ($info = mysqli_fetch_array($data_all_c)) {
                                 echo "<tr>";
                                 echo "<td>" . $info['nome_apar'] . "</td>";
                                 echo "<td>" . $info['nome_exec'] . "</td>";
