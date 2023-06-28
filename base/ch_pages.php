@@ -126,6 +126,22 @@ if (isset($_GET['page'])) {
             include "content/admin/crud/lista_exec.php";
             break;
 
+        case 'block_exec':
+            include "content/admin/crud/block_exec.php";
+            break;
+
+        case 'ativa_exec':
+            include "content/admin/crud/ativa_exec.php";
+            break;
+
+        case 'fedita_exec':
+            include "content/admin/crud/fedita_exec.php";
+            break;
+
+        case 'atualiza_exec':
+            include "content/admin/crud/atualiza_exec.php";
+            break;
+
         case 'fadd_apar_exec':
             include "content/gerente/crud/fadd_apar_exec.php";
             break;

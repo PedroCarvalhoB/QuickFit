@@ -47,6 +47,7 @@ if (!isset($_SESSION))
                 echo "<td><strong>ID</strong></td>";
                 echo "<td><strong>Nome</strong></td>";
                 echo "<td><strong>Grupo Muscular</strong></td>";
+                echo "<td><strong>Status</strong></td>";
                 echo "<td class='actions'><strong>Ações</strong></td>";
                 echo "</tr></thead><tbody>";
 
@@ -55,9 +56,27 @@ if (!isset($_SESSION))
                     echo "<td>" . $info['id_exec'] . "</td>";
                     echo "<td>" . $info['nome_exec'] . "</td>";
                     echo "<td>" . $info['grupo_muscular'] . "</td>";
+                    
+                    if ($info['status_exec'] == 1) {
+						echo "<td>Ativo</td>";
+					} else if ($info['status_exec'] == 0) {
+						echo "<td>Inativo</td>";
+					}
+
                     echo "<td><div class='btn-group btn-group-sm'>";
+                    
                     // Visualizar
                     echo "<a class='btn' href=?page=view_exec&id=" . $info['id_exec'] . " > <i class='fa-solid fa-eye'></i> </a>";
+
+                    // Editar
+                    echo "<a class='btn' href=?page=fedita_exec&id=" . $info['id_exec'] . "> <i class='fa-solid fa-pen'></i> </a>";
+
+                    // Block e Desblock				
+                    if ($info['status_exec'] == 1) {
+                        echo "<a class='btn'  href=?page=block_exec&id=" . $info['id_exec'] . "> <i class='fa-solid fa-ban'></i> </a>";
+                    } else if ($info['status_exec'] == 0) {
+                        echo "<a class='btn'  href=?page=ativa_exec&id=" . $info['id_exec'] . "><i class='fa-solid fa-check'></i></a></div></td>";
+                    }
                 }
                 echo "</tr></tbody></table>";
                 ?>

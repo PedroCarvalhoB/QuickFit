@@ -84,7 +84,7 @@ if (!isset($_SESSION))
 					if ($info['status_usu'] == 1) {
 						echo "<td>Ativo</td>";
 					} else if ($info['status_usu'] == 0) {
-						echo "<td>NÃO</td>";
+						echo "<td>Inativo</td>";
 					}
 					echo "<td>" . date('d/m/Y', strtotime($info['dt_nasc'])) . "</td>";
 					echo "<td><div class='btn-group btn-group-sm'>";
