@@ -37,11 +37,6 @@
                         $id = $_SESSION['UsuarioID'];
                         $acad = $_SESSION['UsuarioAcad'];
 
-                        $quantidade = 10;
-
-                        $pagina = (isset($_GET['pagina'])) ? (int) $_GET['pagina'] : 1;
-                        $inicio = ($quantidade * $pagina) - $quantidade;
-
                         // $sql= "select * from usuario where tipo_usu = 'ALUNO' order by id_usu asc limit $inicio, $quantidade;";
                         $sql = "SELECT * FROM execucao e
                             INNER JOIN treinamento t ON e.id_treinamento = t.id_treinamento
@@ -49,7 +44,7 @@
                             INNER JOIN exercicio er ON e.id_exec = er.id_exec
                             INNER JOIN usuario u ON t.id_alu = u.id_usu
                             WHERE t.id_alu = '$id' and t.treino = 'a' AND dt_final IS NULL
-                            GROUP BY e.id_execucao ORDER BY t.treino ASC limit $inicio, $quantidade;";
+                            GROUP BY e.id_execucao ORDER BY t.treino ASC;";
 
                         $data_all = mysqli_query($con, $sql) or die(mysqli_error($con));
 
@@ -88,9 +83,10 @@
                             INNER JOIN exercicio er ON e.id_exec = er.id_exec
                             INNER JOIN usuario u ON t.id_alu = u.id_usu
                             WHERE t.id_alu = '$id' and t.treino = 'b' AND dt_final IS NULL
-                            GROUP BY e.id_execucao ORDER BY t.treino ASC limit $inicio, $quantidade;";
+                            GROUP BY e.id_execucao ORDER BY t.treino ASC ;";
 
                         $data_all = mysqli_query($con, $sql) or die(mysqli_error($con));
+                        $check = mysqli_num_rows($data_all);
 
                         if ($check != 0) {
                             echo "<h3>Treino B</h3>";
@@ -124,10 +120,11 @@
                             INNER JOIN exercicio er ON e.id_exec = er.id_exec
                             INNER JOIN usuario u ON t.id_alu = u.id_usu
                             WHERE t.id_alu = '$id' and t.treino = 'c' AND dt_final IS NULL
-                            GROUP BY e.id_execucao ORDER BY t.treino ASC limit $inicio, $quantidade;";
+                            GROUP BY e.id_execucao ORDER BY t.treino ASC;";
 
                         $data_all = mysqli_query($con, $sql) or die(mysqli_error($con));
-
+                        $check = mysqli_num_rows($data_all);
+                        
                         if ($check != 0) {
                             echo "<h3>Treino C</h3>";
                             echo "<table class='table table-striped' cellspacing='0' cellpading='0'>";
