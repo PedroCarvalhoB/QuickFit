@@ -16,13 +16,11 @@
 <body>
 	<main>
 		<?php
-		if (!isset($_SESSION))
-			session_start();
-		?>
-		<?php
-		$id = $_SESSION['UsuarioID'];
-		$sql = mysqli_query($con, "select * from avaliacao where id_alu = '" . $id . "';");
-		$row = mysqli_fetch_array($sql);
+		$id = (int) $_GET['id'];
+        $id_aval = (int) $_GET['id_aval'];
+
+		$sql = mysqli_query($con, "select * from avaliacao where id_aval = '" . $id_aval . "';");
+        $row = mysqli_fetch_array($sql);
 
 		$sql_alu = mysqli_query($con, "select * from usuario where id_usu = '" . $id . "';");
 		$row_alu = mysqli_fetch_array($sql_alu);
@@ -104,7 +102,7 @@
 
 			<hr>
 			
-			<a href="?page=aluno_ava" class="btncancel">Voltar</a>
+			<?php echo "<a href='?page=lista_ava_alu&id=$id' class='btncancel'>Voltar</a>";?>
 		</div>
 
 	</main>
