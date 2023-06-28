@@ -50,8 +50,8 @@ if (!isset($_SESSION))
 				echo "<thead><tr>";
 				echo "<td><strong>ID</strong></td>";
 				echo "<td><strong>Aluno</strong></td>";
-				echo "<td><strong>Possui Treino</strong></td>";
-				echo "<td><strong>Data Início Treino</strong></td>";
+				echo "<td><strong>Possui Avaliação</strong></td>";
+				echo "<td><strong>Data da Avaliação</strong></td>";
 				echo "<td class='actions'><strong>Ações</strong></td>";
 				echo "</tr></thead><tbody>";
 
@@ -60,7 +60,7 @@ if (!isset($_SESSION))
 					$sql_ava = "SELECT * FROM avaliacao AS a
 					INNER JOIN usuario AS u ON id_alu = u.id_usu
 					WHERE u.id_usu = " . $info['id_alu'] . "
-				ORDER BY u.id_usu ASC limit $inicio, $quantidade;";
+					ORDER BY u.id_usu ASC limit $inicio, $quantidade;";
 
 					$data_ava = mysqli_query($con, $sql_ava) or die(mysqli_error($con));
 

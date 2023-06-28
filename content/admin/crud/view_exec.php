@@ -50,9 +50,9 @@
 
                 <div class="row">
                     <p><strong>Imagem</strong></p>
-                    <p>
-                        <?php echo $row['imagem'] ?>
-                    </p>
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <video controls src="assets/videos_exercicios/<?php echo $row['imagem'] ?>" muted></video>
+                    </div>
                 </div>
                 
                 <br>
