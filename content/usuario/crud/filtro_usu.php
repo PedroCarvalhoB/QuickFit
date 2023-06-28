@@ -76,7 +76,7 @@ include "../../../base/config.php";
                             echo "<a class='btn' href=?page=fadd_treino&id=" . $info['id_usu'] . "> <i class='fa-solid fa-dumbbell'></i> </a>";
                             break;
 
-                        case 4:
+                        case 4 && 5:
                             // Editar
                             echo "<a class='btn' href=?page=fedita_usu&id=" . $info['id_usu'] . "> <i class='fa-solid fa-pen'></i> </a>";
 
