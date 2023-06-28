@@ -53,7 +53,9 @@
 
                         $data_all = mysqli_query($con, $sql) or die(mysqli_error($con));
 
-                        if (mysqli_num_rows($data_all) != 0) {
+                        $check = mysqli_num_rows($data_all);
+
+                        if ($check != 0) {
                             echo "<h3>Treino A</h3>";
                             echo "<table class='table table-striped' cellspacing='0' cellpading='0'>";
                             echo "<thead><tr>";
@@ -72,7 +74,6 @@
                                 echo "<td><div class='btn-group btn-group-sm'>";
                             }
                             echo "</tr></tbody></table>";
-                            echo "<hr>";
                             echo "<br><br>";
                         }
                         ?>
@@ -91,7 +92,7 @@
 
                         $data_all = mysqli_query($con, $sql) or die(mysqli_error($con));
 
-                        if (mysqli_num_rows($data_all) != 0) {
+                        if ($check != 0) {
                             echo "<h3>Treino B</h3>";
                             echo "<table class='table table-striped' cellspacing='0' cellpading='0'>";
                             echo "<thead><tr>";
@@ -110,7 +111,6 @@
                                 echo "<td><div class='btn-group btn-group-sm'>";
                             }
                             echo "</tr></tbody></table>";
-                            echo "<hr>";
                             echo "<br><br>";
                         }
                         ?>
@@ -128,7 +128,7 @@
 
                         $data_all = mysqli_query($con, $sql) or die(mysqli_error($con));
 
-                        if (mysqli_num_rows($data_all) != 0) {
+                        if ($check != 0) {
                             echo "<h3>Treino C</h3>";
                             echo "<table class='table table-striped' cellspacing='0' cellpading='0'>";
                             echo "<thead><tr>";
@@ -148,55 +148,14 @@
                             }
                             echo "</tr></tbody></table>";
                         }
+
+                        if ($check == 0) {
+                            echo "<h2>Sua ficha de treinamento ainda não está pronta.<br> Aguarde até que seu professor faça ela!</h2>";
+                        }
                         ?>
                     </div>
 
                 </div><!--list-->
-
-                <br>
-
-                <!-- PAGINAÇÃO -->
-                <div id="bottom" class="row">
-                    <div class="col-md-12">
-                        <?php
-                        $sqlTotal = "SELECT * FROM execucao e
-                        INNER JOIN treinamento t ON e.id_treinamento = t.id_treinamento
-                        INNER JOIN aparelho a ON e.id_apar = a.id_apar
-                        INNER JOIN exercicio er ON e.id_exec = er.id_exec
-                        INNER JOIN usuario u ON t.id_alu = u.id_usu
-                        WHERE t.id_alu = '$id' AND dt_final IS NULL
-                        GROUP BY e.id_execucao ORDER BY t.treino ASC;";
-                        $qrTotal = mysqli_query($con, $sqlTotal) or die(mysqli_error($con));
-                        $numTotal = mysqli_num_rows($qrTotal);
-
-                        if ($numTotal != 0) {
-                            $totalpagina = (ceil($numTotal / $quantidade) <= 0) ? 1 : ceil($numTotal / $quantidade);
-
-                            $exibir = 3;
-
-                            $anterior = (($pagina - 1) <= 0) ? 1 : $pagina - 1;
-                            $posterior = (($pagina + 1) >= $totalpagina) ? $totalpagina : $pagina + 1;
-
-                            echo "<ul class='pagination'>";
-                            echo "<li class='page-item'><a class='page-link' href='?page=view_treino_alu&pagina=1&id=$id'> Primeira</a></li> ";
-                            echo "<li class='page-item'><a class='page-link' href=\"?page=view_treino_alu&pagina=$anterior&id=$id\"> Anterior</a></li> ";
-
-                            echo "<li class='page-item'><a class='page-link' href='?page=view_treino_alu&pagina=" . $pagina . "&id=$id'><strong>" . $pagina . "</strong></a></li> ";
-
-                            for ($i = $pagina + 1; $i < $pagina + $exibir; $i++) {
-                                if ($i <= $totalpagina)
-                                    echo "<li class='page-item'><a class='page-link' href='?page=view_treino_alu&pagina=" . $i . "&id=$id'> " . $i . " </a></li> ";
-                            }
-
-                            echo "<li class='page-item'><a class='page-link' href=\"?page=view_treino_alu&pagina=$posterior&id=$id\"> Pr&oacute;xima</a></li> ";
-                            echo "<li class='page-item'><a class='page-link' href=\"?page=view_treino_alu&pagina=$totalpagina&id=$id\"> &Uacute;ltima</a></li></ul>";
-                        } else {
-                            echo "<h2>Sua ficha de treinamento ainda não está pronta.<br> Aguarde até que seu professor faça ela!</h2>";
-                        }
-
-                        ?>
-                    </div>
-                </div><!--bottom-->
             </div>
         </div>
 
