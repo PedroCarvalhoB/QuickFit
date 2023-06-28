@@ -59,19 +59,16 @@
                 <!-- 2° LINHA -->
                 <div class="row">
                     <div class="form-group col-md-3">
-                        <label for="med_abdo">Medida do Abdome</label>
-                        <input type="number" class="form-control" name="cinrcun_abdom" required
-                            placeholder="Centímetros">
+                        <label for="med_abdom">Medida do Abdome</label>
+                        <input type="number" class="form-control" name="med_abdom" required placeholder="Centímetros">
                     </div>
                     <div class="form-group col-md-3">
                         <label for="med_torax">Medida do Torax</label>
-                        <input type="number" class="form-control" name="cinrcun_abdom" required
-                            placeholder="Centímetros">
+                        <input type="number" class="form-control" name="med_torax" required placeholder="Centímetros">
                     </div>
                     <div class="form-group col-md-3">
                         <label for="med_coxa">Medida da Coxa</label>
-                        <input type="number" class="form-control" name="cinrcun_abdom" required
-                            placeholder="Centímetros">
+                        <input type="number" class="form-control" name="med_coxa" required placeholder="Centímetros">
                     </div>
                 </div>
 
