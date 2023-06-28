@@ -75,7 +75,7 @@ $row = mysqli_fetch_array($sql);
         </div><!--list-->
 
         <!-- PAGINAÇÃO -->
-        <div id="bottom" class="row">
+        <!-- <div id="bottom" class="row">
             <div class="col-md-12">
                 <?php
                 $sqlTotal = "SELECT *, up.nome_usu AS nome_prof FROM treinamento t
@@ -107,7 +107,7 @@ $row = mysqli_fetch_array($sql);
                 echo "<li class='page-item'><a class='page-link' href=\"?page=lista_treino_alu&pagina=$totalpagina&id=" . $row['id_usu'] . "\"> &Uacute;ltima</a></li></ul>";
 
                 ?>
-            </div>
+            </div> -->
 
             <hr />
 

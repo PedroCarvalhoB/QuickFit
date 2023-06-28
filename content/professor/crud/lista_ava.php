@@ -95,7 +95,7 @@ if (!isset($_SESSION))
 		</div><!--list-->
 
 		<!-- PAGINAÇÃO -->
-		<div id="bottom" class="row">
+		<!-- <div id="bottom" class="row">
 			<div class="col-md-12">
 				<?php
 				$sqlTotal = "SELECT * FROM avaliacao AS a
@@ -125,7 +125,7 @@ if (!isset($_SESSION))
 				echo "<li class='page-item'><a class='page-link' href=\"?page=lista_ava&pagina=$totalpagina\"> &Uacute;ltima</a></li></ul>";
 
 				?>
-			</div>
+			</div> -->
 		</div><!--bottom-->
 	</div>
 </div><!--main-->
