@@ -16,7 +16,7 @@ $row = mysqli_fetch_array($sql);
         </div>
 
         <div class="col-md-2">
-            <?php echo "<a href=?page=fadd_ava&cpf=" . $row['cpf'] . " class='btnsub'>Novo Treino</a>"; ?>
+            <?php echo "<a href=?page=fadd_ava&cpf=" . $row['cpf'] . " class='btnsub'>Nova Avaliação</a>"; ?>
         </div>
     </div>
 
