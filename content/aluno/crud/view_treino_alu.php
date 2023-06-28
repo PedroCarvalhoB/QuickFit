@@ -184,7 +184,7 @@ $id = $_SESSION['UsuarioID'];
                     echo "<li class='page-item'><a class='page-link' href=\"?page=view_treino_alu&pagina=$posterior&id=$id\"> Pr&oacute;xima</a></li> ";
                     echo "<li class='page-item'><a class='page-link' href=\"?page=view_treino_alu&pagina=$totalpagina&id=$id\"> &Uacute;ltima</a></li></ul>";
                 } else {
-                    echo "<h2>Você ainda não possui um treino <br> Vá até seu professor professor e peça para fazê-lo.</h2>";
+                    echo "<h2>Sua ficha de treinamento ainda não está pronta.<br> Aguarde até que seu professor faça ela!</h2>";
                 }
 
                 ?>

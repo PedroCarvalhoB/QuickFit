@@ -83,7 +83,7 @@ $row = mysqli_fetch_array($sql);
 
             <div id="actions" class="row botoes">
                 <div class="col-md-12">
-                    <button type="submit" class="btnsub">Salvar</button>
+                    <button type="submit" class="btnsub">Incluir Exercício</button>
                 </div>
             </div>
         </form>

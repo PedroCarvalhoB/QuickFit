@@ -23,6 +23,9 @@ $peso             = $_POST["peso"];
 $imc              = $_POST["imc"];
 $obj              = $_POST["objetivo"];
 $dt               = date('Y-m-d');
+$abdome           = $_POST["med_abdom"];
+$torax            = $_POST["med_torax"];
+$coxa             = $_POST["med_coxa"];
 
 $query_alu = mysqli_query($con, "select * from usuario where cpf = '".$cpf_alu."';");
 
@@ -32,7 +35,7 @@ $resul_alu = mysqli_fetch_array($query_alu);
 // header('location: \Quick-fit/index.php');
 
 $sql = "insert into avaliacao values ";
-$sql .= "('0','".$resul_alu['id_usu']."','".$row['id_usu']."','".$obj."','".$peso."','".$alt."','".$imc."','".$dt."');";
+$sql .= "('0','".$resul_alu['id_usu']."','".$row['id_usu']."','".$obj."','".$peso."','".$alt."','".$imc."','".$dt."', '".$abdome."', '".$torax."', '".$coxa."');";
 
 $resultado = mysqli_query($con, $sql) or die(mysqli_error($con));
 

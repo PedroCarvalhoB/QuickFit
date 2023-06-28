@@ -68,7 +68,7 @@ if (!isset($_SESSION))
 				echo "<td><strong>Nome do usuário</strong></td>";
 				echo "<td><strong>Tipo</strong></td>";
 				echo "<td><strong>CPF</strong></td>";
-				echo "<td><strong>Status</strong></td>";
+				echo "<td><strong>Ativo</strong></td>";
 				echo "<td><strong>Data Nascimento</strong></td>";
 				echo "<td class='actions'><strong>Ações</strong></td>";
 				echo "</tr></thead><tbody>";
@@ -82,7 +82,7 @@ if (!isset($_SESSION))
 					echo "<td>" . $info['cpf'] . "</td>";
 
 					if ($info['status_usu'] == 1) {
-						echo "<td>Ativo</td>";
+						echo "<td>SIM</td>";
 					} else if ($info['status_usu'] == 0) {
 						echo "<td>Inativo</td>";
 					}

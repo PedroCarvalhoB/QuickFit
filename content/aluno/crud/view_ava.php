@@ -60,7 +60,32 @@
 					</p>
 				</div>
 			</div>
+
 			<br>
+
+			<div class="row">
+                <div class="col-md-3">
+                    <p><strong>Abdome</strong></p>
+                    <p>
+                        <?php echo $row['abdome']; ?>
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <p><strong>Torax</strong></p>
+                    <p>
+                        <?php echo $row['torax']; ?>
+                    </p>
+                </div>
+                <div class="col-md-3">
+                    <p><strong>Coxa</strong></p>
+                    <p>
+                        <?php echo $row['coxa']; ?>
+                    </p>
+                </div>
+            </div>
+
+			<br>
+			
 			<div class="row">
 				<div class="col-md-4">
 					<p><strong>Objetivo</strong></p>
