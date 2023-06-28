@@ -57,7 +57,6 @@
                             echo "<h3>Treino A</h3>";
                             echo "<table class='table table-striped' cellspacing='0' cellpading='0'>";
                             echo "<thead><tr>";
-                            echo "<td><strong>Treino</strong></td>";
                             echo "<td><strong>Aparelho</strong></td>";
                             echo "<td><strong>Exercício</strong></td>";
                             echo "<td><strong>Séries</strong></td>";
@@ -66,7 +65,6 @@
 
                             while ($info = mysqli_fetch_array($data_all)) {
                                 echo "<tr>";
-                                echo "<td>" . $info['treino'] . "</td>";
                                 echo "<td>" . $info['nome_apar'] . "</td>";
                                 echo "<td>" . $info['nome_exec'] . "</td>";
                                 echo "<td>" . $info['num_serie'] . "</td>";
@@ -97,7 +95,6 @@
                             echo "<h3>Treino B</h3>";
                             echo "<table class='table table-striped' cellspacing='0' cellpading='0'>";
                             echo "<thead><tr>";
-                            echo "<td><strong>Treino</strong></td>";
                             echo "<td><strong>Aparelho</strong></td>";
                             echo "<td><strong>Exercício</strong></td>";
                             echo "<td><strong>Séries</strong></td>";
@@ -106,7 +103,6 @@
 
                             while ($info = mysqli_fetch_array($data_all)) {
                                 echo "<tr>";
-                                echo "<td>" . $info['treino'] . "</td>";
                                 echo "<td>" . $info['nome_apar'] . "</td>";
                                 echo "<td>" . $info['nome_exec'] . "</td>";
                                 echo "<td>" . $info['num_serie'] . "</td>";
@@ -136,7 +132,6 @@
                             echo "<h3>Treino C</h3>";
                             echo "<table class='table table-striped' cellspacing='0' cellpading='0'>";
                             echo "<thead><tr>";
-                            echo "<td><strong>Treino</strong></td>";
                             echo "<td><strong>Aparelho</strong></td>";
                             echo "<td><strong>Exercício</strong></td>";
                             echo "<td><strong>Séries</strong></td>";
@@ -145,7 +140,6 @@
 
                             while ($info = mysqli_fetch_array($data_all)) {
                                 echo "<tr>";
-                                echo "<td>" . $info['treino'] . "</td>";
                                 echo "<td>" . $info['nome_apar'] . "</td>";
                                 echo "<td>" . $info['nome_exec'] . "</td>";
                                 echo "<td>" . $info['num_serie'] . "</td>";

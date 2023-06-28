@@ -53,7 +53,7 @@ $row_dt = mysqli_fetch_array($sql_dt);
 
                 while ($info = mysqli_fetch_array($data_all)) {
                     echo "<tr>";
-                    echo "<td>" . $info['id_alu'] . "</td>";
+                    echo "<td>" . $info['id_alu'] . "</td>";    
                     echo "<td>" . $info['nome_usu'] . "</td>";
                     echo "<td>" . $info['treino'] . "</td>";
                     echo "<td>" . $info['nome_apar'] . "</td>";
