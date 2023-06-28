@@ -63,10 +63,12 @@ if (!isset($_SESSION))
 
 				echo "<table class='table table-striped' cellspacing='0' cellpading='0'>";
 				echo "<thead><tr>";
-				echo "<td><strong>Matrícula</strong></td>";
 				echo "<td><strong>ID</strong></td>";
 				echo "<td><strong>Nome do usuário</strong></td>";
-				echo "<td><strong>Tipo</strong></td>";
+				if ($nivel == 5) {
+					echo "<td><strong>Tipo</strong></td>";
+				}
+				
 				echo "<td><strong>CPF</strong></td>";
 				echo "<td><strong>Ativo</strong></td>";
 				echo "<td><strong>Data Nascimento</strong></td>";
@@ -75,10 +77,13 @@ if (!isset($_SESSION))
 
 				while ($info = mysqli_fetch_array($data_all)) {
 					echo "<tr>";
-					echo "<td>" . $info['matri_usu'] . "</td>";
 					echo "<td>" . $info['id_usu'] . "</td>";
 					echo "<td>" . $info['nome_usu'] . "</td>";
-					echo "<td>" . $info['tipo_usu'] . "</td>";
+					
+					if ($nivel == 5) {
+						echo "<td>" . $info['tipo_usu'] . "</td>";
+					}
+
 					echo "<td>" . $info['cpf'] . "</td>";
 
 					if ($info['status_usu'] == 1) {
