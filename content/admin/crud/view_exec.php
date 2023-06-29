@@ -57,14 +57,16 @@
 
                 <div class="row">
                     <div class="embed-responsive embed-responsive-16by9">
-                        <p><strong>Demonstração</strong></p>
+                        <p><strong>Demonstração do Exercício</strong></p>
                         <video class="videos" autoplay controls loop src="assets/videos_exercicios/<?php echo $row['imagem'] ?>" muted></video>
                     </div>
                 </div>
+                
+                <br>
 
                 <div class="row">
                     <div class="form-group col-md-12">
-                        <p><strong>Descrição</strong></p>
+                        <p><strong>Descrição do Exercício</strong></p>
                         <p>
                             <?php echo $row['desc_exec'] ?>
                         </p>
