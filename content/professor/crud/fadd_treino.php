@@ -34,9 +34,9 @@ $row = mysqli_fetch_array($sql);
                 <input type="hidden" name="id" value="<?php echo $row['id_usu'] ?>">
                 <div class="form-group col-md-2">
                     <label for="objetivo">Treino</label>&nbsp;&nbsp;&nbsp;
-                    <input type="radio" name="treino" value="A">A &nbsp;
-                    <input type="radio" name="treino" value="B">B &nbsp;
-                    <input type="radio" name="treino" value="C">C &nbsp;
+                    <input type="radio" name="treino" value="A" required>A &nbsp;
+                    <input type="radio" name="treino" value="B" required>B &nbsp;
+                    <input type="radio" name="treino" value="C" required>C &nbsp;
                 </div>
                 <div class="form-group col-md-5">
                     <label for="id_exec">Exercício</label>
@@ -140,7 +140,7 @@ $row = mysqli_fetch_array($sql);
                         echo "<td>" . $info['num_repeat'] . "</td>";
                         echo "<td><div class='btn-group btn-group-sm'>";
 
-                        echo "<a href=?page=excluir_exec&id_exec=" . $info['id_exec'] . "&id_alu=" . $info['id_alu'] . " class='btn btn-danger btn-xs'> Excluir </a></td>";
+                        echo "<a href=?page=excluir_exec&id_exec=" . $info['id_execucao'] . "&id_alu=" . $info['id_alu'] . " class='btn btn-danger btn-xs'> Excluir </a></td>";
                     }
                     echo "</tr></tbody></table>";
 

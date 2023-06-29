@@ -3,7 +3,7 @@ $id = (int) @$_GET['id_exec'];
 
 $id_alu = (int) @$_GET['id_alu'];
  
-$sql = "delete from execucao where id_exec = '$id';"; 
+$sql = "delete from execucao where id_execucao = '$id';"; 
 
 $resultado = mysqli_query($con, $sql)or die(mysqli_error($erro));
 

@@ -269,6 +269,10 @@ if (isset($_GET['page'])) {
         case 'view_exec_alu':
             include "content/aluno/crud/view_exec_alu.php";
             break;
+
+        case 'view_exec_prof':
+            include "content/professor/crud/view_exec_prof.php";
+            break;
     
         default:
             include "content/home.php";

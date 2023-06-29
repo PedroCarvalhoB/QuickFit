@@ -21,7 +21,7 @@ $row_dt = mysqli_fetch_array($sql_dt);
             <div class="table-responsive col-xs-12">
                 <?php
 
-                $id = $_SESSION['UsuarioID'];
+                $id_prof = $_SESSION['UsuarioID'];
                 $acad = $_SESSION['UsuarioAcad'];
 
                 $quantidade = 10;
@@ -49,6 +49,7 @@ $row_dt = mysqli_fetch_array($sql_dt);
                 echo "<td><strong>Exercício</strong></td>";
                 echo "<td><strong>Séries</strong></td>";
                 echo "<td><strong>Repetições</strong></td>";
+                echo "<td><strong>Ações</strong></td>";
                 echo "</tr></thead><tbody>";
 
                 while ($info = mysqli_fetch_array($data_all)) {
@@ -60,6 +61,7 @@ $row_dt = mysqli_fetch_array($sql_dt);
                     echo "<td>" . $info['nome_exec'] . "</td>";
                     echo "<td>" . $info['num_serie'] . "</td>";
                     echo "<td>" . $info['num_repeat'] . "</td>";
+                    echo "<td> <a class='btn' href=?page=view_exec_prof&id=".$info['id_exec']."&id_alu=$id&id_trei=$dt > <i class='fa-solid fa-eye'></i> </a> </td>";
                     echo "<td><div class='btn-group btn-group-sm'>";
 
                 }
