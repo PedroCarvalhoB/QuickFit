@@ -58,7 +58,7 @@
                 <div class="row">
                     <div class="embed-responsive embed-responsive-16by9">
                         <p><strong>Demonstração do exercicio</strong></p>
-                        <video class="videos" autoplay controls loop src="assets/videos_exercicios/<?php echo $row['imagem'] ?>" muted></video>
+                        <video class="videos" autoplay loop src="assets/videos_exercicios/<?php echo $row['imagem'] ?>" muted></video>
                     </div>
                 </div>
 

@@ -32,12 +32,12 @@
 
                   <div class="form-outline form-white mb-4 caixatext">
                     <label class="form-label" for="cpf">CPF</label>
-                    <input type="tex" name="cpf" id="cpf" placeholder="CPF" class="form-control form-control-sm" />
+                    <input type="tex" name="cpf" id="cpf" placeholder="CPF" class="form-control form-control-sm" required/>
                   </div>
 
                   <div class="form-outline form-white mb-4 caixatext">
                     <label class="form-label" for="typePasswordX">Senha</label>
-                    <input type="password" name="senha" placeholder="Senha" class="form-control form-control-sm" />
+                    <input type="password" name="senha" placeholder="Senha" class="form-control form-control-sm" required/>
                   </div>
 
                   <button class="w-100 btnsub" type="submit">Entrar</button>

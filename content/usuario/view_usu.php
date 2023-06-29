@@ -144,10 +144,10 @@ $row = mysqli_fetch_array($sql);
             switch ($nivel) {
                 case '2':
                     // Avaliação
-                    echo "<a class='btn' href=?page=fadd_ava&id=" . $row['id_usu'] . " class='btncancel'> Avaliação </a>";
+                    echo "<a class='btn' href=?page=fadd_ava&id=" . $row['id_usu'] . " class='btn btn'> Avaliação </a>";
 
                     // Treinamento 
-                    echo "<a class='btn' href=?page=fadd_treino&id=" . $row['id_usu'] . " class='btncancel'> Treino </a>";
+                    echo "<a class='btn' href=?page=fadd_treino&id=" . $row['id_usu'] . " class='btntreino'> Treino </a>";
                     break;
 
                 case '4':
