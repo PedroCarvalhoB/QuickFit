@@ -58,6 +58,7 @@
                             echo "<td><strong>Exercício</strong></td>";
                             echo "<td><strong>Séries</strong></td>";
                             echo "<td><strong>Repetições</strong></td>";
+                            echo "<td><strong>Visuazlizar</strong></td>";
                             echo "</tr></thead><tbody>";
 
                             while ($info = mysqli_fetch_array($data_all)) {
@@ -66,6 +67,7 @@
                                 echo "<td>" . $info['nome_exec'] . "</td>";
                                 echo "<td>" . $info['num_serie'] . "</td>";
                                 echo "<td>" . $info['num_repeat'] . "</td>";
+                                echo "<td> <a class='btn' href=?page=view_exec_alu&id=" . $info['id_exec'] . " > <i class='fa-solid fa-eye'></i> </a> </td>";
                                 echo "<td><div class='btn-group btn-group-sm'>";
                             }
                             echo "</tr></tbody></table>";
@@ -96,6 +98,7 @@
                             echo "<td><strong>Exercício</strong></td>";
                             echo "<td><strong>Séries</strong></td>";
                             echo "<td><strong>Repetições</strong></td>";
+                            echo "<td><strong>Visuazlizar</strong></td>";
                             echo "</tr></thead><tbody>";
 
                             while ($info = mysqli_fetch_array($data_all_b)) {
@@ -104,6 +107,7 @@
                                 echo "<td>" . $info['nome_exec'] . "</td>";
                                 echo "<td>" . $info['num_serie'] . "</td>";
                                 echo "<td>" . $info['num_repeat'] . "</td>";
+                                echo "<td> <a class='btn' href=?page=view_exec_alu&id=" . $info['id_exec'] . " > <i class='fa-solid fa-eye'></i> </a> </td>";
                                 echo "<td><div class='btn-group btn-group-sm'>";
                             }
                             echo "</tr></tbody></table>";
@@ -133,6 +137,7 @@
                             echo "<td><strong>Exercício</strong></td>";
                             echo "<td><strong>Séries</strong></td>";
                             echo "<td><strong>Repetições</strong></td>";
+                            echo "<td><strong>Visuazlizar</strong></td>";
                             echo "</tr></thead><tbody>";
 
                             while ($info = mysqli_fetch_array($data_all_c)) {
@@ -141,6 +146,7 @@
                                 echo "<td>" . $info['nome_exec'] . "</td>";
                                 echo "<td>" . $info['num_serie'] . "</td>";
                                 echo "<td>" . $info['num_repeat'] . "</td>";
+                                echo "<td> <a class='btn' href=?page=view_exec_alu&id=" . $info['id_exec'] . " > <i class='fa-solid fa-eye'></i> </a> </td>";
                                 echo "<td><div class='btn-group btn-group-sm'>";
                             }
                             echo "</tr></tbody></table>";

@@ -75,7 +75,7 @@
 
                 <div id="actions" class="row botoes">
                     <div class="col-md-12">
-                        <a href="?page=lista_exec" class="btncancel">Voltar</a>
+                        <a href="?page=view_treino_alu" class="btncancel">Voltar</a>
                     </div>
                 </div>
             </form>

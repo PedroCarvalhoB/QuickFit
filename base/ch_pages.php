@@ -265,6 +265,10 @@ if (isset($_GET['page'])) {
         case 'atualiza_func':
             include "content/funcionario/crud/atualiza_func.php";
             break;
+
+        case 'view_exec_alu':
+            include "content/aluno/crud/view_exec_alu.php";
+            break;
     
         default:
             include "content/home.php";

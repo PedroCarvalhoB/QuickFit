@@ -42,7 +42,7 @@
                     <div class="form-group col-md-3">
                         <label for="altura">Altura</label>
                         <input type="number" class="form-control" name="altura" step="any" required
-                            placeholder="Centímetros">
+                            placeholder="Metros">
                     </div>
                     <div class="form-group col-md-3">
                         <label for="peso">Peso</label>

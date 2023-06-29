@@ -42,19 +42,19 @@
 				<div class="col-md-3">
 					<p><strong>Altura</strong></p>
 					<p>
-						<?php echo $row['altura']; ?>
+						<?php echo $row['altura']; ?> m
 					</p>
 				</div>
 				<div class="col-md-3">
 					<p><strong>Peso</strong></p>
 					<p>
-						<?php echo $row['peso']; ?>
+						<?php echo $row['peso']; ?> Kg
 					</p>
 				</div>
 				<div class="col-md-3">
 					<p><strong>IMC</strong></p>
 					<p>
-						<?php echo $row['imc']; ?>
+						<?php echo $row['imc']; ?> %
 					</p>
 				</div>
 			</div>
@@ -65,19 +65,19 @@
                 <div class="col-md-3">
                     <p><strong>Abdome</strong></p>
                     <p>
-                        <?php echo $row['abdome']; ?>
+                        <?php echo $row['abdome']; ?> cm
                     </p>
                 </div>
                 <div class="col-md-3">
                     <p><strong>Torax</strong></p>
                     <p>
-                        <?php echo $row['torax']; ?>
+                        <?php echo $row['torax']; ?> cm
                     </p>
                 </div>
                 <div class="col-md-3">
                     <p><strong>Coxa</strong></p>
                     <p>
-                        <?php echo $row['coxa']; ?>
+                        <?php echo $row['coxa']; ?> cm
                     </p>
                 </div>
             </div>
